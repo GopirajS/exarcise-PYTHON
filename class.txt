@@ -1,0 +1,201 @@
+
+>>> class demo():
+	pass
+
+>>> class demo:
+	pass
+
+>>> class demo(object):
+	pass
+
+>>> #using constracter
+>>> # other name dundun
+>>> class demo(object):
+	def __init__(self,name,age,city):
+		self.name=name
+		self.age=age
+		self.my_city=city
+		print("this mesage from constracter")
+	def dis(self):
+		print(f"my name is {self.name}")
+		print("my age is ",self.age)
+		print("my city is %s",self.my_city)
+
+		
+>>> s=demo("gopiraj","21","salem")
+this mesage from constracter
+>>> s.dis()
+my name is gopiraj
+my age is  21
+my city is %s salem
+>>> s.dis
+<bound method demo.dis of <__main__.demo object at 0x000001E8F5A3CEB0>>
+>>> s.
+SyntaxError: invalid syntax
+>>> s.age
+'21'
+>>> s.name
+'gopiraj'
+>>> s.my_city
+'salem'
+>>>
+
+
+======================================================
+
+
+
+>>> class Person:
+	def __init__(mysillyobject, name, age):
+		mysillyobject.name = name
+		mysillyobject.age = age
+	def myfunc(abc):
+		print("Hello my name is " + abc.name)
+
+>>> s=Person("gopi",21)
+>>> s.age
+21
+>>> s.name
+'gopi'
+>>> s.myfunc()
+Hello my name is gopi
+
+
+>>> class demo:
+	def __init__(my_object,name,age,city):
+		my_object.city=city
+
+		print(name)
+		print(age)
+	def dis(abc):
+		print(abc.city)
+
+		
+>>> s=demo("gopi",21,"salem")
+gopi
+21
+>>> s.dis
+<bound method demo.dis of <__main__.demo object at 0x000001929A3AC280>>
+>>> s.dis()
+salem
+>>>
+
+
+==========================================
+
+>>> class parrot:
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def dis(self):
+		print(self.name,self.age)
+
+		
+>>> s=parrot("gopi",21)
+>>> s.age
+21
+>>> s.name
+'gopi'
+>>> s.dis()
+gopi 21
+>>> dir(s)
+['__class__', '__delattr__', '__dict__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__le__', '__lt__', '__module__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', '__weakref__', 'age', 'dis', 'name']
+
+
+
+>>> class parrot:
+	species="birds"
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def dis(self):
+		print(self.name,self.age)
+
+		
+>>> 
+>>> blu=parrot("blu",10)
+>>> woo=parrot("woo",15)
+>>> 
+>>> print("{}is {}".format(blu.name,blu.age))
+bluis 10
+>>> print("{} is {} year old".format(blu.name,blu.age))
+blu is 10 year old
+>>> print("{} is {}".format(woo.name,woo.age))
+woo is 15
+>>> print("{} is {} year old".format(woo.name,woo.age))
+woo is 15 year old
+>>> print("blu is {}".format(blu.__class__.species))
+blu is birds
+>>> print("blu is {}".format(woo.__class__.species))
+blu is birds
+>>> 
+
+
+====================================   return keyword using    ==================
+
+>>> class parrot:
+	species="birds"
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def song(self,sing):
+		return "{} is now singing {} ".format(self.name,sing)
+	def dance(self):
+		return "{} is dancing".format(self.name)
+
+	
+>>> s=parrot("gopi",21)
+>>> s.age
+21
+>>> s.name
+'gopi'
+>>> s.song("happy")
+'gopi is now singing happy '
+>>> s.dance()
+'gopi is dancing'
+>>> 
+
+==============================
+>>> class person:
+	age=21
+	def get(g,name,city):
+		print(person.age)
+		g.name=name
+		g.city=city
+	def dis(self):
+		print(self.name)
+		print(self.city)
+
+		
+>>> s=person()
+>>> s.age
+21
+>>> s.get
+<bound method person.get of <__main__.person object at 0x0000025E7DCED280>>
+>>> s.get("gopiraj","salem")
+21
+
+>>> s.age
+21
+>>> s.city
+'salem'
+>>> s.dis()
+gopiraj
+salem
+
+
+
+
+
+
+class Polygon:
+	def __init__(self, no_of_sides):
+		self.n = no_of_sides
+		self.sides = [0 for i in range(no_of_sides)]
+	def inputSides(self):
+		self.sides = [float(input("Enter side "+str(i+1)+" : ")) for i in range(self.n)]
+	def dispSides(self):
+		for i in range(self.n):
+			print("Side",i+1,"is",self.sides[i])
+
+    
