@@ -1,7 +1,3 @@
-
-
->>> 
-
 >>>                                     #capitalize()	Converts the first character to upper case
 
 
@@ -61,9 +57,13 @@
 >>> 
 
 
-
+#-----------------------------------------------------------------------------------------------------------------------------------
 
 >>>                             #count()	Returns the number of times a specified value occurs in a string
+
+
+
+
 >>> s
 'GOPIRAJ'
 
@@ -81,11 +81,16 @@
 >>> s.count('apple',0,37)
 2
 
-
+#-------------------------------------------------------------------------------------------------------------------------------------
 
 >>>                         #endswith()	Returns true if the string ends with the specified value
 
  
+
+	
+
+	
+	
 >>> txt = "Hello, welcome to my world."
 
 >>> txt.endswith(".")
@@ -117,18 +122,13 @@ TrueS
 
 
 
-
-
-
-
-
-
-
-
-
-
+#---------------------------------------------------------------------------------------------------------------
 
                               #endswith()	Returns true if the string ends with the specified value
+
+	
+	
+	
 >>> txt = "Hello, welcome to my world."
 
 >>> txt.endswith('.')
@@ -150,9 +150,11 @@ True
 True
 
 
- 
-                             #expandtabs()	Sets the tab size of the string
+#------------------------------------------------------------------------------------------------------------------- 
+        
+	                                           #expandtabs()	Sets the tab size of the string
 
+	
 
 
 >>> txt = "H\te\tl\tl\to"
@@ -195,7 +197,7 @@ True
 
 
 
-
+#---------------------------------------------------------------------------------------------------------------------------------------
  
          #find()	Searches the string for a specified value and returns the position of where it was found
 
@@ -223,7 +225,7 @@ ValueError: substring not found
  
             
 
-
+#------------------------------------------------------------------------------------------------------------------------------------
                                           #format()	Formats specified values in a string
 
 
@@ -283,7 +285,7 @@ this is string 4 and this is bynerry of the string100
 >>> print(txt.format(23))
 i have a doller23.000000
 
-
+#------------------------------------------------------------------------------------------------------------
 
                                              #format_map()
 
@@ -319,10 +321,7 @@ i have a doller23.000000
 
 
 
-
-
-
-
+#--------------------------------------------------------------------------------------------------------------------------------------------------
 
                  # index()	Searches the string for a specified value and returns the position of where it was found
  
@@ -362,7 +361,7 @@ ValueError: substring not found
 
 
 
-
+#------------------------------------------------------------------------------------------------------------------------
 
                  #isalnum()	Returns True if all characters in the string are alphanumeric
  
@@ -395,7 +394,7 @@ False
 
 
 
-
+#--------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -445,7 +444,7 @@ else :
 	
 the string is alpha
 
-
+#-----------------------------------------------------------------------------------------------------------------------------
 
 >>>                         #isascii()	Returns True if all characters in the string are ascii characters
 
@@ -493,7 +492,7 @@ False
 True
 
 
-
+#--------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -509,7 +508,7 @@ True
 
 
 
-
+#---------------------------------------------------------------------------------------------------------------------------------------
 
                            #isidentifier()	Returns True if the string is an identifier
 
@@ -539,7 +538,7 @@ True
 >>> str.isidentifier()
 False
 
-
+#------------------------------------------------------------------------------------------------------------------------------
 
 
 >>>                   #islower()	Returns True if all characters in the string are lower case
@@ -573,7 +572,7 @@ True
 True
 
 
-
+#-------------------------------------------------------------------------------------------------------------------------------------
 
 
 >>> 	      #isspace()	Returns True if all characters in the string are whitespaces
@@ -596,7 +595,7 @@ False
 False
         
 
-
+#-----------------------------------------------------------------------------------------------------------------------------------
 
                                   #istitle()	Returns True if the string follows the rules of a title
 >>> s='Gopi Raj'
@@ -626,7 +625,7 @@ True
 
 >>> 
 
-
+#-----------------------------------------------------------------------------------------------------------------------------------
                                 #join()	Joins the elements of an iterable to the end of the string
 >>> 
 >>> 
@@ -664,7 +663,7 @@ True
 
 
 
-
+#-------------------------------------------------------------------------------------------------------------------------------
 
 >>>                        #ljust()	Returns a left justified version of the string
 
@@ -697,7 +696,7 @@ banana               this is my faviriet fruit
 
 
 
-
+#----------------------------------------------------------------------------------------------------------------------------------
                      #rjust()	Returns a right justified version of the string
 
 
@@ -731,7 +730,7 @@ banana               this is my faviriet fruit
 
 
 
-
+#--------------------------------------------------------------------------------------------------------------------
 
                                #lower()	Converts a string into lower case
 
@@ -751,7 +750,7 @@ banana               this is my faviriet fruit
 
 
 
-
+#----------------------------------------------------------------------------------------------------------------------------
 
                                  #lstrip()   #trimming#  	Returns a left trim version of the string
 
@@ -778,7 +777,7 @@ banana               this is my faviriet fruit
 'gopiraj'
 
 
-
+#--------------------------------------------------------------------------------------------------------------------------------------------
 
 >>>                              #strip()   #trimming#	 Returns a trimmed version of the string
 
@@ -798,7 +797,7 @@ banana               this is my faviriet fruit
 'banana'
 
 
-
+#---------------------------------------------------------------------------------------------------------------------------------------------
 
 
                           #replace()	Returns a string where a specified value is replaced with a specified value
@@ -822,7 +821,7 @@ banana               this is my faviriet fruit
 
 
 
-
+#------------------------------------------------------------------------------------------------------------------------------------------------
                      #rfind()	Searches the string for a specified value and returns the last position of where it was foun
 
 
@@ -851,7 +850,7 @@ banana               this is my faviriet fruit
 
 
 
-
+#------------------------------------------------------------------------------------------------------------------------------
 
 
 
@@ -890,7 +889,7 @@ banana               this is my faviriet fruit
 
 
 
-
+#----------------------------------------------------------------------------------------------------------------------------------
 
                #split()	Splits the string at the specified separator, and returns a list
 
@@ -908,7 +907,7 @@ banana               this is my faviriet fruit
 
 
 
-
+#----------------------------------------------------------------------------------------------------------------------------------------
                    #startswith()	Returns true if the string starts with the specified value
 
 
@@ -934,12 +933,9 @@ True
 
 
 
-
-
-
-
- 
-
+ #_-----------------------------------------------------------------------------------------------------------------------------
+	
+	
                       #swapcase()	Swaps cases, lower case becomes upper case and vice versa
 >>> s='gopi RAJ'
 >>> s.swapcase()
@@ -952,7 +948,7 @@ True
 
 
 
-
+#-----------------------------------------------------------------------------------------------------------------------------------------
 
 
 >>>                      #title()	Converts the first character of each word to upper case
@@ -973,7 +969,7 @@ True
 
 
 
-
+#--------------------------------------------------------------------------------------------------------------------------
 
                            >>> #upper()	Converts a string into upper case
 
@@ -1006,3 +1002,88 @@ True
 >>> s.zfill(30)
 '000000000000000000satish kumar'
 >>>  
+
+
+
+
+
+
+
+>>> #----------------------------------------------------------------
+>>>                                                 #partition()  
+
+>>> s='gopi raj'
+
+
+>>> s.partition(' ')
+('gopi', ' ', 'raj')
+
+>>> s='gopi raj  s'
+
+>>> s.partition('raj')
+('gopi ', 'raj', '  s')
+
+>>> s.partition('123')
+('gopi raj  s', '', '')
+
+>>> s.partition('$%')
+('gopi raj  s', '', '')
+
+>>> mystr = 'TutorialsTeacher is the best tutorials website.'
+
+>>> mystr.partition("tutorials")
+('TutorialsTeacher is the best ', 'tutorials', ' website.')
+
+>>> mystr.partition("Tutorials")
+('', 'Tutorials', 'Teacher is the best tutorials website.')
+
+>>> s='gopi raj'
+
+>>> s.partition()
+Traceback (most recent call last):
+  File "<pyshell#217>", line 1, in <module>
+    s.partition()
+TypeError: str.partition() takes exactly one argument (0 given)
+
+>>> mystr = 'TutorialsTeacher is the best Tutorials website.'
+
+>>> mystr.partition("Tutorials")
+('', 'Tutorials', 'Teacher is the best Tutorials website.')
+
+#-----------------------------------------------------------------------------------------------------------
+>>>                                              # rpartition()
+
+
+
+>>> s='gopiraj sathish kumar'
+
+
+
+>>> s.rpartition('')
+Traceback (most recent call last):
+  File "<pyshell#228>", line 1, in <module>
+    s.rpartition('')
+ValueError: empty separator
+
+
+>>> s.rpartition(' ')
+('gopiraj sathish', ' ', 'kumar')
+
+>>> s.rpartition('k')
+('gopiraj sathish ', 'k', 'umar')
+
+>>> s.rpartition('t')
+('gopiraj sa', 't', 'hish kumar')
+
+>>> s.rpartition('o')
+('g', 'o', 'piraj sathish kumar')
+
+>>> s.rpartition(sep='o')
+Traceback (most recent call last):
+  File "<pyshell#233>", line 1, in <module>
+    s.rpartition(sep='o')
+TypeError: str.rpartition() takes no keyword arguments
+ 
+
+
+
