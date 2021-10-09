@@ -455,5 +455,154 @@ TypeError: list.remove() takes exactly one argument (0 given)
 >>> cities[::-1]
 ['Delhi', 'New York', 'Paris', 'London', 'Mumbai']
 
+#-------------------------------------------------------------------
+>>>              # list sort() method
+>>> # .sort(key=None,reverse=False)
+>>> 
+>>> 
+>>> prime = [11, 3, 7, 5, 2]
 
+>>> prime.sort()
+
+>>> prime
+[2, 3, 5, 7, 11]
+
+>>> prime = [11, 3, 7, 5, 2]
+
+>>> prime.sort(reverse=True)
+
+ 
+>>> prime
+[11, 7, 5, 3, 2]
+
+>>> let=['s','ww','r','g']
+
+>>> let.sort()
+
+>>> let
+['g', 'r', 's', 'ww']
+
+>>> let=['f','e','d','c','b','a']
+
+>>> let.sort()
+
+>>> let
+['a', 'b', 'c', 'd', 'e', 'f']
+
+>>> let=['f','e','d','c','b','a','A','Y','R']
+
+>>> let.sort()
+
+>>> let
+['A', 'R', 'Y', 'a', 'b', 'c', 'd', 'e', 'f']
+
+>>> let.sort(reverse=True)
+
+>>> let
+['f', 'e', 'd', 'c', 'b', 'a', 'Y', 'R', 'A']
+
+>>> aln=['a','r','A','q',12,2.3,'#','%']
+
+>>> aln.sort()
+Traceback (most recent call last):
+  File "<pyshell#26>", line 1, in <module>
+    aln.sort()
+TypeError: '<' not supported between instances of 'int' and 'str'
+
+>>> random = [(2, 2), (3, 4), (4, 1), (1, 3)]
+
+
+>>> #key=fuction()
+
+>>> def s(element):
+	return element[1]
+
+>>> random.sort(key=s)
+
+>>> random
+[(4, 1), (2, 2), (1, 3), (3, 4)]
+
+>>> def s(element):
+
+	return element[0]
+
+>>> random.sort(key=s)
+
+>>> random
+[(1, 3), (2, 2), (3, 4), (4, 1)]
+
+
+>>> random.sort(key=s,reverse=True)
+
+>>> random
+[(4, 1), (3, 4), (2, 2), (1, 3)]
+
+
+>>> #key=abs,len,str.upper,str.lower,lambda
+
+>>> prime = [11, 3, -7, -5, 2,3,-6,23,-34.4]
+
+>>> prime.sort(key=abs)
+
+>>> prime
+[2, 3, 3, -5, -6, -7, 11, 23, -34.4]
+
+>>> prime = [11, 3, -7, -5, 2,3,-6,23,-34.4]
+
+>>> prime.sort()
+
+>>> prime
+[-34.4, -7, -6, -5, 2, 3, 3, 11, 23]
+
+
+>>> let=['f','e','d','c','b','a']
+
+>>> let=['ft','ee','dddd','c','bbb','aa']
+
+>>> let.sort(key=len)
+
+>>> let
+['c', 'ft', 'ee', 'aa', 'bbb', 'dddd']
+
+>>> let.sort(key=len,reverse=True)
+
+>>> let
+['dddd', 'bbb', 'ft', 'ee', 'aa', 'c']
+
+>>> let.sort(key=str.upper)
+
+>>> let
+['aa', 'bbb', 'c', 'dddd', 'ee', 'ft']
+
+>>> let.sort(key=str.lower)
+
+>>> let
+['aa', 'bbb', 'c', 'dddd', 'ee', 'ft']
+
+
+>>> employees = [
+    {'Name': 'Alan Turing', 'age': 25, 'salary': 10000},
+    {'Name': 'Sharon Lin', 'age': 30, 'salary': 8000},
+    {'Name': 'John Hopkins', 'age': 18, 'salary': 1000},
+    {'Name': 'Mikhail Tal', 'age': 40, 'salary': 15000},
+]
+>>> employees.sort(key=lambda x:x.get("Name"))
+
+
+>>> print(employees)
+[{'Name': 'Alan Turing', 'age': 25, 'salary': 10000}, {'Name': 'John Hopkins', 'age': 18, 'salary': 1000}, {'Name': 'Mikhail Tal', 'age': 40, 'salary': 15000}, {'Name': 'Sharon Lin', 'age': 30, 'salary': 8000}]
+
+ 
+ 
+>>> employees.sort(key=lambda x:x.get("age"))
+
+>>> employees
+[{'Name': 'John Hopkins', 'age': 18, 'salary': 1000}, {'Name': 'Alan Turing', 'age': 25, 'salary': 10000}, {'Name': 'Sharon Lin', 'age': 30, 'salary': 8000}, {'Name': 'Mikhail Tal', 'age': 40, 'salary': 15000}]
+
+>>> employees.sort(key=lambda x:x.get("salary"))
+
+
+>>> employees
+[{'Name': 'John Hopkins', 'age': 18, 'salary': 1000}, {'Name': 'Sharon Lin', 'age': 30, 'salary': 8000}, {'Name': 'Alan Turing', 'age': 25, 'salary': 10000}, {'Name': 'Mikhail Tal', 'age': 40, 'salary': 15000}]
+ 
  
