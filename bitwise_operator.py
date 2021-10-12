@@ -62,6 +62,22 @@ Type "help", "copyright", "credits" or "license()" for more information.
 >>> #   2 & 7 --------->  0b010   &   0b111 ---> 0b010
 >>> 0b010
 2
+
+
+>>> import operator
+>>> operator.and_(2,5)
+0
+>>> operator.and_(2,6)
+2
+>>> operator.and_(6,6)
+6
+>>> operator.and_(6,5)
+4
+>>> operator.and_(6,9)
+0
+>>> operator.and_(6,10)
+2
+>>> 
 >>> #-------------------------------------------------------
 >>> 
 >>> #      OR operator
@@ -129,6 +145,28 @@ Type "help", "copyright", "credits" or "license()" for more information.
 >>> 0b1011
 11
 >>> 
+>>> operator.or_(1,2)
+3
+>>> operator.or_(1,3)
+3
+>>> operator.or_(1,4)
+5
+>>> operator.or_(1,5)
+5
+>>> operator.or_(1,6)
+7
+>>> operator.or_(2,6)
+6
+>>> operator.or_(2,2)
+2
+>>> operator.or_(2,3)
+3
+>>> operator.or_(2,4)
+6
+>>> operator.or_(2,5)
+7
+>>> operator.or_(2,6)
+6
 >>> #----------------------------------------------------------
 >>> 
 >>> #   NOT  ------>   ~
@@ -174,6 +212,20 @@ Type "help", "copyright", "credits" or "license()" for more information.
 '-0b110'
 >>> 
 >>> 
+>>> operator.invert(3)
+-4
+>>> operator.invert(5)
+-6
+>>> operator.invert(7)
+-8
+>>> operator.invert(70)
+-71
+>>> operator.invert(71)
+-72
+>>> operator.invert(-123)
+122
+>>> 
+
 >>> #-------------------------------------------------
 >>> # XOR -------->  ^
 >>> 
@@ -220,6 +272,25 @@ Type "help", "copyright", "credits" or "license()" for more information.
 >>> bin(6)
 '0b110'
 >>>
+>>> operator.xor(1,2)
+3
+>>> operator.xor(1,3)
+2
+>>> operator.xor(1,4)
+5
+>>> operator.xor(1,5)
+4
+>>> operator.xor(1,6)
+7
+>>> operator.xor(4,2)
+6
+>>> operator.xor(4,3)
+7
+>>> operator.xor(4,4)
+0
+>>> operator.xor(4,0)
+4
+
 >>> #-------------------------------------------------------------
 >>> 
 >>> 
@@ -243,6 +314,15 @@ Type "help", "copyright", "credits" or "license()" for more information.
 12
 >>> 100 >> 4
 6
+>>> operator.rshift(1,1)
+0
+>>> operator.rshift(1,2)
+0
+>>> operator.rshift(1,3)
+0
+>>> operator.rshift(1,4)
+0
+>>> 
 >>> #  left shift
 >>> 
 >>> 
@@ -265,3 +345,22 @@ Type "help", "copyright", "credits" or "license()" for more information.
 >>> -100 << 1
 -200
 >>> 
+>>> operator.lshift(1,1)
+2
+>>> operator.lshift(1,3)
+8
+>>> operator.lshift(1,-1)
+Traceback (most recent call last):
+  File "<pyshell#49>", line 1, in <module>
+    operator.lshift(1,-1)
+ValueError: negative shift count
+>>> operator.lshift(1,5)
+32
+>>> operator.lshift(1,2)
+4
+>>> operator.lshift(1,3)
+8
+>>> operator.lshift(1,4)
+16
+>>> operator.lshift(1,5)
+32
