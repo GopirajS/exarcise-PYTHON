@@ -224,3 +224,58 @@ True
 >>> 'kumar' in l1
 True
  
+	
+	
+	                                                >>> # list comprehension
+>>> 
+
+>>> fruit=['apple','oringe','banana','kiwi','mango']
+
+>>> l=[]
+
+>>> l=[x for x in fruit]
+
+>>> l
+['apple', 'oringe', 'banana', 'kiwi', 'mango']
+
+>>> l=[fruit]
+
+>>> l
+[['apple', 'oringe', 'banana', 'kiwi', 'mango']]
+
+>>> l=[x for x in fruit if x=='a']
+
+>>> l
+[]
+>>> l=[x for x in fruit if x!='apple']
+
+>>> l
+['oringe', 'banana', 'kiwi', 'mango']
+
+>>> s=[x for x in range(10)]
+
+>>> s
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> s=[x for x in range(10) if x<5]
+
+>>> s
+[0, 1, 2, 3, 4]
+
+>>> s=[x.upper() for x in fruit]
+
+>>> s
+['APPLE', 'ORINGE', 'BANANA', 'KIWI', 'MANGO']
+
+>>> s=['hello' for i in fruit]
+
+>>> s
+['hello', 'hello', 'hello', 'hello', 'hello']
+
+>>> s=[x if x!='banana' else 'sss' for x in fruit ]
+
+>>> s
+['apple', 'oringe', 'sss', 'kiwi', 'mango']
+
+>>> s
+['apple', 'oringe', 'sss', 'kiwi', 'mango']
