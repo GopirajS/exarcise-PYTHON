@@ -279,3 +279,194 @@ True
 
 >>> s
 ['apple', 'oringe', 'sss', 'kiwi', 'mango']
+
+
+
+>>>                                             # list comrehension
+>>> string='This Is An Apple'
+
+>>> n=[]
+
+>>> for i in string:
+	if i.lower() in 'aeiou':
+		n.append(i)
+
+		
+>>> n
+['i', 'I', 'A', 'A', 'e']
+
+>>> x=[i for i in string if i.lower() in 'aeiou']
+
+>>> x
+['i', 'I', 'A', 'A', 'e']
+
+
+
+>>> a1=['live','arm','strong']
+
+>>> a2=['lively','harm','sun','armstrong']
+
+>>> n.clear()
+
+>>> for i in a1:
+	for j in a2:
+		if i in j :
+			n.append(j)
+
+			
+>>> n
+['lively', 'harm', 'armstrong', 'armstrong']
+
+>>> x=[ j for i in a1 for j in a2 if i in j ]
+
+>>> x
+['lively', 'harm', 'armstrong', 'armstrong']
+
+>>> a2
+['lively', 'harm', 'sun', 'armstrong']
+
+
+>>> x=[ i for i in a1 for j in a2 if i in j ]
+
+>>> x
+['live', 'arm', 'arm', 'strong']
+
+>>> n=[]
+
+>>> for i in range(1,11):
+	if i%2==0:
+		n.append(str(i)+':even')
+	else:
+		n.append(str(i)+":odd")
+
+		
+>>> n
+['1:odd', '2:even', '3:odd', '4:even', '5:odd', '6:even', '7:odd', '8:even', '9:odd', '10:even']
+
+>>> x=[ str(i)+':even' if i%2==0 else str(i)+':odd' for i in range(1,11) ]
+
+>>> x
+['1:odd', '2:even', '3:odd', '4:even', '5:odd', '6:even', '7:odd', '8:even', '9:odd', '10:even']
+
+>>> n=[]
+
+>>> number=[]
+
+
+>>> n=[]
+
+>>> number=[]
+
+>>> for i in range(3):
+	for j in range(3):
+		n.append(i)
+	number.append(n)
+
+	
+>>> number
+[[0, 0, 0, 1, 1, 1, 2, 2, 2], [0, 0, 0, 1, 1, 1, 2, 2, 2], [0, 0, 0, 1, 1, 1, 2, 2, 2]]
+
+>>> for i in range(3):
+	for j in range(3):
+		n.append(j)
+	number.append(n)
+
+	
+>>> number.clear()
+
+>>> n.clear()
+
+>>> for i in range(3):
+	for j in range(3):
+		n.append(j)
+	number.append(n)
+
+	
+>>> number
+[[0, 1, 2, 0, 1, 2, 0, 1, 2], [0, 1, 2, 0, 1, 2, 0, 1, 2], [0, 1, 2, 0, 1, 2, 0, 1, 2]]
+
+>>> n.clear()
+
+>>> number.clear()
+
+>>> for i in range(3):
+	for j in range(3):
+		n.append(j)
+
+>>> n
+[0, 1, 2, 0, 1, 2, 0, 1, 2]
+>>> for i in range(3):
+	for j in range(3):
+		n.append(i)
+
+		
+>>> n
+[0, 1, 2, 0, 1, 2, 0, 1, 2, 0, 0, 0, 1, 1, 1, 2, 2, 2]
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> n=[]
+>>> s=[]
+>>> x=[[ i for j in range(3)]for i in range(3)]
+>>> x
+[[0, 0, 0], [1, 1, 1], [2, 2, 2]]
+
+>>> for i in range(3):
+	for j in range(3):
+		print(i,end=' ')
+
+		
+0 0 0 1 1 1 2 2 2 
+>>> for i in range(3):
+	for j in range(3):
+		print(i,end=' ')
+	print('')
+
+	
+0 0 0 
+1 1 1 
+2 2 2 
+>>> for i in range(3):
+	for j in range(3):
+		n.append(i)
+	s.append(n)
+
+	
+>>> s
+[[0, 0, 0, 1, 1, 1, 2, 2, 2], [0, 0, 0, 1, 1, 1, 2, 2, 2], [0, 0, 0, 1, 1, 1, 2, 2, 2]]
+>>> for i in range(3):
+	n=[]
+	for j in range(3):
+		n.append(i)
+	s.append(n)
+
+	
+>>> s.clear()
+>>> n.clear()
+>>> for i in range(3):
+	n=[]
+	for j in range(3):
+		n.append(i)
+	s.append(n)
+
+	
+>>> s
+[[0, 0, 0], [1, 1, 1], [2, 2, 2]]
+
+>>> a1=['live','arm','strong']
+
+>>> a2=['lively','harm','sun','armstrong']
+
+>>> word=[]
+
+>>> for i in a1:
+	for j in a2:
+		if i in j:
+			word.append(j)
+
+			
+>>> word
+['lively', 'harm', 'armstrong', 'armstrong']
