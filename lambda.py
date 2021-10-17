@@ -123,3 +123,38 @@ Type "help", "copyright", "credits" or "license()" for more information.
 
 >>> x(4)
 [4]
+
+
+
+>>> s=[('gopi',1000),('raj',1500),('sathish',2000),('kumar',2500)]
+>>> sle=map(lambda x: x[1]+100,s)
+
+>>> sle
+<map object at 0x000001EFD0BFB9A0>
+
+>>> for i in sle:
+	i
+
+	
+1100
+1600
+2100
+2600
+>>> sle=map(lambda x:(x[0], x[1]+100),s)
+
+>>> sle
+<map object at 0x000001EFD0B5C280>
+
+>>> sle=map(lambda x:(x[0], x[1]+100),s)
+
+>>> list(sle)
+[('gopi', 1100), ('raj', 1600), ('sathish', 2100), ('kumar', 2600)]
+
+>>> tuple(sle)
+()
+
+>>> sl=filter(lambda x: x[1]>1500,s)
+
+>>> list(sl)
+[('sathish', 2000), ('kumar', 2500)]
+
