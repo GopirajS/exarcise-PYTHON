@@ -170,3 +170,109 @@ Traceback (most recent call last):
     print('string of all():   ',all(s))
 TypeError: 'bool' object is not iterable
 >>> 
+>>> #-----------------------------------------------------------
+
+>>> z='''
+        Syntax:
+               any(iterable)
+
+    Parameters:
+              iterable: An iterable (list, tuple, string, set, dictionary).
+
+              '''
+>>> l=[]
+
+>>> print(any(l))
+False
+
+>>> l=[1,2,3]
+
+>>> print(any(l))
+True
+
+>>> l=[1,2,3,0]
+
+>>> print(any(l))
+True
+
+>>> l=[1,2,3,0,False,True]
+
+>>> print(any(l))
+True
+
+>>> l=[False]
+
+>>> print(any(l))
+False
+
+>>> l=[0]
+
+>>> print(any(l))
+False
+
+>>> l=[0]
+
+>>> l=[0,1]
+
+>>> print(any(l))
+True
+
+>>> s=''
+
+>>> print(any(s))
+False
+
+>>> s=' '
+
+>>> print(any(s))
+True
+
+>>> s='gopi '
+
+>>> print(any(s))
+True
+
+>>> s='False'
+
+>>> print(any(s))
+True
+>>> s=set()
+
+>>> print(any(s))
+False
+
+>>> s={'gopi','raj'}
+
+>>> print(any(s))
+True
+
+>>> s={0,False}
+
+>>> print(any(s))
+False
+
+>>> s={0,False,True}
+
+>>> print(any(s))
+True
+
+>>> d={}
+
+>>> print(any(d))
+False
+
+>>> d={1}
+
+>>> print(any(d))
+True
+
+>>> d={0}
+
+>>> print(any(d))
+False
+
+>>> d={0,1}
+
+>>> print(any(d))
+True
+>>> 
