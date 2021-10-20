@@ -63,3 +63,110 @@ absolute value of hex of 35:    35
 
 
 >>> #----------------------------------------------------------------------
+
+
+>>> # all() method
+>>> z='''
+          all() Syntax:
+                      all(iterable)
+
+
+            Parameters:
+                       iterable: A list, tuple, string, set, or dictionary object.
+                       '''
+
+>>> l=[]
+
+>>> print('list of all() mehtod :  ',all(l))
+list of all() mehtod :   True
+
+>>> l=[1,2,3,4,5]
+
+>>> print('list of all() mehtod :  ',all(l))
+list of all() mehtod :   True
+
+>>> l=[1,2,3,4,5,0]
+
+>>> print('list of all() mehtod :  ',all(l))
+list of all() mehtod :   False
+
+>>> l=[1,2,3,4,5,False]
+
+>>> print('list of all() mehtod :  ',all(l))
+list of all() mehtod :   False
+
+>>> s=set()
+
+>>> print('set of all():   ',all(s))
+set of all():    True
+
+>>> s={'gopi','sathish'}
+
+>>> print('set of all():   ',all(s))
+
+set of all():    True
+
+>>> s={'gopi','sathish',0}
+
+>>> print('set of all():   ',all(s))
+set of all():    False
+
+>>> s={'gopi','sathish',False}
+
+>>> print('set of all():   ',all(s))
+set of all():    False
+
+>>> s={'gopi','sathish',False,True}
+
+>>> print('set of all():   ',all(s))
+set of all():    False
+
+>>> d={}
+
+>>> print('dict of all():   ',all(d))
+dict of all():    True
+
+>>> d={'name':'gopi'}
+
+>>> print('dict of all():   ',all(d))
+dict of all():    True
+
+>>> d={1:'gopi'}
+
+>>> print('dict of all():   ',all(d))
+dict of all():    True
+
+>>> d={0:'gopi'}
+
+>>> print('dict of all():   ',all(d))
+dict of all():    False
+
+>>> d={False:'gopi'}
+
+>>> print('dict of all():   ',all(d))
+
+dict of all():    False
+
+>>> s=''
+
+>>> print('string of all():   ',all(s))
+string of all():    True
+
+>>> s='hi hellow '
+
+>>> print('string of all():   ',all(s))
+string of all():    True
+
+>>> s='       '
+
+>>> print('string of all():   ',all(s))
+string of all():    True
+
+>>> s=False
+
+>>> print('string of all():   ',all(s))
+Traceback (most recent call last):
+  File "<pyshell#44>", line 1, in <module>
+    print('string of all():   ',all(s))
+TypeError: 'bool' object is not iterable
+>>> 
