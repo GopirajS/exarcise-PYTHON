@@ -487,3 +487,306 @@ False
 True
 >>> #------------------------------------------------------
 
+>>> # callable() mehtod
+
+>>> print(callable(str))
+True
+
+>>> print(callable(int))
+True
+
+>>> print(callable(float))
+True
+
+>>> print(callable(bool))
+True
+
+
+>>> print(callable(dict))
+True
+
+>>> print(callable(bin))
+True
+
+>>> print(callable(hex))
+True
+
+>>> print(callable(oct))
+True
+
+>>> print(callable(set))
+True
+
+>>> print(callable(list))
+True
+
+>>> print(callable(tuple))
+True
+
+>>> s=12
+
+>>> print(callable(s))
+False
+
+>>> s=int
+
+>>> print(callable(s))
+True
+
+>>> s=int()
+
+>>> print(callable(s))
+False
+
+>>> s=int
+
+>>> print(callable(s))
+True
+
+>>> d=s(12.3)
+
+>>> d
+12
+
+>>> s=float
+
+>>> s(12)
+12.0
+
+>>> s(12.234)
+12.234
+
+>>> s('gopi')
+Traceback (most recent call last):
+  File "<pyshell#27>", line 1, in <module>
+    s('gopi')
+ValueError: could not convert string to float: 'gopi'
+
+>>> float('gopi')
+Traceback (most recent call last):
+  File "<pyshell#28>", line 1, in <module>
+    float('gopi')
+ValueError: could not convert string to float: 'gopi'
+
+
+>>> class myclass():
+	def fuc(self):
+		print('hello world')
+
+		
+>>> s=myclass()
+
+>>> print(callable(myclass))
+True
+
+>>> print(callable(s.fuc))
+True
+
+>>> print(callable(s))
+False
+
+>>> s=myclass
+
+>>> print(callable(s))
+True
+
+>>> s()
+<__main__.myclass object at 0x0000019B2ED0C280>
+
+>>> s.fuc()
+Traceback (most recent call last):
+  File "<pyshell#48>", line 1, in <module>
+    s.fuc()
+TypeError: fuc() missing 1 required positional argument: 'self'
+
+>>> class myclass():
+	def __call__(self):
+		print('hello world')
+
+		
+>>> s=myclass()
+
+>>> s()
+hello world
+
+>>> myclass()
+<__main__.myclass object at 0x0000019B2EDBECA0>
+
+>>> myclass.__call__
+<function myclass.__call__ at 0x0000019B2EDD4D30>
+
+>>> s.__call__()
+hello world
+
+
+>>> s=myclass()
+
+>>> s.fuc()
+helow world
+
+>>> s()
+
+>>> s=myclass
+
+
+>>> s.fuc('hi')
+helow world
+>>> class myclass():
+	def fuction(self):
+		print('hellow world')
+	def __call__(self):
+		print('callable class')
+
+		
+>>> s=myclass()
+
+>>> print(callable(s))
+True
+
+>>> print(callable(myclass))
+True
+
+>>> print(callable(myclass.fuction))
+True
+
+>>> print(callable(s.fuction))
+True
+
+>>> print(callable(s.fuction()))
+hellow world
+False
+
+>>> s=myclass
+
+>>> print(callable(s))
+True
+
+>>> print(callable(myclass))
+True
+
+>>> print(callable(myclass.fuction))
+True
+
+>>> print(callable(s.fuction))
+True
+
+>>> def fuction():
+	print('hellow world')
+
+	
+>>> print(callable(fuction))
+True
+
+>>> s=fuction
+
+>>> print(callable(s))
+True
+
+>>> s()
+hellow world
+
+>>> class myclass():
+	def fuc(self):
+		print('hello world')
+	def my(self):
+		print('hi gopi')
+
+		
+>>> s=myclass()
+
+>>> s.fuc()
+hello world
+
+>>> s.my()
+hi gopi
+
+>>> print(callable(myclass))
+True
+
+>>> print(callable(myclass.fuc))
+True
+
+>>> print(callable(myclass.my))
+True
+
+>>> print(callable(s.fuc))
+True
+
+>>> print(callable(s.my))
+True
+
+>>> print(callable(s))
+False
+
+>>> s=myclass
+
+>>> s()
+<__main__.myclass object at 0x0000019B2EDBEFD0>
+
+>>> a=s()
+
+
+>>> a.fuc()
+hello world
+
+>>> a.my()
+hi gopi
+
+>>> x=s
+
+>>> callable(x)
+True
+
+>>> callable(a)
+False
+
+>>> class myclass():
+	def fuc(self):
+		print('hello world')
+	def my(self):
+		print('hi gopi')
+	def __call__(self):
+		print('im callable')
+
+>>> s=myclass()
+
+>>> s.fuc()
+hello world
+
+>>> s.my()
+hi gopi
+
+>>> callable(myclass)
+True
+
+>>> callable(myclass.fuc)
+True
+
+>>> callable(myclass.my)
+True
+
+>>> callable(s.fuc)
+True
+
+>>> callable(s.my)
+True
+
+>>> s=myclass
+
+>>> d=s()
+
+>>> d.fuc()
+hello world
+
+>>> d.my()
+hi gopi
+
+>>> callable(d)
+True
+
+>>> callable(s)
+True
+
+>>> callable(myclass)
+True
+
