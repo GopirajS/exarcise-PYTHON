@@ -608,3 +608,287 @@ StopIteration
 >>> (4, 'gopal')
 (4, 'gopal')
 
+
+>>> # enumerate()  method
+
+>>> l=['gopi','raj','sathish','kumar']
+
+>>> enumerate(l)
+<enumerate object at 0x00000226A7C12380>
+
+>>> for i in enumerate(l):
+	i
+
+	
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+
+>>> for i in enumerate(l):
+	i
+
+	
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+>>> for i in enumerate(l):
+	i
+
+	
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+
+>>> s=list(enumerate(l))
+
+>>> s
+[(0, 'gopi'), (1, 'raj'), (2, 'sathish'), (3, 'kumar')]
+
+>>> s
+[(0, 'gopi'), (1, 'raj'), (2, 'sathish'), (3, 'kumar')]
+
+>>> for i in  s:
+	print(i)
+
+	
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+
+>>> d=list(enumerate(l,5))
+
+>>> d
+[(5, 'gopi'), (6, 'raj'), (7, 'sathish'), (8, 'kumar')]
+
+>>> for i in d:
+	i
+
+	
+(5, 'gopi')
+(6, 'raj')
+(7, 'sathish')
+(8, 'kumar')
+
+>>> for i,j in d:
+	print(i)
+	print(j)
+
+	
+5
+gopi
+6
+raj
+7
+sathish
+8
+kumar
+
+>>> for index,name in d:
+	print(index,name)
+
+	
+5 gopi
+6 raj
+7 sathish
+8 kumar
+
+>>> s='GOPIRAJ'
+
+>>> d=enumerate(s,4)
+
+>>> for i in d:
+	i
+
+	
+(4, 'G')
+(5, 'O')
+(6, 'P')
+(7, 'I')
+(8, 'R')
+(9, 'A')
+(10, 'J')
+
+>>> print(list(d))
+[]
+
+>>> for i in d:
+	i
+
+	
+>>> for i in enumerate(s):
+	i
+
+	
+(0, 'G')
+(1, 'O')
+(2, 'P')
+(3, 'I')
+(4, 'R')
+(5, 'A')
+(6, 'J')
+
+>>> l
+['gopi', 'raj', 'sathish', 'kumar']
+
+>>> s=enumerate(l)
+
+>>> l=list(s)
+
+>>> l
+[(0, 'gopi'), (1, 'raj'), (2, 'sathish'), (3, 'kumar')]
+
+>>> l=['gopi','raj','sathish','kumar']
+
+>>> s=enumerate(l)
+
+>>> s
+<enumerate object at 0x00000226A9DC88C0>
+
+>>> for i in s:
+	i
+
+	
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+
+>>> for i in s:
+	i
+
+	
+
+	
+>>> s=list(enumerate(l))
+
+>>> for i in s:
+	i
+
+	
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+>>> for i in s:
+	i
+
+	
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+>>> l=list(s)
+
+>>> l
+[(0, 'gopi'), (1, 'raj'), (2, 'sathish'), (3, 'kumar')]
+
+>>> l=['gopi','raj','sathish','kumar']
+
+>>> s=enumerate(l)
+
+>>> s
+<enumerate object at 0x00000226A9DC88C0>
+
+>>> for i in s:
+	i
+
+
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+
+
+
+>>> s=list(enumerate(l))
+
+>>> for i in s:
+	i
+
+
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+>>> l=list(s)
+
+>>> l
+[(0, 'gopi'), (1, 'raj'), (2, 'sathish'), (3, 'kumar')]
+
+>>> l=['gopi','raj','sathish','kumar']
+
+>>> s=enumerate(l)
+>>> s
+<enumerate object at 0x00000226A9DC88C0>
+
+>>> for i in s:
+	i
+
+
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+
+>>> for j in s:
+	j
+
+>>> s=list(enumerate(l))
+
+>>> for i in s:
+	i
+
+
+(0, 'gopi')
+(1, 'raj')
+(2, 'sathish')
+(3, 'kumar')
+
+>>> dir(enumerate)
+['__class__', '__class_getitem__', '__delattr__', '__dir__', 
+'__doc__', '__eq__', '__format__', '__ge__', '__getattribute__',
+ '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', 
+ '__le__', '__lt__', '__ne__', '__new__', '__next__', '__reduce__', 
+ '__reduce_ex__', '__repr__', '__setattr__', '__sizeof__', '__str__',
+ '__subclasshook__']
+
+
+>>> l
+['gopi', 'raj', 'sathish', 'kumar']
+
+>>> d=enumerate(l)
+
+>>> d.__next__()
+(0, 'gopi')
+
+>>> d.__next__()
+(1, 'raj')
+
+>>> d.__next__()
+(2, 'sathish')
+
+>>> d.__next__()
+(3, 'kumar')
+
+>>> d.__next__()
+Traceback (most recent call last):
+  File "<pyshell#90>", line 1, in <module>
+    d.__next__()
+StopIteration
+
+>>> d=enumerate(l)
+
+>>> d.__next__()
+(0, 'gopi')
+
+>>> d.__next__(3)
+Traceback (most recent call last):
+  File "<pyshell#93>", line 1, in <module>
+    d.__next__(3)
+TypeError: expected 0 arguments, got 1
+
+
