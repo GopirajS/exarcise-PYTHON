@@ -39,7 +39,8 @@ Help on built-in function chr in module builtins:
 chr(i, /)
     Return a Unicode string of one character with ordinal i; 0 <= i <= 0x10ffff.
 
->>> #------------------------------------------------------------------
+>>> #==================================================================================
+
 
 >>> # complex() mehtod
 
@@ -76,7 +77,8 @@ SyntaxError: invalid syntax
 >>> complex("j")
 1j
 
->>> #---------------------------------------------------
+>>> #==================================================================================
+
 
 >>> # delattr() method
 
@@ -191,7 +193,7 @@ Traceback (most recent call last):
   File "<pyshell#81>", line 7, in myage
     print(self.age)
 AttributeError: 'myclass' object has no attribute 'age'
->>> #-------------------------------------------------------------
+>>> #==================================================================================
 
 
 >>> # dict() method
@@ -274,7 +276,8 @@ TypeError: 'tuple' object is not callable
 >>> a
 {2: 'two', 3: 'three', 1: 'one'}
 
->>> #---------------------------------------------------------------------------
+>>> #==================================================================================
+
 
 >>> dir()
 ['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'd', 'f', 's', 'x', 'y', 'z']
@@ -366,7 +369,8 @@ gopi
  '__str__', '__subclasshook__', '__weakref__', 'age', 'display', 'name']
 
 
->>> #--------------------------------------------------------------------
+>>> #==================================================================================
+
 >>> # divmod() method
 
 >>> 12 % 3
@@ -410,7 +414,7 @@ Traceback (most recent call last):
 TypeError: can't take floor or mod of complex number.
 
 
->>> #----------------------------------------------------------------------
+>>> #==================================================================================
 
 >>> #              enumerate() method
 
@@ -891,4 +895,206 @@ Traceback (most recent call last):
     d.__next__(3)
 TypeError: expected 0 arguments, got 1
 
+>>>#==================================================================
 
+>>> #  exce()  method
+
+>>> exec(print('hi'))
+hi
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    exec(print('hi'))
+TypeError: exec() arg 1 must be a string, bytes or code object
+
+>>> exec("print('hi')")
+hi
+
+>>> exec("print(23+3)")
+26
+
+>>> exec("print(23+3*2/3)")
+25.0
+
+>>> exec("input('enter yours code')")
+enter yours code[print('hi')]
+
+>>>#---------------------------------
+code=input('enter your code')
+exec(code)
+.
+.
+.
+enter your codeprint('python')
+python
+
+>>>#-------------------------------- 
+code=input('enter your code')
+exec(code)
+.
+.
+.
+
+enter your code[print('hi'*4)]
+hihihihi
+
+>>>#--------------------------------- 
+
+>>> exec("print('hellow world')")
+hellow world
+
+>>> exec("print('hellow world')")
+hellow world
+
+>>> c="""
+a=4
+b=3
+print('aXb :',a*b)
+"""
+
+
+>>> exec(c)
+aXb : 12
+
+>>> a
+4
+
+>>> b
+3
+
+>>> print(dir)
+<built-in function dir>
+
+>>> print(dir())
+['__annotations__', '__builtins__', '__doc__', '__file__', '__loader__',
+ '__name__', '__package__', '__spec__', 'a', 'b', 'c', 'code']
+
+>>> exec("print(dir())")
+['__annotations__', '__builtins__', '__doc__', '__file__',
+ '__loader__', '__name__', '__package__', '__spec__', 'a', 'b', 'c', 'code']
+
+
+>>> c="""
+import math
+s=sqrt(9)
+print(s)
+"""
+
+>>> exec(c)
+Traceback (most recent call last):
+  File "<pyshell#32>", line 1, in <module>
+    exec(c)
+  File "<string>", line 3, in <module>
+NameError: name 'sqrt' is not defined
+
+>>> import math
+
+>>> from math import *
+
+>>> s=sqrt(9)
+
+>>> print(s)
+3.0
+
+>>> c="""
+import math
+s=math.sqrt(9)
+print(s)
+"""
+
+
+>>> exec(c)
+3.0
+
+>>> from math import *
+
+>>> c="""
+print(dir())
+"""
+
+>>> exec(c)
+['__annotations__', '__builtins__', '__doc__', '__file__', '__loader__',
+ '__name__', '__package__', '__spec__', 'a', 'acos', 'acosh', 'asin',
+ 'asinh', 'atan', 'atan2', 'atanh', 'b', 'c', 'ceil', 'code', 'comb', 
+ 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 
+ 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum',
+ 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 
+ 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2',
+ 'math', 'modf', 'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 
+ 'radians', 'remainder', 's', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 
+ 'tau', 'trunc', 'ulp']
+
+
+>>> s='gopiraj'
+
+>>> c="""
+print(s,'he is best date scities')
+"""
+
+>>> exec(c)
+gopiraj he is best date scities
+
+>>> from math import *
+
+>>> c="""
+s=sqroot(9)
+print(s)
+"""
+>>> exec(c,{})
+Traceback (most recent call last):
+  File "<pyshell#71>", line 1, in <module>
+    exec(c,{})
+  File "<string>", line 2, in <module>
+NameError: name 'sqroot' is not defined
+
+>>> exec(c,{'sqroot':sqrt})
+3.0
+
+>>> name='gopiraj'
+
+>>> age=21
+
+>>> c="""
+print(n,'is my friend and age is',a)
+"""
+
+>>> exec(c,{'n':name,'a':age})
+gopiraj is my friend and age is 21
+
+>>> c="print('hellow world')"
+
+>>> exec(c,{"__builtins__":None})
+Traceback (most recent call last):
+  File "<pyshell#85>", line 1, in <module>
+    exec(c,{"__builtins__":None})
+  File "<string>", line 1, in <module>
+TypeError: 'NoneType' object is not subscriptable
+
+
+>>> exec("print(dir)",{"__builtins__":None})
+Traceback (most recent call last):
+  File "<pyshell#90>", line 1, in <module>
+    exec("print(dir)",{"__builtins__":None})
+  File "<string>", line 1, in <module>
+TypeError: 'NoneType' object is not subscriptable
+
+>>> exec("print(dir)")
+<built-in function dir>
+
+
+>>> exec("print(dir())", {"built" : __builtins__}, {"sum": sum, "iter": iter})
+['iter', 'sum']
+
+
+>>> exec("print(dir())", {"__builtins__" : None}, {"sum": sum, "print": print, "dir": dir})
+['dir', 'print', 'sum']
+
+
+>>> exec("print(dir())", {"__builtins__" : None}, {"sum":sum,'s':pow})
+Traceback (most recent call last):
+  File "<pyshell#102>", line 1, in <module>
+    exec("print(dir())", {"__builtins__" : None}, {"sum":sum,'s':pow})
+  File "<string>", line 1, in <module>
+TypeError: 'NoneType' object is not subscriptable
+
+
+>>>#================================================================================
