@@ -1098,3 +1098,383 @@ TypeError: 'NoneType' object is not subscriptable
 
 
 >>>#================================================================================
+
+
+>>>   # filter()   method
+
+>>> l=[1,2,3,4,5,6,7,8,9]
+
+>>> result=filter(None,l)
+
+>>> result
+<filter object at 0x000002B88538BDC0>
+
+>>> for i in result:
+	i
+
+	
+1
+2
+3
+4
+5
+6
+7
+8
+9
+	
+>>> result=list(filter(None,l))
+
+>>> result
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> result
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> def even(x):
+	if x%2==0:
+		return True
+	else:
+		return False
+
+	
+>>> result=list(filter(even,l))
+
+
+>>> result
+[2, 4, 6, 8]
+
+
+>>> def even(x):
+	if x%2==0:
+		return False
+	else:
+		return True
+
+	
+>>> result=list(filter(even,l))
+
+
+>>> result
+[1, 3, 5, 7, 9]
+
+>>> l
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+>>> result=list(filter(lambda x:x%2==0,l))
+
+>>> result
+[2, 4, 6, 8]
+
+>>> result=list(filter(lambda x:x%2!=0,l))
+
+>>> result
+[1, 3, 5, 7, 9]
+
+>>> result=list(filter(None,l))
+
+>>> result
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+
+>>> s=[0,1,2,3,False,True,None]
+
+>>> result=list(filter(None,s))
+
+>>> result
+[1, 2, 3, True]
+
+
+
+>>> s='gopiraj'
+
+>>> l=[]
+
+>>> for i in range(len(s)):
+	l.append(s[i])
+
+	
+>>> l
+['g', 'o', 'p', 'i', 'r', 'a', 'j']
+
+>>> def find(char):
+	v=['a','e','i','o','u','A','E','I','O','U']
+	if char in v:
+		return True
+	else:
+		return False
+
+	
+>>> result=list(filter(find,l))
+
+>>> result
+['o', 'i', 'a']
+
+
+>>> result=filter(find,l)
+
+>>> next(result)
+'o'
+
+>>> next(result)
+'i'
+
+>>> next(result)
+'a'
+
+>>> result=filter(find,l)
+
+>>> result.__next__()
+'o'
+
+>>> result.__next__()
+'i'
+
+>>> result.__next__()
+'a'
+
+
+>>> lambda :print('hello world')()
+<function <lambda> at 0x000002B8853CEEE0>
+
+
+>>> (lambda :print('hello world'))()
+hello world
+
+>>> (lambda :print('hello world'))()
+hello world
+
+
+>>> s=lambda x:x*x
+
+>>> s(2)
+4
+
+>>> s(7)
+49
+
+>>> s(79)
+6241
+
+>>> greet=lambda name: print('hellow',name)
+
+>>> greet('sathish')
+hellow sathish
+
+>>> greet('GOPAL')
+hellow GOPAL
+
+>>> greet=lambda name: print('Hellow',name)
+
+>>> greet('Gowri')
+Hellow Gowri
+
+
+>>>#=======================================================
+
+>>> #  float()  method
+
+>>> float(10)
+10.0
+
+>>> float(10.12)
+10.12
+
+>>> float(-10.12)
+-10.12
+
+>>> float('-10.12')
+-10.12
+
+>>> float('-10')
+-10.0
+
+>>> float('10')
+10.0
+
+>>> float(3e-002)
+0.03
+
+>>> float('+1E3')
+1000.0
+
+>>> float(False)
+0.0
+
+>>> float(True)
+1.0
+
+>>> float('inf')
+inf
+
+>>> float('inf')
+inf
+
+>>> name='gopiraj'
+
+>>> try:
+	print(float(name))
+except ValueError as s
+SyntaxError: invalid syntax
+
+>>> try:
+	print(float(name))
+except ValueError as s:
+	print(s)
+
+	
+could not convert string to float: 'gopiraj'
+
+>>> #===================================================
+
+
+>>> #   getattr() method
+
+>>> class myclass():
+	name='gopiraj'
+	age=21
+
+	
+>>> obj=myclass()
+
+>>> obj.name= ' sathish '
+
+>>> obj.name
+' sathish '
+
+>>> s=myclass()
+
+>>> s.name
+'gopiraj'
+
+>>> s.age
+21
+
+>>> class myclass():
+	name='gopiraj'
+	age=21
+
+>>> obj=myclass()
+
+>>> getattr(obj,'name')
+'gopiraj'
+
+>>> help(getattr)
+Help on built-in function getattr in module builtins:
+
+getattr(...)
+    getattr(object, name[, default]) -> value
+    
+    Get a named attribute from an object; getattr(x, 'y') is equivalent to x.y.
+    When a default argument is given, it is returned when the attribute doesn't
+    exist; without it, an exception is raised in that case.
+
+>>> class myclass:
+	name='gopi'
+	age=21
+	
+>>> obj=myclass()
+
+>>> obj.name
+'gopi'
+
+>>> obj.age
+21
+
+>>> getattr(obj,'nam','not found')
+'not found'
+
+
+>>> getattr(obj,'name')
+'gopi'
+
+>>> l=[1,2,3,4,5,6]
+
+>>> getattr(l,'reverse')
+<built-in method reverse of list object at 0x000002B88347BC40>
+
+>>> s=getattr(l,'reverse')
+
+>>> s
+<built-in method reverse of list object at 0x000002B88347BC40>
+
+>>> s()
+
+>>> s=getattr(l,'reverse')
+
+>>> s()
+>>> print(l)
+[1, 2, 3, 4, 5, 6]
+>>> print(l)
+[1, 2, 3, 4, 5, 6]
+>>> s()
+>>> print(l)
+[6, 5, 4, 3, 2, 1]
+>>> print(l)
+[6, 5, 4, 3, 2, 1]
+
+>>> l=[1,2,3,4,5,6]
+
+>>> s=getattr(l,'reverse')
+
+>>> s()
+>>> print(l)
+[6, 5, 4, 3, 2, 1]
+>>> s()
+>>> print(l)
+[1, 2, 3, 4, 5, 6]
+>>> s()
+>>> print(l)
+[6, 5, 4, 3, 2, 1]
+
+>>> class GfG:
+     
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+ 
+    def call(self, x):
+        print(f"{self.name} called with parameters '{x}'")
+        return
+
+>>> obj = GfG("Vivek", 10)
+
+>>> print(obj)
+<__main__.GfG object at 0x000002B8853D1820>
+
+>>> print(GfG)
+<class '__main__.GfG'>
+
+>>> print(getattr(obj,'call'))
+<bound method GfG.call of <__main__.GfG object at 0x000002B8853D1820>>
+
+>>> getattr(obj,'call')('arg')
+Vivek called with parameters 'arg'
+
+>>> #---------------------------------------------
+
+>>> class myclass():
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def display(self,x):
+		print(self.name,'is nice man  and his age ',self.age,'and',x)
+
+		
+>>> obj=myclass('gopi',12)
+
+
+>>> getattr(obj,'name')
+'gopi'
+
+>>> getattr(obj,'age')
+12
+
+>>> getattr(obj,'display')('salem')
+gopi is nice man  and his age  12 and salem
+
+
+>>> #===============================================================
+
+
