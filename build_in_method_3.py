@@ -1123,3 +1123,323 @@ TypeError: ord() expected a character, but string of length 7 found
 
 >>> pow(2,8)
 256
+
+
+
+>>> #====================================================
+>>> #   print()  method
+
+>>> print('learn python ')
+learn python 
+
+>>> s='imy name is gopi'
+
+>>> a='and im learn python'
+
+>>> print(s,a)
+imy name is gopi and im learn python
+
+>>> print(s, a)
+imy name is gopi and im learn python
+
+>>> print(s,sep='  ', a)
+SyntaxError: positional argument follows keyword argument
+
+>>> print(s, a ,sep='  ')
+imy name is gopi  and im learn python
+
+>>> print(s, a ,sep=' * ')
+imy name is gopi * and im learn python
+
+>>> print(s, a ,sep=' * ','hi hellow worls')
+SyntaxError: positional argument follows keyword argument
+
+>>> print(s, a ,sep=' * ','hi hellow worls',sep='  ')
+SyntaxError: positional argument follows keyword argument
+
+>>> print(s,a,sep='--',end='  ')
+imy name is gopi--and im learn python  
+
+>>> print(s,a,sep='--',end='  '); print('hellow python')
+imy name is gopi--and im learn python  hellow python
+
+>>> print(s,a,sep='--',end='  \n'); print('hellow python')
+imy name is gopi--and im learn python  
+hellow python
+
+>>> print(s,a,sep='--',end='  \t'); print('hellow python')
+imy name is gopi--and im learn python  	hellow python
+
+>>> print(s,a,sep='--',end='......'); print('hellow python')
+imy name is gopi--and im learn python......hellow python
+
+
+>>> a='gopiraj'
+
+>>> b='sathish'
+
+>>> c='kumar'
+
+>>> d='gopal'
+
+>>> e='gowri'
+
+>>> print(a,b,c,d,e)
+gopiraj sathish kumar gopal gowri
+
+>>> print(a,',',b,',',c,',',d,',',e)
+gopiraj , sathish , kumar , gopal , gowri
+
+>>> print(a,b,c,d,e,sep=',')
+gopiraj,sathish,kumar,gopal,gowri
+
+>>> print(a,b,c,d,e,sep=' , ')
+gopiraj , sathish , kumar , gopal , gowri
+
+>>> print(a,b,c,d,e,sep=':')
+gopiraj:sathish:kumar:gopal:gowri
+
+>>> print(a,b,c,d,e,sep=' : ')
+gopiraj : sathish : kumar : gopal : gowri
+
+>>> print(a,b,c,d,e,sep='___')
+gopiraj___sathish___kumar___gopal___gowri
+
+>>> print(a,b,c,d,e,sep='&&&')
+gopiraj&&&sathish&&&kumar&&&gopal&&&gowri
+
+>>> print(a,b,c,d,e,sep='  &&&  ')
+gopiraj  &&&  sathish  &&&  kumar  &&&  gopal  &&&  gowri
+
+>>> print(a,b,c,d,e,sep='<--->')
+gopiraj<--->sathish<--->kumar<--->gopal<--->gowri
+
+>>> print(a,b,c,d,e,sep=' , ',end='');print('hi')
+gopiraj , sathish , kumar , gopal , gowrihi
+
+>>> print(a,b,c,d,e,sep=' , ',end='');print('hi')
+gopiraj , sathish , kumar , gopal , gowrihi
+
+>>> print(a,b,c,d,e,sep=' , ',end=''); print('hi')
+gopiraj , sathish , kumar , gopal , gowrihi
+
+>>> print(a,b,c,d,e,sep=' , ',end=''); print('hi hellow ')
+gopiraj , sathish , kumar , gopal , gowrihi hellow 
+
+>>> print(a,b,c,d,e,sep=' , ',end=' '); print('hi hellow ')
+gopiraj , sathish , kumar , gopal , gowri hi hellow 
+
+>>> print(a,b,c,d,e,sep=' , ',end=' '); print(', hi hellow ')
+gopiraj , sathish , kumar , gopal , gowri , hi hellow 
+
+>>> print(a,b,c,d,e,sep=' , ',end=' /n '); print(' hi hellow ')
+gopiraj , sathish , kumar , gopal , gowri /n  hi hellow 
+
+>>> print(a,b,c,d,e,sep=' , ',end=' \n '); print(' hi hellow ')
+gopiraj , sathish , kumar , gopal , gowri 
+  hi hellow 
+
+>>> print(a,b,c,d,e,sep=' , ',end=' \n '); print('hi hellow ')
+gopiraj , sathish , kumar , gopal , gowri 
+ hi hellow 
+
+>>> print(a,b,c,d,e,sep=' , ',end=' \n ');print('hi hellow ')
+gopiraj , sathish , kumar , gopal , gowri 
+ hi hellow 
+
+>>> print(a,b,c,d,e,sep=' , ',end='\n');print('hi hellow ')
+gopiraj , sathish , kumar , gopal , gowri
+hi hellow 
+
+
+>>> #=================================================================
+
+>>> #   range() method
+
+
+>>> dir(range)
+['__bool__', '__class__', '__contains__', '__delattr__', '__dir__', '__doc__', '__eq__', '__format__', '__ge__', '__getattribute__', '__getitem__', '__gt__', '__hash__', '__init__', '__init_subclass__', '__iter__', '__le__', '__len__', '__lt__', '__ne__', '__new__', '__reduce__', '__reduce_ex__', '__repr__', '__reversed__', '__setattr__', '__sizeof__', '__str__', '__subclasshook__', 'count', 'index', 'start', 'step', 'stop']
+
+>>> type(range)
+<class 'type'>
+
+
+>>> range(12)
+range(0, 12)
+
+>>> for i in range(12):
+	print(i,end=' ')
+	
+0 1 2 3 4 5 6 7 8 9 10 11 
+
+>>> l=[range(12)]
+
+>>> l
+[range(0, 12)]
+
+>>> l=[list(range(12))]
+
+>>> l
+[[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11]]
+
+>>> t=(tuple(range(12)))
+
+>>> t
+(0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11)
+
+>>> s=set(range(12))
+
+>>> s
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}
+
+>>> for i in range(12):
+	print(i,end=' ')
+
+	
+0 1 2 3 4 5 6 7 8 9 10 11 
+
+>>> #===========================================================================
+
+>>> #   repr()   method
+
+>>> help(repr)
+Help on built-in function repr in module builtins:
+
+repr(obj, /)
+    Return the canonical string representation of the object.
+    
+    For many object types, including most builtins, eval(repr(obj)) == obj.
+
+>>> repr(10)
+'10'
+
+>>> repr('gopi')
+"'gopi'"
+
+>>> str('gopi')
+'gopi'
+
+>>> repr(str)
+"<class 'str'>"
+
+>>> repr(12.2)
+'12.2'
+
+>>> repr(True)
+'True'
+>>> repr(None)
+'None'
+
+>>> repr(False)
+'False'
+
+>>> class myclass():
+	n=''
+	
+>>> s=myclass()
+
+>>> repr(s)
+'<__main__.myclass object at 0x000001F1E97EE730>'
+
+>>> str(s)
+'<__main__.myclass object at 0x000001F1E97EE730>'
+
+>>> class myclass():
+	n='gopi'
+	
+>>> s=myclass()
+
+>>> str(s)
+'<__main__.myclass object at 0x000001F1E9815940>'
+
+>>> repr(s)
+'<__main__.myclass object at 0x000001F1E9815940>'
+
+>>> class myclass():
+	n=''
+	def __repr__(self):
+		return "hellow repr"
+
+	
+>>> s=myclass()
+
+>>> repr(s)
+'hellow repr'
+
+>>> class myclass():
+	n=''
+	def __repr__(self):
+		return "hellow repr"
+	def __str__(self):
+		return 'hellow str'
+
+	
+>>> s=myclass()
+
+>>> repr(s)
+'hellow repr'
+
+>>> str(s)
+'hellow str'
+
+>>> l=[1,2,3,4,5]
+
+>>> s=iter(l)
+
+>>> s
+<list_iterator object at 0x000001F1E97EE4C0>
+
+>>> repr(s)
+'<list_iterator object at 0x000001F1E97EE4C0>'
+
+>>> s.__repr__()
+'<list_iterator object at 0x000001F1E97EE4C0>'
+
+>>> class my():
+	"hi this this is class"
+	def __init__(self,name):
+		self.name=name
+		print('welcome to learn python',self.name)
+
+		
+>>> s=my('gopi')
+welcome to learn python gopi
+
+>>> s.__repr__()
+'<__main__.my object at 0x000001F1E9815BB0>'
+
+>>> s.__doc__()
+Traceback (most recent call last):
+  File "<pyshell#207>", line 1, in <module>
+    s.__doc__()
+TypeError: 'str' object is not callable
+
+
+>>> class fuc():
+	def __init__(self,name,age):
+		self.myname=name
+		self.myage=age
+		print(self.myname)
+		print(self.myage)
+	def my(self):
+		print('hellow',self.myname,'How are you?','and my age is','self.myage')
+
+		
+>>> s=fuc('gopi',21)
+gopi
+21
+
+
+>>> init(s)
+Traceback (most recent call last):
+  File "<pyshell#219>", line 1, in <module>
+    init(s)
+NameError: name 'init' is not defined
+
+>>> l=[1,2,3,4,5,6]
+
+>>> repr(l)
+'[1, 2, 3, 4, 5, 6]'
+
+>>> eval(repr(l))
+[1, 2, 3, 4, 5, 6]
