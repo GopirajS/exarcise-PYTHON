@@ -883,4 +883,258 @@ child class
 parent display
 None
 
+
+
 >>> #======================================================================
+>>> #  vars()  method
+
+>>> class myclass():
+	name=''
+	age=0
+	def __init__(self):
+		print('hellow python')
+
+		
+>>> s=myclass()
+hellow python
+
+>>> vars(s)
+{}
+
+>>> class myclass():
+	def __init__(self):
+		self.name=""
+		self.age=0
+
+		
+>>> s=myclass()
+
+>>> vars(s)
+{'name': '', 'age': 0}
+
+>>> s.age=21
+
+>>> s.name='gopiraj'
+
+>>> vars(s)
+{'name': 'gopiraj', 'age': 21}
+
+>>> s.__dict__
+{'name': 'gopiraj', 'age': 21}
+
+>>> str.__dir__
+<method '__dir__' of 'object' objects>
+
+>>> dict()
+{}
+>>> #=============================================
+
+>>> # zip()  method
+
+>>> l=[1,2,3,4]
+
+>>> s=['one','two','three','four']
+
+>>> a=zip(l,s)
+
+>>> a
+<zip object at 0x0000019AAD573EC0>
+
+>>> a=list(zip(l,s))
+
+>>> a
+[(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four')]
+
+>>> a=dict(zip(l,s))
+
+>>> a
+{1: 'one', 2: 'two', 3: 'three', 4: 'four'}
+
+>>> a=tuple(zip(l,s))
+
+>>> a
+((1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'))
+
+>>> a=set(zip(l,s))
+
+>>> a
+{(2, 'two'), (3, 'three'), (4, 'four'), (1, 'one')}
+
+>>> a=set(sorted(zip(l,s)))
+
+>>> a
+{(2, 'two'), (3, 'three'), (4, 'four'), (1, 'one')}
+
+
+>>> a=sorted(zip(l,s))
+
+>>> for i in  a:
+	i	
+(1, 'one')
+(2, 'two')
+(3, 'three')
+(4, 'four')
+
+>>> l=[1,2,3,4]
+
+>>> s=['one','two','three','four']
+
+>>> s=('one','two','three','four')
+
+>>> d=['I','II','III']
+
+>>> a=zip(l,s,d)
+
+>>> a
+<zip object at 0x0000019AAD55E800>
+
+>>> a=list(zip(l,s,d))
+
+>>> a
+[(1, 'one', 'I'), (2, 'two', 'II'), (3, 'three', 'III')]
+
+>>> teams = ["India", "England", "NZ", "Aus"]
+
+>>> captains = ["Kohli","Root","Williaamson", "Smith"]
+
+>>> a=zip(teams,captains)
+
+>>> a=list(zip(teams,captains))
+
+>>> a
+[('India', 'Kohli'), ('England', 'Root'), ('NZ', 'Williaamson'), ('Aus', 'Smith')]
+
+>>> a=zip(teams,captains)
+
+>>> while True:
+	try:
+		s=next(a)
+		print(s[0],'-->',s[1])
+	except StopIteration:
+		break
+
+	
+India --> Kohli
+England --> Root
+NZ --> Williaamson
+Aus --> Smith
+
+>>> a=zip(teams,captains)
+
+>>> next(a,'loop close')
+('India', 'Kohli')
+
+>>> next(a,'loop close')
+('England', 'Root')
+
+>>> a=zip(teams,captains)
+
+
+>>> a=list(zip(teams,captains))
+
+>>> len(a)
+4
+
+>>> a=list(zip(teams,captains))
+
+>>> a
+[('India', 'Kohli'), ('England', 'Root'), ('NZ', 'Williaamson'), ('Aus', 'Smith')]
+
+>>> p='python'
+
+>>> j='java'
+
+>>> a='php'
+
+>>> s=zip(p,j,a)
+
+>>> s=list(zip(p,j,a))
+
+>>> s
+[('p', 'j', 'p'), ('y', 'a', 'h'), ('t', 'v', 'p')]
+
+>>> import itertools
+
+>>> p='python'
+
+>>> j='java'
+
+>>> a='php'
+
+>>> s=list(itertools.zip_longest(p,j,a,fillvalue="empty"))
+
+>>> s
+[('p', 'j', 'p'), ('y', 'a', 'h'), ('t', 'v', 'p'), ('h', 'a', 'empty'), ('o', 'empty', 'empty'), ('n', 'empty', 'empty')]
+
+>>> for i in s:
+	print(i)	
+('p', 'j', 'p')
+('y', 'a', 'h')
+('t', 'v', 'p')
+('h', 'a', 'empty')
+('o', 'empty', 'empty')
+('n', 'empty', 'empty')
+
+>>> s=list(itertools.zip_longest(p,j,a,fillvalue=" "))
+
+>>> for i in s:
+	print(i)
+	
+('p', 'j', 'p')
+('y', 'a', 'h')
+('t', 'v', 'p')
+('h', 'a', ' ')
+('o', ' ', ' ')
+('n', ' ', ' ')
+
+>>> s
+[('p', 'j', 'p'), ('y', 'a', 'h'), ('t', 'v', 'p'), ('h', 'a', ' '), ('o', ' ', ' '), ('n', ' ', ' ')]
+
+
+>>> for x,y,z in s:
+	print(x,y,z)
+
+	
+p j p
+y a h
+t v p
+h a  
+o    
+n    
+
+>>> digits = [1,2,3,4,5]
+
+>>> words = ['one', 'two', 'three', 'four','five']
+
+>>> zipobj = zip(digits, words)
+
+>>> for i in zipobj:
+	i
+
+	
+(1, 'one')
+(2, 'two')
+(3, 'three')
+(4, 'four')
+(5, 'five')
+
+>>> zipobj = zip(digits, words)
+
+>>> obj = list(zip(digits, words))
+
+>>> print(obj)
+[(1, 'one'), (2, 'two'), (3, 'three'), (4, 'four'), (5, 'five')]
+
+
+
+>>> zip(obj)
+
+<zip object at 0x0000019AAAE75B80>
+
+>>> x,y=zip(*obj)
+
+>>> x
+(1, 2, 3, 4, 5)
+
+>>> y
+('one', 'two', 'three', 'four', 'five')
