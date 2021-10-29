@@ -369,3 +369,518 @@ sathish kumar
 
 >>> s[0:18:2]
 'gprjahskm'
+
+>>>#=========================================================================================
+
+>>>  # sorted()  method
+
+
+>>> code = ('bb','cd', 'aa', 'zc')
+
+>>> for s in code:
+	print(len(s),end=' ')
+
+	
+2 2 2 2 
+
+>>> for s in code:
+	print(len(s)-1,end=' ')
+
+	
+1 1 1 1 
+
+>>> for s in code:
+	print(s[len(s)-1],end=' ')
+
+	
+b d a c 
+
+
+>>> code=['ab','cd','ef','gh','ij']
+
+>>> s=sorted(code)
+
+>>> s
+['ab', 'cd', 'ef', 'gh', 'ij']
+
+>>> s=sorted(code,reverse=True)
+
+>>> s
+['ij', 'gh', 'ef', 'cd', 'ab']
+
+>>> l=[1,2,3,4,5]
+
+>>> s=sorted(l)
+
+>>> s
+[1, 2, 3, 4, 5]
+
+>>> s=sorted(l,reverse=True)
+
+>>> s
+[5, 4, 3, 2, 1]
+
+>>> s=sorted(l,reverse=False)
+
+>>> s
+[1, 2, 3, 4, 5]
+
+>>> s='asdfghjkqwertyui'
+
+>>> d=sorted(s)
+
+>>> d
+['a', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'q', 'r', 's', 't', 'u', 'w', 'y']
+
+>>> d=sorted(s,reverse=True)
+
+>>> d
+['y', 'w', 'u', 't', 's', 'r', 'q', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'a']
+
+>>> d={1:'one',2:'two',3:'three',4:'four'}
+
+>>> a=sorted(d)
+
+>>> a
+[1, 2, 3, 4]
+
+>>> a=sorted(d,reverse=True)
+
+>>> a
+[4, 3, 2, 1]
+>>> #========================================================
+
+>>> #  str()  method
+
+>>> str(3)
+'3'
+
+>>> str(12.2)
+'12.2'
+
+>>> str('gopi')
+'gopi'
+
+>>> str(gopi)
+Traceback (most recent call last):
+  File "<pyshell#54>", line 1, in <module>
+    str(gopi)
+NameError: name 'gopi' is not defined
+
+>>> s=str()
+
+>>> type(s)
+<class 'str'>
+
+>>> str(True)
+'True'
+
+>>> str(False)
+'False'
+
+>>> str(2+4j)
+'(2+4j)'
+
+>>> str(2+4J)
+'(2+4j)'
+
+>>> s=bytes('gopi')
+Traceback (most recent call last):
+  File "<pyshell#63>", line 1, in <module>
+    s=bytes('gopi')
+TypeError: string argument without an encoding
+
+
+>>> s=bytes(4)
+
+>>> s
+b'\x00\x00\x00\x00'
+
+>>> b = bytes('Hellö Wörld', encoding='utf-8')
+
+>>> b
+b'Hell\xc3\xb6 W\xc3\xb6rld'
+
+>>> str(b)
+"b'Hell\\xc3\\xb6 W\\xc3\\xb6rld'"
+
+
+>>> #=================================================
+
+>>> # sum() method
+
+>>> l=[1,2,3,4]
+
+>>> sum(l)
+10
+
+>>> sum(l,2)
+12
+
+>>> sum(l,1)
+11
+
+>>> sum(l,55)
+65
+
+>>> sum(l,100)
+110
+
+>>> l=[1,2,3,4.4,33.2]
+
+>>> sum(l)
+43.6
+
+
+>>> l=[3+3j,3+7j]
+
+>>> sum(l)
+
+(6+10j)
+>>> #==============================================
+
+>>> l=[1,2,3,4,5,6]
+
+>>> t=(1,2,3,4,5,6,7)
+
+>>> s={1,2,3,4,5,6,7,8}
+
+>>> d={1:'one',2:'two',3:'three',4:'four'}
+
+>>> sum(l)
+21
+
+>>> sum(t)
+28
+
+>>> sum(s)
+36
+
+>>> sum(d)
+10
+
+>>> #====================================================
+
+
+>>> #  tuple() method
+
+>>> l=[1,2,3,4,6]
+
+>>> tuple(l)
+(1, 2, 3, 4, 6)
+
+>>> t=tuple()
+
+>>> type(t)
+<class 'tuple'>
+
+>>> t=(1,2,3,4,5,6)
+
+>>> tuple(t)
+(1, 2, 3, 4, 5, 6)
+
+>>> s={1,2,3,4,5,5,7}
+
+>>> tuple(s)
+(1, 2, 3, 4, 5, 7)
+
+>>> d={1:'one',2:'two',3:'three',4:'four'}
+
+>>> tuple(d)
+(1, 2, 3, 4)
+
+>>> tuple(d.values)
+
+Traceback (most recent call last):
+  File "<pyshell#131>", line 1, in <module>
+    tuple(d.values)
+TypeError: 'builtin_function_or_method' object is not iterable
+
+>>> tuple(d.values())
+('one', 'two', 'three', 'four')
+
+
+
+>>> #==============================================================
+
+>>>   #   type()   method
+
+>>> s='string'
+
+>>> type(s)
+<class 'str'>
+
+
+>>> l=[1,2,3,'gopi',False]
+
+>>> type(l)
+<class 'list'>
+
+>>> t=(1,2,3.334,'gopi',)
+
+>>> type(t)
+<class 'tuple'>
+
+
+>>> b=False
+
+>>> type(b)
+<class 'bool'>
+
+>>> s=132
+
+>>> type(s)
+
+<class 'int'>
+>>> f=1212.12333
+
+>>> type(f)
+<class 'float'>
+
+>>> c=12+434J
+
+>>> type(c)
+<class 'complex'>
+
+
+>>> #=========================================
+
+>>> # super() method
+
+>>> S="""
+
+         **  super() method only usered in inheritens  **
+
+         
+       1.variable level
+       
+       2.constructor level
+
+       3.method level
+
+       """
+>>> 
+
+
+>>> class parent:
+	name1='sanmugam'
+	name2='parimal'
+	def displey(self):
+		print(self.name1,'  ',self.name2)
+
+		
+>>> class child(parent):
+	name1='s.sathish kumar'
+	name2='s.gopi raj'
+	def pri(self):
+		print(self.name1,'  ',self.name2)
+
+		
+>>> s=child()
+
+>>> s.displey()
+s.sathish kumar    s.gopi raj
+
+>>> s.name1
+'s.sathish kumar'
+
+>>> s.name2
+'s.gopi raj'
+
+>>> s.pri()
+s.sathish kumar    s.gopi raj
+
+
+>>> #----------------
+
+>>> class parent:
+	name1='sanmugam'
+	name2='parimal'
+	def displey(self):
+		print(self.name1,'  ',self.name2)
+
+		
+>>> class child(parent):
+	name1='s.sathish kumar'
+	name2='s.gopi raj'
+	def pri(self):
+		print(super().name1)
+		print(super().name2)
+		print(self.name1,'  ',self.name2)
+
+		
+>>> s=child()
+
+>>> s.pri()
+sanmugam
+parimal
+s.sathish kumar    s.gopi raj
+
+>>> s.displey()
+s.sathish kumar    s.gopi raj
+
+>>> #---------------
+
+>>> class parent:
+	def __init__(self,name,age):
+		print(name,age)
+
+		
+>>> s=parent('gopi',21)
+gopi 21
+
+		
+>>> class parent:
+	def __init__(self):
+		print('im from parent class')
+
+		
+>>> class child(parent):
+	name='sathish kumar'
+	name2='gopi raj'
+	def dis(self):
+		print('im from child class')
+
+		
+>>> s=child()
+im from parent class
+
+>>> s.dis()
+im from child class
+
+>>> s.name
+'sathish kumar'
+
+>>> s.name2
+'gopi raj'
+
+>>> class parent:
+	def __init__(self):
+		print('im from parent class')
+
+		
+>>> class child(parent):
+	name='sathish kumar'
+	name2='gopi raj'
+	def __init__(self):
+		print('im from child class')
+
+		
+>>> s=child()
+im from child class
+
+
+>>> class parent:
+	def __init__(self):
+		print('im from parent class')
+
+
+
+>>> class child(parent):
+	name='sathish kumar'
+	name2='gopi raj'
+	def __init__(self):
+		super().__init__()
+		print('im from child class')
+
+		
+>>> s=child()
+im from parent class
+im from child class
+
+
+
+>>> class parent:
+	def __init__(self,name):
+		print('im from parent class',name)
+
+		
+>>> class child(parent):
+	def __init__(self):
+		super().__init__('parent')
+		print('im from child class')
+
+		
+>>> s=child()
+im from parent class parent
+im from child class
+
+
+
+
+>>> class child(parent):
+	def __init__(self,name):
+		super().__init__('parent')
+		print('im from child class',name)
+
+		
+>>> s=child('child')
+im from parent class parent
+im from child class child
+
+>>> #----------------------------------------------------
+
+
+	
+>>> class parent:
+	def __init__(self,name):
+		self.name=name
+		print('im from parent class',name)
+	def dis(self):
+		print("parent display",self.name)
+
+		
+>>> class child(parent):
+	def __init__(self):
+		print('im from child class')
+	def dis(self):
+		print('child class',super().name)
+
+		
+>>> s=child()
+im from child class
+
+
+>>> class child(parent):
+	def __init__(self):
+		print(super().__init__('parent'))
+		print('im from child class')
+	def dis(self):
+		print('child class',super().name)
+
+		
+>>> s=child()
+im from parent class parent
+None
+im from child class
+
+
+>>> class parent:
+	def __init__(self,name):
+		self.name=name
+		print('im from parent class',name)
+	def dis(self):
+		print("parent display")
+
+		
+>>> class child(parent):
+	def __init__(self):
+		print(super().__init__('parent'))
+		print('im from child class')
+	def dis(self):
+		print('child class')
+		print(super().dis())
+
+		
+>>> s=child()
+im from parent class parent
+None
+im from child class
+
+>>> s.dis()
+
+child class
+parent display
+None
+
+>>> #======================================================================
