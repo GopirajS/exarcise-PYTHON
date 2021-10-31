@@ -1309,4 +1309,922 @@ TypeError: '>' not supported between instances of 'str' and 'int'
 >>> #================================================
 
 
+>>> s=[1,2,3,4,5,6,7]
+
+>>> a=iter(s)
+
+>>> a
+<list_iterator object at 0x000002176E45E160>
+
+>>> next(a)
+1
+
+>>> next(a)
+2
+
+>>> next(a)
+3
+
+>>> next(a)
+4
+
+>>> 4
+4
+
+>>> next(a)
+5
+
+
+>>> s=[1,2,3,4,5,6,7]
+
+>>> a=iter(s)
+
+>>> next(a,'stop')
+1
+
+>>> next(a,'stop')
+2
+
+>>> next(a,'stop')
+3
+
+>>> next(a,'stop')
+4
+
+>>> 4
+4
+
+>>> next(a,'stop')
+5
+
+>>> next(a,'stop')
+6
+
+>>> next(a,'stop')
+7
+
+>>> next(a,'stop')
+'stop'
+
+
+>>> def traverse(iterable):
+    it=iter(iterable)
+    while True:
+        try:
+            item=next(it)
+            print (item)
+        except StopIteration:
+            break
+
+        
+
+>>> s=[1,2,3,4,5,6,7]
+
+>>> traverse(s)
+1
+2
+3
+4
+5
+6
+7
+
+
+>>> traverse(s)
+1
+2
+3
+4
+5
+6
+7
+
+
+>>> class DataStore:
+	def __init__(self, data):
+		self.data = data
+	def __iter__(self):
+		return self.data
+
+	
+
+>>> s=[1,2,3,4,5,6,7]
+
+
+>>> d=DataStore(s)
+
+>>> d
+<__main__.DataStore object at 0x000002176E4A40D0>
+
+>>> next(d)
+Traceback (most recent call last):
+  File "<pyshell#34>", line 1, in <module>
+    next(d)
+TypeError: 'DataStore' object is not an iterator
+
+
+>>> d.data
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> #============================================================
+
+>>> #   filder() method
+
+>>> s=[1,2,3,4,5,6,7]
+
+>>> a=filter(None,s)
+
+>>> a
+<filter object at 0x000002176E53E6A0>
+
+>>> for i in a:
+	print(i,end=' ')
+	
+1 2 3 4 5 6 7 
+
+>>> a=filter(lambda x:x%2==0,s)
+
+>>> a
+<filter object at 0x000002176E53E880>
+
+>>> for i in a:
+	print(i,end=' ')
+	
+2 4 6 
+
+>>> a=filter(lambda x:x%2!=0,s)
+
+>>> for i in a:
+	print(i,end=' ')
+
+	
+1 3 5 7 
+
+>>> mylist = [0, 1, 2, 3, False, True, 5]
+
+>>> a=filter(lambda x:x%2!=0,mylist)
+
+>>> for i in a:
+	print(i,end=' ')
+
+	
+1 3 True 5 
+
+>>> True%2
+1
+
+>>> True%3
+1
+
+>>> True%12
+1
+
+>>> for i in a:
+	print(i,sep=',',end=' ')
+
+	
+>>> a=filter(lambda x:x%2!=0,mylist)
+
+>>> for i in a:
+	print(i,sep=',',end=' ')
+	
+1 3 True 5 
+
+>>> s
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> print(s)
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> print(s,sep=',')
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> print(s,sep=',',end=' ')
+[1, 2, 3, 4, 5, 6, 7] 
+
+>>> #==========================================
+
+
+>>> # map()  method
+
+>>> s=[1,2,3,4,5,6,7]
+
+>>> 
+
+>>> d=map(lambda x:x+1,s)
+
+>>> d
+<map object at 0x000002176E53E610>
+
+>>> for i in d:
+	i
+	
+2
+3
+4
+5
+6
+7
+8
+
+>>> d=map(lambda x:x+3,s)
+
+>>> next(d)
+4
+
+>>> next(d)
+5
+
+>>> next(d)
+6
+
+>>> next(d)
+7
+
+>>> next(d)
+8
+
+>>> next(d)
+9
+
+>>> next(d)
+10
+
+>>> next(d)
+Traceback (most recent call last):
+  File "<pyshell#99>", line 1, in <module>
+    next(d)
+StopIteration
+
+>>> s
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> d=filter(lambda :True,s)
+
+>>> d
+
+<filter object at 0x000002176E53E610>
+
+
+>>> d=filter(lambda x:True,s)
+
+>>> for i in d:
+	i	
+1
+2
+3
+4
+5
+6
+7
+
+
+>>> #=======================================================
+
+>>> # sorted() method
+
+>>> nums = [2,1,5,3,4]
+
+>>> s=sorted(nums)
+
+>>> s
+[1, 2, 3, 4, 5]
+
+
+>>> s=sorted(nums,reverse=True)
+
+>>> s
+[5, 4, 3, 2, 1]
+
+>>> s=sorted(nums,reverse=False)
+
+>>> s='asdfghjklqwertyuiop'
+
+>>> s='asdfghjklqwertyuiopzxcvbnm'
+
+>>> len(s)
+26
+
+>>> d=sorted(s,key=len)
+
+>>> d
+['a', 's', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'q', 'w', 'e', 'r', 't', 'y', 'u', 'i', 'o', 'p', 'z', 'x', 'c', 'v', 'b', 'n', 'm']
+
+>>> d=sorted(s)
+
+>>> d
+['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+
+>>> d=sorted(s,reverse=True)
+
+
+>>> d
+['z', 'y', 'x', 'w', 'v', 'u', 't', 's', 'r', 'q', 'p', 'o', 'n', 'm', 'l', 'k', 'j', 'i', 'h', 'g', 'f', 'e', 'd', 'c', 'b', 'a']
+
+
+>>> #========================================================
+
+>>> #   reverse()   method
+
+>>> s='gopiraj'
+
+>>> reversed(s)
+<reversed object at 0x000002176E53E340>
+
+>>> for i in reversed(s):
+	i
+
+	
+'j'
+'a'
+'r'
+'i'
+'p'
+'o'
+'g'
+
+>>> for i in reversed(s):
+	i
+	
+'j'
+'a'
+'r'
+'i'
+'p'
+'o'
+'g'
+
+>>> d=reversed(s)
+
+>>> next(d)
+'j'
+
+>>> next(d)
+'a'
+
+>>> next(d)
+'r'
+
+>>> next(d)
+'i'
+
+>>> next(d)
+'p'
+
+>>> next(d)
+'o'
+
+>>> next(d)
+'g'
+
+
+>>> for i in reversed(s):
+	print(i,end=' ')
+	
+j a r i p o g 
+
+>>> s='gopiraj'
+
+>>> d=reversed(s)
+
+>>> d
+<reversed object at 0x000002176E53E340>
+
+>>> d=list(reversed(s))
+
+>>> d
+['j', 'a', 'r', 'i', 'p', 'o', 'g']
+
+>>> s=(1,2,3,4,5,6)
+
+>>> d=tuple(reversed(s))
+
+>>> d
+(6, 5, 4, 3, 2, 1)
+
+>>> s=[10,20,30,40]
+
+>>> d=tuple(reversed(s))
+
+
+>>> d
+(40, 30, 20, 10)
+
+>>> d=set(reversed(s))
+
+>>> d
+{40, 10, 20, 30}
+
+>>> #=================================================
+
+>>> #   other build in method
+
+>>> # abs()
+
+>>> abs(21)
+21
+
+>>> abs(-21)
+21
+
+
+>>> abs(12+2j)
+
+12.165525060596439
+
+>>> #================================
+
+>>> T=[1,2,3,4,5,6]
+
+>>> all(T)
+True
+
+>>> T=[1,2,3,4,5,6,0]
+
+>>> all(T)
+False
+
+>>> t=[]
+
+>>> all(T)
+False
+
+>>> all(t)
+True
+
+>>> #=======================================
+
+>>> # any method
+
+>>> t=[]
+
+
+>>> any(t)
+False
+
+>>> t=[1]
+
+>>> any(t)
+True
+
+>>> t=[1,False,0]
+
+>>> any(t)
+True
+
+>>> t=[1,False,0,None]
+
+>>> any(t)
+True
+
+>>> t=[False,0,None]
+
+>>> any(t)
+False
+
+>>> #======================================
+
+>>> t=[1,2,3,4,5,6]
+
+
+>>> enumerate(t)
+<enumerate object at 0x000002176E53D940>
+
+>>> for i in enumerate(t):
+	i
+	
+(0, 1)
+(1, 2)
+(2, 3)
+(3, 4)
+(4, 5)
+(5, 6)
+
+>>> for i in enumerate(t,5):
+	i
+
+(5, 1)
+(6, 2)
+(7, 3)
+(8, 4)
+(9, 5)
+(10, 6)
+
+
+>>> l=['gopi','sathish','kumar','raj','gopal']
+
+>>> enumerate(l)
+<enumerate object at 0x000002176E53D840>
+
+>>> s=enumerate(l)
+
+>>> for i in s:
+	i
+	
+(0, 'gopi')
+(1, 'sathish')
+(2, 'kumar')
+(3, 'raj')
+(4, 'gopal')
+
+>>> for i in s:
+	i
+
+
+>>> s=enumerate(l,10)
+
+>>> for i in s:
+	i
+	
+(10, 'gopi')
+(11, 'sathish')
+(12, 'kumar')
+(13, 'raj')
+(14, 'gopal')
+
+>>> for i in s:
+	i[0]
+
+	
+>>> s=enumerate(l,10)
+
+>>> for i in s:
+	i[0]
+	
+10
+11
+12
+13
+14
+
+>>> for i in enumerate(l,10):
+	i[0]
+	
+10
+11
+12
+13
+14
+
+>>> for i in enumerate(l,10):
+	i[0] ;i[1]
+
+	
+10
+'gopi'
+11
+'sathish'
+12
+'kumar'
+13
+'raj'
+14
+'gopal'
+
+>>> #===========================================
+
+
+>>> # help() method
+
+>>> help(object)
+
+
+>>> bin
+<built-in function bin>
+
+>>> help(bin)
+Help on built-in function bin in module builtins:
+
+bin(number, /)
+    Return the binary representation of an integer.
+    
+    >>> bin(2796202)
+    '0b1010101010101010101010'
+
+
+>>> #==============================================================
+
+>>> #  id() method
+
+>>> id(12)
+2299617307280
+
+>>> id(123)
+2299617499312
+
+>>> s=12
+
+>>> id(s)
+2299617307280
+
+>>> a=12
+
+>>> id(a)
+2299617307280
+
+>>> name='gopiraj'
+
+
+>>> id(name)
+2299658701040
+
+>>> s='gopiraj'
+
+>>> id(s)
+2299658701040
+
+>>> id(name)==id(s)
+True
+
+>>> id('gopiraj')
+2299658701040
+
+>>> class my:
+	name='string'
+	age=21
+
+	
+>>> s=my()
+
+>>> id(s)
+2299658496368
+
+>>> d=my()
+
+>>> id(d)
+2299658495888
+
+>>> g=my()
+
+>>> id(g)
+2299658497472
+
+>>> id(s)==id(d)
+False
+
+>>> id(s)==id(d)==id(g)
+False
+
+
+>>> #=========================================================
+
+>>> input()
+how age u?
+'how age u?'
+
+>>> input('enter your name')
+enter your name  gopi
+'  gopi'
+
+>>> input(None)
+None sss
+' sss'
+
+
+
+>>> input(prompt='enter your name')
+Traceback (most recent call last):
+  File "<pyshell#338>", line 1, in <module>
+    input(prompt='enter your name')
+TypeError: input() takes no keyword arguments
+
+
+>>> input('enter your name: ')
+enter your name: கோபிராஜ்
+'கோபிராஜ்'
+
+>>> #==============================================
+
+>>> l=[1,2,3,4,5,6,6,6]
+
+>>> len(l)
+8
+
+>>> s={1,2,3,4,5,6,6,6}
+
+>>> len(s)
+6
+
+>>> s='gopiraj'
+
+>>> len(s)
+7
+
+>>> d={1:'one',2:'two',3:'three'}
+
+>>> len(d)
+3
+
+>>> ascii('gopi')
+"'gopi'"
+
+
+>>> len(range(2))
+2
+
+>>> len(range(10))
+10
+
+>>> len(10)
+Traceback (most recent call last):
+  File "<pyshell#370>", line 1, in <module>
+    len(10)
+TypeError: object of type 'int' has no len()
+
+
+>>> len(True)
+Traceback (most recent call last):
+  File "<pyshell#371>", line 1, in <module>
+    len(True)
+TypeError: object of type 'bool' has no len()
+
+>>> #============================================================
+
+
+
+
+>>> # print() method
+
+>>> print('jellow')
+jellow
+
+>>> print('jellow','world')
+jellow world
+
+>>> print('jellow','world','python')
+jellow world python
+
+>>> print('jellow','world','python',sep=',')
+jellow,world,python
+
+>>> print('jellow','world','python',sep='--->')
+jellow--->world--->python
+
+>>> print('jellow','world','python',sep='--->');print('gopiraj')
+jellow--->world--->python
+gopiraj
+
+>>> print('jellow','world','python',sep='--->',end=' ');print('gopiraj')
+jellow--->world--->python gopiraj
+
+>>> print('jellow','world','python',sep='--->',end='\n ');print('gopiraj')
+jellow--->world--->python
+ gopiraj
+
+>>> print('jellow','world','python',sep='--->');print('gopiraj')
+
+jellow--->world--->python
+gopiraj
+
+>>> name='gopiraj'
+
+
+>>> print('hellow python',name)
+hellow python gopiraj
+
+>>> #===================================================
+
+>>> # range() method
+
+>>> range(10)
+range(0, 10)
+
+>>> for i in range(10):
+	i
+	
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+>>> for i in range(1,10):
+	print(i,end=' ')
+
+	
+1 2 3 4 5 6 7 8 9 
+
+>>> for i in range(1,20):
+	print(i,end=' ')
+
+	
+1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 
+>>> for i in range(1,20,2):
+	print(i,end=' ')
+
+	
+1 3 5 7 9 11 13 15 17 19 
+>>> for i in range(1,20,3):
+	print(i,end=' ')
+
+	
+1 4 7 10 13 16 19 
+
+>>> list(range(10))
+[0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> set(range(10))
+{0, 1, 2, 3, 4, 5, 6, 7, 8, 9}
+
+>>> set(range(10,1))
+set()
+
+>>> set(range(10,1,-1))
+{2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+>>> set(range(10,0,-1))
+{1, 2, 3, 4, 5, 6, 7, 8, 9, 10}
+
+>>> set(range(10,0,-2))
+{2, 4, 6, 8, 10}
+
+>>> tuple(range(10,0,-2))
+(10, 8, 6, 4, 2)
+
+>>> #======================================================
+
+
+
+
+>>> #  slice() method
+
+>>> l=[1,2,3,4,5,6,7,8,9]
+
+>>> l[slice(9)]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> l[slice(4)]
+[1, 2, 3, 4]
+
+>>> l[slice(1,4)]
+[2, 3, 4]
+
+>>> l[slice(0,4)]
+[1, 2, 3, 4]
+
+>>> l[slice(0,4,3)]
+[1, 4]
+
+
+>>> l[slice(0,9,3)]
+[1, 4, 7]
+
+>>> l[slice(0,10,3)]
+[1, 4, 7]
+
+>>> l[slice(0,100,3)]
+[1, 4, 7]
+
+
+>>> l[0:1:1]
+[1]
+
+>>> l[0:9:1]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> l[0:10:1]
+[1, 2, 3, 4, 5, 6, 7, 8, 9]
+
+>>> l[0:10:2]
+[1, 3, 5, 7, 9]
+
+
+>>> #===================================================
+
+
+
+
+>>> #   type() method
+
+>>> type(s)
+<class 'str'>
+
+>>> s='gopi'
+
+>>> type(s)
+<class 'str'>
+
+>>> l=[1,2,3]
+
+>>> type(l)
+<class 'list'>
+
+>>> t=(1,2,3,4)
+
+>>> type(t)
+<class 'tuple'>
+
+>>> 
+
+>>> s={'gopi','raj','sathish'}
+
+
+>>> type(s)
+<class 'set'>
+
 
