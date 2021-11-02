@@ -2228,3 +2228,120 @@ set()
 <class 'set'>
 
 
+#=============================================================
+       
+       
+>>> exec("print('hellow python')")
+hellow python
+
+>>> exec("print('hellow python')")
+hellow python
+
+>>> code=input("enter your code :")
+enter your code :[print(x**2) for x in [1,2,3,4,5]]
+
+
+>>> code
+'[print(x**2) for x in [1,2,3,4,5]]'
+
+>>> exec(code)
+1
+4
+9
+16
+25
+
+>>> mycode='''
+a=12
+b=32
+
+print(a+b)'''
+
+>>> exec(mycode)
+44
+
+>>> exec('abs(-9)')
+
+
+>>> exec('print(abs(-9))')
+9
+
+>>> abs(--9)
+9
+
+>>> abs(-9)
+9
+
+>>> mycode='''
+from math import *
+s=sqrt(9)
+print(s)
+'''
+
+
+>>> exec(s)
+Traceback (most recent call last):
+  File "<pyshell#30>", line 1, in <module>
+    exec(s)
+NameError: name 's' is not defined
+
+>>> exec(mycode)
+3.0
+
+>>> from math import *
+
+
+>>> from math import *
+
+>>> exec("print(dir())")
+['__annotations__', '__builtins__', '__doc__', '__loader__', '__name__', '__package__', '__spec__', 'a', 'acos', 'acosh', 'asin', 'asinh', 'atan', 'atan2', 'atanh', 'b', 'ceil', 'code', 'comb', 'copysign', 'cos', 'cosh', 'degrees', 'dist', 'e', 'erf', 'erfc', 'exp', 'expm1', 'fabs', 'factorial', 'floor', 'fmod', 'frexp', 'fsum', 'gamma', 'gcd', 'hypot', 'inf', 'isclose', 'isfinite', 'isinf', 'isnan', 'isqrt', 'lcm', 'ldexp', 'lgamma', 'log', 'log10', 'log1p', 'log2', 'modf', 'mycode', 'nan', 'nextafter', 'perm', 'pi', 'pow', 'prod', 'radians', 'remainder', 's', 'sin', 'sinh', 'sqrt', 'tan', 'tanh', 'tau', 'trunc', 'ulp']
+
+>>> exec("print(sqrt(4))")
+2.0
+
+>>> exec("print(sq(4))",{'sq':sqrt})
+2.0
+
+>>> exec
+<built-in function exec>
+
+>>> code=input('enter a code :')
+enter a code :x*(x+1)*(x+2)
+
+>>> x=2
+
+>>> eval(code)
+24
+
+>>> code
+'x*(x+1)*(x+2)'
+
+>>> def mycode():
+	return 12345
+
+
+>>> code=input('enter a code :')
+enter a code :mycode()
+
+>>> eval(code)
+12345
+
+
+
+>>> #                 eval()  method
+
+>>> def my_fuction():
+	code=input('enter a code for execute :')
+        print(code)
+	x=int(input('enter a number:'))
+        s=eval(code)
+	print(s)
+	
+
+
+>>> my_fuction()
+enter a code for execute :x*(x+1)*(x+2)
+enter a number:3
+
+60       
+       
