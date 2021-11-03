@@ -2345,3 +2345,292 @@ enter a number:3
 
 60       
        
+
+       
+       
+>>> #===========================================================
+
+>>> #  bin() method
+
+>>> bin(132)
+'0b10000100'
+
+>>> 0b10000100
+132
+
+>>> bin(10)
+'0b1010'
+
+>>> 7+8
+15
+
+>>> bin(15)
+'0b1111'
+
+>>> class ss:
+	n=0
+	s=0
+	def __index__(self):
+		return self.n+self.s
+
+	
+>>> obj=ss()
+
+>>> obj.n=6
+
+
+>>> obj.s=5
+
+>>> obj
+<__main__.ss object at 0x0000018F3161BA00>
+
+>>> obj.__index__()
+11
+
+>>> obj.__gt__(2)
+NotImplemented
+
+>>> bin(obj)
+'0b1011'
+
+
+>>> bin(12.2)
+Traceback (most recent call last):
+  File "<pyshell#26>", line 1, in <module>
+    bin(12.2)
+TypeError: 'float' object cannot be interpreted as an integer
+
+>>> oct(12)
+'0o14'
+
+>>> bin(0o14)
+'0b1100'
+
+>>> eval('0o14')
+12
+
+>>> exec('0o14')
+
+>>> bin(0o14)
+'0b1100'
+
+>>> bin(exec('0o14'))
+Traceback (most recent call last):
+  File "<pyshell#34>", line 1, in <module>
+    bin(exec('0o14'))
+TypeError: 'NoneType' object cannot be interpreted as an integer
+
+>>> bin(0b1100)
+'0b1100'
+
+>>> 0b1100
+12
+>>> bin(0b1100)
+'0b1100'
+
+>>> bin(12)
+'0b1100'
+
+>>> oct(0b1100)
+'0o14'
+
+>>> oct(0B1100)
+'0o14'
+
+>>> oct(12)
+'0o14'
+
+
+>>> class s:
+	age=12
+	def __index__(self):
+		return self.age
+
+	
+
+>>> s=s()
+
+>>> s
+<__main__.s object at 0x0000018F3161BDC0>
+
+>>> oct(s)
+'0o14'
+
+>>> #==================================================================
+
+>>> #     hex() method
+
+>>> hex(12)
+'0xc'
+
+>>> hex('0xc')
+Traceback (most recent call last):
+  File "<pyshell#73>", line 1, in <module>
+    hex('0xc')
+TypeError: 'str' object cannot be interpreted as an integer
+
+>>> hex(0xc)
+'0xc'
+
+>>> oct(0xc)
+'0o14'
+
+>>> 0o14
+12
+
+>>> #=========================================================
+
+>>> #    ascii()  method
+
+>>> s='''
+this is
+new line
+'''
+
+>>> ascii(s)
+"'\\nthis is\\nnew line\\n'"
+
+>>> print(s)
+
+this is
+new line
+
+>>> chr(2)
+'\x02'
+
+>>> chr(93)
+']'
+
+>>> chr(65)
+'A'
+
+>>> ord('Ø')
+216
+
+>>> for i in range(0,127):
+	print(chr(i),end=' ')
+
+	
+         	 
+   
+                     ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ 
+
+>>> for i in range(0,128):
+	print(chr(i),end=' ')
+
+	
+         	 
+   
+                     ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~  
+
+>>> ord('\x02')
+2
+
+>>> \x02
+SyntaxError: unexpected character after line continuation character
+
+>>> x02
+Traceback (most recent call last):
+  File "<pyshell#106>", line 1, in <module>
+    x02
+NameError: name 'x02' is not defined
+
+>>> '\x02'
+'\x02'
+
+>>> print(\x02)
+SyntaxError: unexpected character after line continuation character
+
+>>> chr(3)
+'\x03'\
+
+>>> chr(66)
+'B'
+
+>>> chr(68)
+'D'
+>>> for o in range(0,127):
+	print(chr(o),end=' ')
+
+	
+         	 
+   
+                     
+ ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+ [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ 
+
+>>> ord('A')
+65
+
+
+>>> for o in range(0,127):
+	print(chr(o),end=' ')
+
+	
+         	 
+   
+                     ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ 
+
+>>> chr(88)
+'X'
+
+>>> ord('X')
+88
+
+>>> ord(chr(88))
+88
+
+
+>>> for i in range(0,127):
+	print(ord(chr(i)),end=' ')
+
+	
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22
+ 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41
+ 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 
+ 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79
+ 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 
+ 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113
+ 114 115 116 117 118 119 120 121 122 123 124 125 126 
+
+
+>>> for i in range(0,127):
+	d=chr(i)
+	print(d,end=' ')
+
+	
+         	 
+   
+                     
+ ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 7 8 9 : ; < = > ? @ 
+ A B C D E F G H I J K L M N O P Q R S T U V W X Y Z 
+ [ \ ] ^ _ ` a b c d e f g h i j k l m n o p q r s t u v w x y z { | } ~ 
+
+>>> for i in range(0,127):
+	d=chr(i)
+	print(ord(str(d)),end=' ')
+
+	
+0 1 2 3 4 5 6 7 8 9 10 11 12 13 14 15 16 17 18 19 20 21 22 23 24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49 50 51 52 53 54 55 56 57 58 59 60 61 62 63 64 65 66 67 68 69 70 71 72 73 74 75 76 77 78 79 80 81 82 83 84 85 86 87 88 89 90 91 92 93 94 95 96 97 98 99 100 101 102 103 104 105 106 107 108 109 110 111 112 113 114 115 116 117 118 119 120 121 122 123 124 125 126 
+
+>>> for i in range(0,127):
+	d=chr(i)
+	print(ord(str(d)),' ',chr(i),end=' ')
+
+	
+0    1    2    3    4    5    6    7    8    9   	 10   
+ 11    12    13   
+ 14    15    16    17    18    19    20    21    22    23    24    25    26    27    28    29    30    31    32     33   ! 34   " 35   # 36   $ 37   % 38   & 39   ' 40   ( 41   ) 42   * 43   + 44   , 45   - 46   . 47   / 48   0 49   1 50   2 51   3 52   4 53   5 54   6 55   7 56   8 57   9 58   : 59   ; 60   < 61   = 62   > 63   ? 64   @ 65   A 66   B 67   C 68   D 69   E 70   F 71   G 72   H 73   I 74   J 75   K 76   L 77   M 78   N 79   O 80   P 81   Q 82   R 83   S 84   T 85   U 86   V 87   W 88   X 89   Y 90   Z 91   [ 92   \ 93   ] 94   ^ 95   _ 96   ` 97   a 98   b 99   c 100   d 101   e 102   f 103   g 104   h 105   i 106   j 107   k 108   l 109   m 110   n 111   o 112   p 113   q 114   r 115   s 116   t 117   u 118   v 119   w 120   x 121   y 122   z 123   { 124   | 125   } 126   ~ 
+
+
+>>> ascii(   )
+SyntaxError: invalid syntax
+
+>>> ascii('   ')
+"'  \\x1c '"
+
+>>> ascii('  ')
+"' \\x1c '"
+
+       
