@@ -656,3 +656,229 @@ gopiraj
 gopiraj
 
 
+
+>>> # assertions
+
+>>> n=1
+
+>>> assert n==1,'hellow'
+
+>>> print(12/n)
+12.0
+
+
+
+>>> if True:
+	b=12
+	assert b==12
+	print(12/b)
+
+	
+1.0
+
+
+
+
+
+>>> if True:
+	b=12
+	assert b!=0,"Zero Divition Error"
+
+	
+
+>>> if True:
+	b=0
+	assert b!=12,"Zero Divition Error"
+	
+
+>>> batch = [ 40, 26, 39, 30, 25, 21]
+
+  
+>>> for i in batch:
+	print(i,end=' ')
+
+	
+40 26 39 30 25 21 
+
+>>> for i in batch:
+	assert i>=26,'rejecr of set'
+	print(str(i)+ "is OK")
+
+	
+40is OK
+26is OK
+39is OK
+30is OK
+Traceback (most recent call last):
+  File "<pyshell#43>", line 2, in <module>
+    assert i>=26,'rejecr of set'
+AssertionError: rejecr of set
+
+
+>>> #=========================================================
+
+>>> #   try except and else and finally
+
+
+>>> def divition(x,y):
+	try:
+		result=x//y
+		print('your ans is :',result)
+	except:
+		print('sorry your divition by zero')
+
+		
+
+>>> divition(12,3)
+your ans is : 4
+
+>>> divition(12,0)
+sorry your divition by zero
+
+>>> def divition(x,y):
+	try:
+		result=x//y
+		print('your ans is :',result)
+	except:
+		print('sorry your divition by zero')
+
+		
+>>> def divition(x,y):
+	try:
+		result=x//y
+		print('your ans is :',result)
+	except:
+		print('sorry your divition by zero')
+	else:
+		print('else port')
+
+		
+>>> divition(12,3)
+your ans is : 4
+else port
+
+>>> divition(12,0)
+sorry your divition by zero
+
+>>> divition(0,0)
+sorry your divition by zero
+
+>>> divition(0,12.2)
+your ans is : 0.0
+else port
+
+>>> def divition(x,y):
+	try:
+		result=x//y
+		print('your ans is :',result)
+	except:
+		print('sorry your divition by zero')
+	else:
+		print('else port')
+	finally:
+		print('final port')
+
+		
+
+>>> divition(12,3)
+your ans is : 4
+else port
+final port
+
+>>> divition(12,0)
+sorry your divition by zero
+final port
+
+>>> #=========================================================
+
+>>> def print_even(test_list) :
+    for i in test_list:
+        if i % 2 == 0:
+            yield i
+
+            
+>>> test_list = [1, 4, 5, 6, 7]
+
+>>> print ("The original list is : " +  str(test_list))
+The original list is : [1, 4, 5, 6, 7]
+
+>>> for j in print_even(test_list):
+    print (j, end = " ")
+
+    
+4 6 
+
+>>> print_even(test_list)
+<generator object print_even at 0x0000026107590510>
+
+>>> for i in print_even(test_list):
+	print(i,end=' ')
+
+	
+4 6 
+
+>>> def next():
+	i=1
+	while True:
+		yield i*i
+		i+=1
+
+
+>>> for num in next():
+	if num>100:
+		break
+	print(num)
+
+	
+1
+4
+9
+16
+25
+36
+49
+64
+81
+100
+
+>>> next()
+<generator object next at 0x000002610768E970>
+
+
+>>> def print_even(test_string) :
+    for i in test_string:
+        if i == "geeks":
+            yield i
+
+            
+>>> test_string = " The are many geeks around you, \
+              geeks are known for teaching other geeks"
+
+
+
+	
+>>> def print_even(test_string) :
+    for i in test_string:
+        if i == "geeks":
+            yield i
+
+            
+>>> print_even(test_string)
+<generator object print_even at 0x0000026107590510>
+
+>>> for i in print_even(test_string):
+	i
+
+	
+>>> n=0
+
+>>> for i in print_even(test_string):
+	n+=1
+
+	
+>>> n=0
+
+>>> for i in print_even(test_string):
+	n+=1
+	print(n)
+
