@@ -882,3 +882,225 @@ The original list is : [1, 4, 5, 6, 7]
 	n+=1
 	print(n)
 
+	
+	
+	
+#=======================================================================
+
+
+
+#   yield   keyworld
+
+
+>>> def mygenerator():
+	print('first item')
+	yield 10
+	print('second item')
+	yield 20
+	print('tired')
+	yield 30
+
+	
+>>> mygenerator()
+<generator object mygenerator at 0x0000025C27C40510>
+
+
+>>> for  i in mygenerator():
+	i
+	
+first item
+10
+second item
+20
+tired
+30
+
+>>> for  i in mygenerator():
+	print(i,end=' \n')
+
+	
+first item
+10 
+second item
+20 
+tired
+30 
+
+
+>>> for  i in mygenerator():
+	print(i,end=' ')
+
+	
+first item
+10 second item
+20 tired
+30 
+
+
+>>> obj=mygenerator()
+
+
+>>> next(obj)
+first item
+10
+
+>>> next(obj)
+second item
+20
+
+
+>>> next(obj)
+tired
+30
+
+>>> def mygenerator():
+	print('first item')
+	yield 10
+
+	return
+
+	print('second item')
+	yield 20
+
+	return
+
+	print('tired')
+	yield 30
+
+	
+
+>>> def mygenerator():
+	print('first item')
+	yield 10
+
+	return
+
+	print('second item')
+	yield 20
+
+	return
+
+	print('tired')
+	yield 30
+
+	return
+
+
+>>> s=mygenerator()
+
+
+>>> s
+<generator object mygenerator at 0x0000025C27C40510>
+
+
+>>> for i in s:
+	i
+
+	
+first item
+10
+
+>>> s=mygenerator()
+
+
+>>> next(s)
+first item
+10
+
+
+>>> def get_sequance(x):
+	for i in range(x):
+		yield i
+
+		
+
+>>> get_sequance(6)
+<generator object get_sequance at 0x0000025C27C40510>
+
+
+>>> for i in get_sequance(6):
+	i
+
+	
+0
+1
+2
+3
+4
+5
+
+
+>>> def sequance(x):
+	for i in range(x):
+		yield i*i
+
+		
+
+
+>>> s=sequance(6)
+
+>>> s
+<generator object sequance at 0x0000025C27C40510>
+
+>>> for i in s:
+	i	
+0
+1
+4
+9
+16
+25
+
+>>> s=sequance(6)
+
+
+>>> while True:
+	try:
+		print('Received on Next() :',next(s))
+	except StopIteration as s:
+		print(s)
+		break
+
+	
+Received on Next() : 0
+Received on Next() : 1
+Received on Next() : 4
+Received on Next() : 9
+Received on Next() : 16
+Received on Next() : 25
+
+
+
+
+>>> s=sequance(6)
+
+>>> while True:
+	try:
+		print('Received on Next() :',next(s))
+	except StopIteration :
+		print('stop iteration')
+		break
+
+	
+Received on Next() : 0
+Received on Next() : 1
+Received on Next() : 4
+Received on Next() : 9
+Received on Next() : 16
+Received on Next() : 25
+stop iteration
+
+>>> s=sequance(5)
+
+
+
+>>> for i in s:
+	i
+
+	
+0
+1
+4
+9
+16
+
