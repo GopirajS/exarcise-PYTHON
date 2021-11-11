@@ -1104,3 +1104,40 @@ stop iteration
 9
 16
 
+
+>>> #   assert   keyword
+>>> 
+>>> x=5
+>>> assert x>4
+>>> print(x)
+5
+>>> assert x>10
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    assert x>10
+AssertionError
+>>> assert x>10,'given number only greater then of 4'
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    assert x>10,'given number only greater then of 4'
+AssertionError: given number only greater then of 4
+>>> 
+>>> 
+>>> 
+>>> def square(x):
+	assert x>=0,'only positive number allowed'
+	print(x*x)
+
+	
+>>> 
+>>> square(6)
+36
+>>> square(-1)
+Traceback (most recent call last):
+  File "<pyshell#19>", line 1, in <module>
+    square(-1)
+  File "<pyshell#16>", line 2, in square
+    assert x>=0,'only positive number allowed'
+AssertionError: only positive number allowed
+>>> 
+
