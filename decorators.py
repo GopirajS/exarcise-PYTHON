@@ -743,4 +743,148 @@ Traceback (most recent call last):
 TypeError: unsupported operand type(s) for +: 'NoneType' and 'str'
 
 
+>>>#------------------------------------------------------------------------------------------
+
+
+>>> #                           @property        Decorator
+
+
+>>> class student(object):
+	def __init__(self,name):
+		self.__name=name
+
+	
+
+>>> s=student('Gopi')
+
+
+>>> class student(object):
+	def __init__(self,name):
+		self.__name=name
+	def name(self):
+		return self.__name
+
+	
+>>> s=student('Gopi')
+
+>>> s.name
+<bound method student.name of <__main__.student object at 0x000001FEAF08C280>>
+
+>>> s.name()
+'Gopi'
+
+>>> print(s.name())
+Gopi
+
+>>> class student(object):
+	def __init__(self,name):
+		self.__name=name
+	@property	
+	def name(self):
+		return self.__name
+
+	
+
+>>> s=student('Gopi')
+
+>>> s.name
+
+'Gopi'
+
+>>> print(s.name)
+Gopi
+
+>>> s.name='Sathish'
+Traceback (most recent call last):
+  File "<pyshell#22>", line 1, in <module>
+    s.name='Sathish'
+AttributeError: can't set attribute
+
+
+>>> class student(object):
+	def __init__(self,name):
+		self.__name=name
+	@property
+	def name(self):
+		return self.__name
+	@name.setter
+	def name(self,value):
+		self.__name=value
+
+		
+
+>>> s=student('Gopi')
+
+>>> s.name
+'Gopi'
+
+>>> s.name='Sathish kumar'
+
+>>> s.name
+'Sathish kumar'
+
+
+>>> class student(object):
+	def __init__(self,name):
+		self.__name=name
+	@property
+	def name(self):
+		return self.__name
+	@name.setter
+	def name(self,value):
+		self.__name=value
+	def name(self):
+		print('Deleting...')
+		del self.__name
+
+		
+>>> s=student('Gopi')
+
+>>> s.name()
+Deleting...
+
+>>> s.name
+<bound method student.name of <__main__.student object at 0x000001FEAF12B970>>
+
+>>> s.name()
+Deleting...
+Traceback (most recent call last):
+  File "<pyshell#46>", line 1, in <module>
+    s.name()
+  File "<pyshell#42>", line 12, in name
+    del self.__name
+AttributeError: _student__name
+
+>>> class student(object):
+	def __init__(self,name):
+		self.__name=name
+	@property
+	def name(self):
+		return self.__name
+	@name.setter
+	def name(self,value):
+		self.__name=value
+	@name.deleter	
+	def name(self):
+		print('Deleting...')
+		del self.__name
+
+		
+>>> s=student('Gopi')
+
+>>> s.name
+'Gopi'
+
+>>> s.name='SAthish kuamr'
+
+
+>>> s.name
+'SAthish kuamr'
+>>> del s.name
+Deleting...
+
+		
+		
+		
+
 >>>#========================================================================
