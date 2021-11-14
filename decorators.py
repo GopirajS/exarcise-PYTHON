@@ -888,3 +888,345 @@ Deleting...
 		
 
 >>>#========================================================================
+
+
+
+
+		
+>>> class student(object):
+	name='Gopiraj'        #  class attribute
+	def __init__(self):
+		self.age=20   #  instence attribute
+	@classmethod	
+	def tostring(cls):
+		print('student class attribute name :',cls.name)
+
+		
+>>> s=student()
+
+>>> student.tostring()
+student class attribute name : Gopiraj
+
+>>> s=student()
+
+>>> s.tostring()
+student class attribute name : Gopiraj
+
+>>> student().tostring()
+student class attribute name : Gopiraj
+
+>>> class student():
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def msg(self):
+		return 'Hellow'+ self.name +' his age :'+self.age
+
+	
+
+>>> s=student('Gopi',21)
+
+
+>>> class student():
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def msg(self):
+		return 'Hellow'+ self.name +' his age :'+str(self.age)
+
+	
+>>> s=student('Gopi',21)
+
+>>> s.msg()
+'HellowGopi his age :21'
+
+>>> s.name
+'Gopi'
+
+>>> s.age
+21
+
+>>> class student():
+	clg='Muthayammal Collage oof Arts & Science'
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def msg(self):
+		return 'Hellow'+ self.name +' his age :'+str(self.age)
+
+	
+
+>>> s=student('Gopi',21)
+
+>>> s.msg()
+'HellowGopi his age :21'
+
+>>> s.name
+'Gopi'
+>>> s.age
+21
+
+>>> s.clg
+'Muthayammal Collage oof Arts & Science'
+
+
+>>> s.age
+21
+
+
+>>> s.clg
+'Muthayammal Collage oof Arts & Science'
+
+
+>>> s.msg
+<bound method student.msg of <__main__.student object at 0x0000028E5658E670>>
+
+>>> s.msg()
+'HellowGopi his age :21'
+
+
+>>> s.name
+'Gopi'
+
+>>> s.clg
+'Muthayammal Collage oof Arts & Science'
+
+
+>>> student.clg
+'Muthayammal Collage oof Arts & Science'
+
+
+>>> class student():
+	count=0
+	clg='Muthayammal Collage oof Arts & Science'
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+		student.count +=1
+	def msg(self):
+		return 'Hellow'+ self.name +' his age :'+str(self.age)
+
+	
+
+>>> s=student('Gopi',21)
+
+>>> d=student('Sathish',27)
+
+
+>>> d.count
+2
+
+>>> s.count
+2
+
+>>> s.age
+21
+
+>>> s.clg
+'Muthayammal Collage oof Arts & Science'
+
+>>> s.count
+2
+
+>>> s.msg()
+'HellowGopi his age :21'
+
+>>> s.name
+'Gopi'
+
+>>> d.age
+27
+
+>>> d.clg
+'Muthayammal Collage oof Arts & Science'
+
+>>> d.count
+2
+
+>>> d.msg
+<bound method student.msg of <__main__.student object at 0x0000028E5658E730>>
+
+>>> d.msg()
+'HellowSathish his age :27'
+
+>>> d.name
+'Sathish'
+
+
+>>> class student():
+	count=0
+	clg='Muthayammal Collage oof Arts & Science'
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+		student.count +=1
+	def msg(self):
+		return 'Hellow'+ self.name +' his age :'+str(self.age)
+	@classmethod
+	def classes(cls):
+		return cls.count
+
+	
+
+>>> s=student('Gopi',21)
+
+
+
+>>> s.age
+21
+
+>>> s.classes()
+1
+
+
+>>> s.classes
+<bound method student.classes of <class '__main__.student'>>
+
+>>> s.classes()
+1
+
+>>> s.count
+1
+
+
+>>> s.msg
+<bound method student.msg of <__main__.student object at 0x0000028E5658E3A0>>
+
+>>> s.msg()
+'HellowGopi his age :21'
+
+>>> s.name
+'Gopi'
+
+
+>>> s.age
+21
+
+
+>>> s.classes()
+1
+
+>>> s.clg
+'Muthayammal Collage oof Arts & Science'
+
+
+>>> s.msg
+<bound method student.msg of <__main__.student object at 0x0000028E5658E3A0>>
+
+>>> s.name
+'Gopi'
+
+>>> #--------------------------------------------
+
+>>> class student(object):
+	def __init__(self,name,marks):
+		self.name=name
+		self.marks=marks
+	def msg(self):
+		print(self.name+' got '+self.marks)
+
+	
+
+>>> s=student('Gopi',99)
+
+>>> s.msg
+<bound method student.msg of <__main__.student object at 0x0000028E5657BDF0>>
+
+
+>>> s=student('Gopi','99')
+
+
+>>> s.msg()
+Gopi got 99
+
+>>> s.name
+'Gopi'
+
+>>> s.marks
+'99'
+
+>>> name='Sathish kumar'
+
+>>> marks='546'
+
+
+>>> equation = str(int(marks)/600)*100
+
+
+>>> equation
+'0.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.910.91'
+
+>>> equation = str((int(marks)/600)*100)
+
+>>> equation
+'91.0'
+
+
+>>> s=student(name,equation)
+
+>>> s.marks
+'91.0'
+
+>>> s.msg()
+Sathish kumar got 91.0
+
+>>> s.name
+'Sathish kumar'
+
+
+>>> class student(object):
+	def __init__(self,name,marks):
+		self.name=name
+		self.marks=marks
+	def msg(self):
+		print(self.name+' got '+self.marks)
+	def get_per(cls,name,marks):
+		return cls(name,str(int(marks)/600)*100)
+
+	
+
+>>> s=student('gopi',546)
+
+
+>>> s=student('gopi',"546")
+
+>>> s.msg()
+gopi got 546
+
+>>> s.name
+'gopi'
+
+
+>>> class student(object):
+	def __init__(self,name,marks):
+		self.name=name
+		self.marks=marks
+	def msg(self):
+		print(self.name+' got '+self.marks)
+	def get_per(cls,name,marks):
+		return cls(name,str(int(marks)/600)*100)
+
+	
+
+>>> s=student('Gopi','93')
+
+>>> marks='560'
+
+>>> name='gopi'
+
+
+>>> class student(object):
+	def __init__(self,name,marks):
+		self.name=name
+		self.marks=marks
+	def msg(self):
+		print(self.name+' got '+self.marks)
+	def get_per(cls,name,marks):
+		return cls(name,str((int(marks)/600)*100))
+
+	
+>>> s=student('Gopi','93')
+
+>>> marks='560'
+
+>>> name='gopi'
