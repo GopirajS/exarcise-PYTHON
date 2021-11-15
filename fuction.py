@@ -806,4 +806,403 @@ False
 10.0
 11.0
 
+>>>#==============================================================================
+
+
+>>> #   global and Local variables in python
+
+>>> def fuc():
+	s='local variable'
+	print(s)
+
+	
+
+>>> fuc()
+local variable
+
+
+>>> #  creat global scope variable
+
+>>> s='This is Global scope Variable'
+
+>>> def fuc():
+	print('inner fuction :',s)
+
+	
+>>> fuc()
+inner fuction : This is Global scope Variable
+
+
+>>> print('This is outer fuction:',s)
+This is outer fuction: This is Global scope Variable
+
+
+>>> def fuction():
+	s='Gopiraj'
+	print('Hellow',s)
+
+	
+
+
+>>> fuction()
+Hellow Gopiraj
+
+
+>>> s
+'This is Global scope Variable'
+
+
+>>> def f():
+    s += 'GFG'
+    print("Inside Function", s)
+
+    
+
+
+>>> def f():
+    s += 'GFG'
+    print("Inside Function", s)
+
+    
+
+>>> s='I Love GeekforGeeks'
+
+
+
+>>> def f():
+    global s
+    s += ' GFG'
+    print(s)
+    s = "Look for Geeksforgeeks Python Section"
+    print(s)
+
+    
+
+>>> s = "Python is great!"
+
+
+>>> f()
+Python is great! GFG
+Look for Geeksforgeeks Python Section
+
+
+>>> def f():
+    global s
+    print(s)
+    s += ' GFG'
+    print(s)
+    s = "Look for Geeksforgeeks Python Section"
+    print(s)
+
+    
+
+>>> s = "Python is great!"
+
+
+>>> f()
+Python is great!
+Python is great! GFG
+Look for Geeksforgeeks Python Section
+
+
+>>> def f():
+    global s
+    print(s)
+    s += ' GFG'
+    print(s)
+    s += "Look for Geeksforgeeks Python Section"
+    print(s)
+
+    
+>>> f()
+Look for Geeksforgeeks Python Section
+Look for Geeksforgeeks Python Section GFG
+Look for Geeksforgeeks Python Section GFGLook for Geeksforgeeks Python Section
+
+
+
+>>> s='gopi'
+
+>>> s+='Raj'
+
+>>> s
+'gopiRaj'
+
+
+>>> name='Gopi'
+
+
+>>> def f():
+	print(name)
+
+	
+>>> f()
+Gopi
+
+
+>>> def f():
+	name+='Raj'
+	print(name)
+
+	
+>>> name
+'Gopi'
+
+
+
+>>> def f():
+	global name
+	name+='Raj'
+	print(name)
+
+	
+
+>>> name
+'Gopi'
+
+>>> f()
+GopiRaj
+
+>>> def f():
+	print(name)
+	name+='Raj'
+	print(name)
+
+	>>> def f():
+	print(name)
+
+	
+>>> f()
+GopiRaj
+
+>>> A=1
+
+>>> def f():
+	print('A')
+
+>>> def g():
+	A=2
+	print(A)
+
+	
+>>> def f():
+	global A
+	A=4
+	print(A)
+
+	
+
+>>> print(A)
+1
+
+
+>>> f()
+4
+
+>>> g()
+2
+
+>>> def h():
+	print(A)
+
+	
+>>> h()
+4
+
+>>> #================================================================
+
+>>> #                      Global keyword in python
+
+
+>>> a=12345
+
+>>> def fuc():
+	print(a)
+
+	
+>>> fuc()
+12345
+
+>>> class myclass():
+	print(a)
+
+	
+12345
+
+>>> class myclass():
+	def myfuc(self):
+		print(a)
+
+		
+>>> s=myclass()
+
+>>> s.myfuc()
+12345
+
+>>> a=1234
+
+>>> def fuc():
+	print(a)
+	s=a+4
+	print(s)
+
+	
+>>> fuc()
+1234
+1238
+
+
+>>> a=1234
+
+>>> def fuc():
+	print(a)
+	a=a+3
+	print(s)
+
+	
+>>> fuc()
+Traceback (most recent call last):
+  File "<pyshell#184>", line 1, in <module>
+    fuc()
+  File "<pyshell#183>", line 2, in fuc
+    print(a)
+UnboundLocalError: local variable 'a' referenced before assignment
+
+
+
+>>> def fuc():
+	global  a
+	print(a)
+	a=a+3
+	print(a)
+
+	
+>>> a
+1237
+
+>>> fuc()
+1237
+1240
+
+>>> a
+1240
+
+>>> #-------------------------------------------------
+
+
+
+
+>>> def add():
+     x = 15
+       
+     def change():
+         global x
+         x = 20
+     print("Before making changing: ", x)
+     print("Making change")
+     change()
+     print("After making change: ", x)
+
+     
+>>> add()
+Before making changing:  15
+Making change
+After making change:  15
+
+
+>>> def add():
+     x = 15
+
+     def change():
+         global x
+         x = 20
+         print('change():',x)
+     print("Before making changing: ", x)
+     print("Making change")
+     change()
+     print("After making change: ", x)
+
+     
+>>> add()
+Before making changing:  15
+Making change
+change(): 20
+After making change:  15
+
+
+>>> x
+20
+
+>>> #------------------------------------------------
+
+>>> def change(x):
+	return x.upper()
+
+
+
+>>> change('Gopi')
+'GOPI'
+
+>>> up=change
+
+>>> up('Sathish kumar')
+'SATHISH KUMAR'
+
+
+>>> def upper(text):
+	return text.upper()
+
+>>> def lower(text):
+	return text.lower()
+
+
+>>> def greet(func):
+    greeting = func("""Hi, I am created by a function
+                    passed as an argument.""")
+
+    
+
+>>> greet(upper)
+
+>>> def greet(func):
+    greeting = func("""Hi, I am created by a function
+                    passed as an argument.""")
+    print(greeting)
+
+    
+
+
+>>> greet(upper)
+HI, I AM CREATED BY A FUNCTION
+                    PASSED AS AN ARGUMENT.
+
+
+>>> greet(lower)
+hi, i am created by a function
+                    passed as an argument.
+
+>>> #-------------------------------------------
+
+>>> def create(x):
+	def add(x):
+		return x+y
+	return add
+
+>>> s=create(5)
+
+
+>>> def create(x):
+	def add(y):
+		return x+y
+	return add
+
+
+>>> s=create(5)
+
+>>> s(5)
+10
+
+>>> create(4)(5)
+9
+
 
