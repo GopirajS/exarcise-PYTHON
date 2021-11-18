@@ -830,3 +830,616 @@ fuction is start :
 	s=math.factorial(x)
 	print(s)
 
+	
+	
+>>>#========================================================	
+>>> def fuc():
+	return 'hellow'
+
+>>> fuc()
+'hellow'
+
+>>> s=fuc()
+
+>>> s
+'hellow'
+
+
+>>> def s():
+	s='hellow python '
+	print(s)
+
+	
+>>> s()
+hellow python 
+
+>>> a=s()
+hellow python 
+>>> a
+
+
+>>> def f():
+	x=3
+	def inner():
+		y=4
+		s=x+y
+		print(s)
+	return inner()
+
+>>> f()
+7
+
+>>> s=f()
+7
+
+>>> def f():
+	x=3
+	def inner():
+		y=4
+		s=x+y
+		return s
+	return inner()
+
+>>> f()
+7
+
+>>> def f():
+	x=3
+	def inner():
+		y=4
+		s=x+y
+		return s
+	return inner
+
+>>> f()
+<function f.<locals>.inner at 0x000001D808671430>
+
+>>> s=f()
+
+
+
+>>> s()
+7
+
+>>> f
+<function f at 0x000001D8086714C0>
+
+>>> s
+<function f.<locals>.inner at 0x000001D808671550>
+>>> s=f()
+
+
+>>> s()
+7
+
+>>> #=================================================
+
+>>> def fuction():
+	x='hellow'
+	print(x)
+
+	
+>>> fuction()
+hellow
+
+>>> s=fuction()
+hellow
+
+>>> s
+
+>>> def fuction():
+	x='hellow'
+	return x
+
+>>> fuction()
+'hellow'
+
+>>> s=fuction()
+
+>>> s
+'hellow'
+
+>>> print(s)
+hellow
+
+>>> def fuction(x):
+	return x
+
+>>> fuction('hellow')
+'hellow'
+
+>>> s=fuction('hellow')
+
+>>> s
+'hellow'
+
+>>> def fuction(x):
+	print(x)
+
+	
+
+>>> fuction('hellow')
+hellow
+
+>>> s=fuction('hellow')
+hellow
+
+>>> s
+
+>>> def fuction(x):
+	x+='hellow'
+
+	
+>>> fuction('gopi')
+
+>>> print(fuction('gopi'))
+None
+
+>>> def outer(x):
+	def inner(y):
+		print(x+y)
+	return inner()
+
+
+>>> def outer(x):
+	def inner(y):
+		print(x+y)
+	return inner
+
+>>> s=outer(5)
+
+>>> s(7)
+12
+
+>>> outer(5)
+<function outer.<locals>.inner at 0x000001D808671700>
+
+>>> outer(5)(5)
+10
+
+>>> def outer():
+	x=3
+	def inner():
+		y=6
+		return x+y
+	return inner
+
+>>> s=outer()
+
+>>> s()
+9
+
+>>> outer()()
+9
+
+>>> def outer():
+	x=3
+	def inner():
+		y=6
+		return x+y
+	return inner
+
+>>> a=outer()
+
+>>> a.__name__
+'inner'
+
+>>> a()
+9
+
+>>> def fuction1():
+	print('hi im fuction 1 ')
+
+	
+>>> def fuction2(fun):
+	print('hi im fuction 2 and im calling fuction 1')
+	fun()
+
+	
+>>> fuction2(fuction1)
+hi im fuction 2 and im calling fuction 1
+hi im fuction 1 
+
+
+>>> @fuction2
+def fuction1():
+	print('hi im fuction 1 ')
+
+	
+hi im fuction 2 and im calling fuction 1
+hi im fuction 1 
+
+
+>>> fuction1
+
+>>> #-------------------------
+
+>>> def print_str():
+	return 'python'
+
+>>> def deco(fun):
+	s=fun()
+	s.upper()
+	return s
+
+>>> deco(print_str)
+'python'
+
+>>> s='ggg'
+
+>>> s.upper()
+'GGG'
+
+
+>>> print_str()
+'python'
+
+>>> s=print_str()
+
+>>> s
+'python'
+
+>>> s.upper()
+'PYTHON'
+
+>>> def deco(fun):
+	s=fun()
+	s.upper()
+	return s
+
+>>> def print_str():
+	return 'python'
+
+>>> deco(print_str)
+'python'
+
+>>> def deco(fun):
+	s=fun()
+	return s.upper()
+
+>>> deco(print_str)
+'PYTHON'
+
+
+>>> def deco(fun):
+	def inner():
+		s=fun()
+		return s.upper()
+	return inner
+
+>>> s=deco(print_str)
+
+>>> s()
+'PYTHON'
+
+>>> s
+<function deco.<locals>.inner at 0x000001D8086715E0>
+
+>>> s.__name__
+'inner'
+
+
+>>> print_str
+<function print_str at 0x000001D8086719D0>
+
+>>> print_str.__name__
+'print_str'
+
+>>> def deco(fun):
+	def inner():
+		s=fun()
+		return s.upper()
+	return inner
+
+>>> @deco
+def print_str():
+	return 'python'
+
+
+>>> print_str.__name__
+'inner'
+
+
+>>> print_str()
+'PYTHON'
+
+>>> print_str
+<function deco.<locals>.inner at 0x000001D808671A60>
+
+
+>>> def upper(fun):
+	def inner():
+		s=fun()
+		return s.upper()
+	return inner
+
+>>> @upper
+def print_str():
+	return 'hellow world'
+
+
+>>> print_str
+<function upper.<locals>.inner at 0x000001D808671CA0>
+
+>>> type(print_str)
+<class 'function'>
+
+
+>>> print_str.__name__
+'inner'
+
+>>> print_str()
+'HELLOW WORLD'
+
+>>> print(print_str)
+<function upper.<locals>.inner at 0x000001D808671CA0>
+
+>>> def upper(fun):
+	def inner():
+		s=fun()
+		return s.upper()
+	return inner()
+
+>>> print(print_str)
+<function upper.<locals>.inner at 0x000001D808671CA0>
+
+>>> @upper
+def print_str():
+	return 'hellow world'
+
+>>> print_str
+'HELLOW WORLD'
+
+>>> def upper(fun):
+	def inner():
+		s=fun()
+		return s.upper()
+	return inner
+
+
+
+>>> print_str
+'HELLOW WORLD'
+
+>>> @upper
+def print_str():
+	return 'hellow world'
+
+
+>>> print_str
+<function upper.<locals>.inner at 0x000001D808671B80>
+
+>>> print_str()
+'HELLOW WORLD'
+
+>>> #--------------------------
+
+>>> def greet(name):
+	s='welcome to my class , Mr.',name
+	return s
+
+
+>>> name='gopi'
+
+>>> s='hellow',name
+
+>>> s
+('hellow', 'gopi')
+
+>>> greet('gopi')
+('welcome to my class , Mr.', 'gopi')
+
+>>> " ".join(s)
+'hellow gopi'
+
+
+>>> def greet(name):
+	s='welcome to my class , Mr.',name
+	return " ".join(s)
+
+>>> def deco(fuc):
+	s=fuc()
+	return s.upper()
+
+
+>>> def deco(fun):
+	def inner(name):
+		
+		s=fun(name)
+		return s.upper()
+	return inner
+
+
+
+>>> @deco
+def greet(name):
+	s='welcome to my class , Mr.',name
+	return " ".join(s)
+
+>>> greet.__name__
+'inner'
+
+
+>>> greet('gopi')
+'WELCOME TO MY CLASS , MR. GOPI'
+
+>>> #=====================================
+
+>>> for i in range(10):
+	print(i,end=' ')
+
+	
+0 1 2 3 4 5 6 7 8 9 
+
+>>> import math
+
+>>> math.factorial(4)
+24
+
+>>> def fac(n):
+	if n==0:
+		return 0
+	else:
+		for i in range(n):
+			return i*fac(n-1)
+
+		
+>>> fac(5)
+0
+
+>>> def fac(n):
+	if n==0:
+		return 0
+	else:
+		for i in range(1,n+1):
+			return i*fac(n-1)
+
+		
+>>> fac(5)
+0
+
+>>> def fac(n):
+	if n==0:
+		return 0
+	else:
+		for i in range(1,n+1):
+			print(i*fac(n-1))
+
+			
+
+>>> def factorial(n):
+	if n<=0:
+		return -1
+	else:
+		return n*factorial(n-1)
+
+	
+>>> factorial(5)
+-120
+
+>>> def factorial(n):
+	if n<0:
+		return 1
+	else:
+		return n*factorial(n-1)
+
+
+>>> factorial(5)
+0
+
+>>> factorial(4)
+0
+
+
+>>> def f(n):
+	if n<0:
+		return 1
+	else:
+		return n*f(n-1)
+
+	
+>>> f(5)
+0
+
+>>> def factorial(n):
+    if n == 0:
+        return 1
+    else:
+        return n * factorial(n-1)
+
+
+>>> factorial(7)
+5040
+
+>>> def factorial(n):
+	if n<0:
+		return 1
+	else:
+		return n*factorial(n-1)
+
+	
+>>> factorial(5)
+0
+
+>>> def factorial(n):
+	if n==0:
+		return 1
+	else:
+		return n * factorial(n-1)
+
+	
+>>> factorial(5)
+120
+
+>>> def factorial(n):
+	if n<0:
+		return 1
+	else:
+		return n * factorial(n-1)
+
+	
+>>> factorial(5)
+0
+
+>>> def factorial(n):
+	if n==0:
+		return 1
+	else:
+		return n * factorial(n-1)
+
+	
+
+>>> factorial(5)
+120
+
+
+>>> def outer(fuc):
+	def inner(x):
+		if x==0:
+			print('facrorial',x ,' :',0)
+		else :
+			print('factorial ',x,':',fun(x))
+	return inner
+
+
+
+>>> def outer(fuc):
+	def inner(x):
+		if x==0 or x==1:
+			print('facrorial',x ,' :',0)
+		else :
+			print('factorial ',x,':',fun(x))
+	return inner
+
+
+>>> @outer
+def factorial(n):
+	return n*factorial(n-1)
+
+
+>>> def outer(fuc):
+	def inner(x):
+		if x==0 or x==1:
+			print('facrorial',x ,' :',0)
+		else :
+			print('factorial ',x,':',fuc(x))
+	return inner
+
+
+>>> @outer
+def factorial(n):
+	return n*factorial(n-1)
+
+
+>>> def outer(fuc):
+	def inner(x):
+		if x==0 or x==1:
+			print('x==0 or x==1')
+		else :
+			print('factorial :',fuc(x))
+	return inner
+
+
+>>> @outer
+def factorial(n):
+	return n*factorial(n-1)
