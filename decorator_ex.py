@@ -1443,3 +1443,549 @@ def factorial(n):
 >>> @outer
 def factorial(n):
 	return n*factorial(n-1)
+
+
+>>>#===================================================================
+
+
+>>> def div(a,b):
+	s=a/b
+	return s
+
+>>> def deco(fun):
+	def inner(x,y):
+		if y==0:
+			print('canot divide by zero')
+		else:
+			print('divided...')
+			s=fun(x,y)
+			print(s)
+
+			
+>>> @deco
+def div(a,b):
+	s=a/b
+	return s
+
+
+>>> div
+
+>>> def deco(fun):
+	def inner(x,y):
+		if y==0:
+			print('canot divide by zero')
+		else:
+			print('divided...')
+			s=fun(x,y)
+			print(s)
+	return inner
+
+>>> @deco
+def div(a,b):
+	s=a/b
+	return s
+
+>>> div(2,4)
+divided...
+0.5
+
+>>> div(2,0)
+canot divide by zero
+
+>>> d
+
+>>> def fact(x):
+	return x*fact(x-1)
+
+
+>>> def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+	
+>>> fact(4)
+24
+
+>>> fact(1)
+1
+
+
+>>> fact(0)
+1
+
+
+
+
+
+>>> @deco
+def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+	
+
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			s=fun(num)
+			print(s)
+	return inner
+
+
+>>> @deco
+def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+	
+
+
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			s=fun(num)
+			print(s)
+	return inner
+
+
+>>> def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+>>> fact(5)
+120
+
+>>> deco(fact)
+<function deco.<locals>.inner at 0x0000028E09613790>
+
+>>> s=deco(fact)
+
+>>> s(5)
+120
+
+>>> s(-1)
+negative numer cannot used !
+
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			print('positive number can be use ')
+			s=fun(num)
+			print(s)
+	return inner
+
+>>> def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+	
+
+>>> fact(5)
+120
+
+>>> @deco
+def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+	
+
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			print('positive number can be use ')
+			s=fun(num)
+			print(s)
+	return inner
+
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			s=fun(num)
+			print(s)
+	return inner
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			s=fun(num)
+			print(s)
+	return inner
+
+
+>>> def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+
+>>> fact(6)
+720
+
+>>> fact(5)
+120
+
+>>> fact(3)
+6
+
+>>> fact(4)
+24
+
+>>> deco(fact)
+<function deco.<locals>.inner at 0x0000028E09613820>
+
+>>> s=deco(fact)
+
+>>> s(8)
+40320
+
+>>> s(-1)
+negative numer cannot used !
+
+
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			s=fun(num)
+			print(s)
+	return inner()
+
+
+>>> @deco
+def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			return fun(num)
+	return inner
+
+
+>>> deco(fact)
+<function deco.<locals>.inner at 0x0000028E09613940>
+
+>>> s=deco(fact)
+
+>>> s(4)
+24
+
+>>> s(-1)
+negative numer cannot used !
+
+
+>>> @deco
+def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+
+>>> fact(7)
+5040
+
+>>> fact(-1)
+negative numer cannot used !
+
+>>> fact(-1)
+negative numer cannot used !
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			return fun(num)
+	return inner
+
+
+>>> def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+	
+
+>>> deco(fact)
+<function deco.<locals>.inner at 0x0000028E09613AF0>
+
+>>> s=deco(fact)
+
+>>> s(5)
+120
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			return fun(num)
+	return inner()
+
+
+>>> def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+	
+
+>>> def deco(fun):
+	def inner(num):
+		if num<0:
+			print('negative numer cannot used !')
+		else:
+			return fun(num)
+	return inner()(5)
+
+
+>>> def fact(x):
+	if x==0 or x==1:
+		return 1
+	else:
+		return x*fact(x-1)
+
+	
+
+>>> def div(a,b):
+	return a/b
+
+
+>>> div(1,3)
+0.3333333333333333
+
+
+
+
+>>> def deco(fuc):
+	def inner(x,y):
+		if y==0:
+			print('canot division by zero')
+		else:
+			print('divided by {} and {}'.format(x,y))
+			return fuc(x,y)
+	return inner
+
+
+>>> @deco
+def div(a,b):
+	return a/b
+
+
+
+>>> div(2,4)
+divided by 2 and 4
+0.5
+
+>>> div(2,0)
+canot division by zero
+
+>>> #------------------------------
+
+>>> def normal_msg():
+	s=input('enter a string:')
+	return s
+
+
+		
+>>> def split_d(func):
+	def inner():
+		s=func()
+		return s.split(" ")
+	return inner
+
+>>> s=split_d(normal_msg)
+
+>>> s()
+enter a string:hellow world
+['hellow', 'world']
+
+
+>>> def cap_d(func):
+	def inner():
+		s=func()
+		return s.capitalize()
+	return inner
+
+
+>>> @split_d
+@cap_d
+def normal_msg():
+	s=input('enter a string:')
+	return s
+
+
+>>> normal_msg()
+enter a string:hellow world
+['Hellow', 'world']
+
+>>> s=['hellow', 'world']
+
+
+>>> for i in s:
+	i.capitalize()
+
+	
+'Hellow'
+'World'
+
+>>> #------------------------------
+
+>>> s=['hellow', 'world']
+
+>>> for i in s:
+	l=[]
+	l.append(i.capitalize())
+
+	
+>>> l
+['World']
+
+>>> l
+['World']
+
+>>> s=['hellow', 'world']
+
+>>> for i in s:
+	l=[]
+	l.append(i.capitalize())
+
+	
+>>> l
+['World']
+
+
+>>> l=[]
+
+>>> for i in s:
+	l.append(i.capitalize())
+
+	
+>>> l
+['Hellow', 'World']
+
+>>> def cap_d(func):
+	def inner():
+		l=[]
+		s=func()
+		for i in s:
+			l.append(i.capitalize())
+		return l
+	return inner
+
+>>> def split_d(func):
+	def inner():
+		s=func()
+		return s.split(" ")
+	return inner
+
+
+>>> @split_d
+@cap_d
+def normal_msg():
+	s=input('enter a string:')
+	return s
+
+
+>>> @split_d
+def normal_msg():
+	s=input('enter a string:')
+	return s
+
+
+>>> normal_msg()
+enter a string:hellow world
+['hellow', 'world']
+
+
+>>> @split_d
+def normal_msg():
+	return input('enter a string:')
+
+
+>>> def normal_msg():
+	return input('enter a string:')
+
+
+>>> normal_msg()
+enter a string:helow world
+'helow world'
+
+
+>>> @split_d
+def normal_msg():
+	return input('enter a string:')
+
+
+>>> normal_msg()
+enter a string:hellow world
+['hellow', 'world']
+
+>>> s=normal_msg()
+enter a string:hellw world
+
+>>> s
+['hellw', 'world']
+
+>>> s
+['hellw', 'world']
+
+>>> def cap_d(func):
+	def inner():
+		l=[]
+		s=func()
+		for i in s:
+			l.append(i.capitalize())
+		return l
+	return inner
+
+
+
+>>> @split_d
+@cap_d
+def normal_msg():
+	return input('enter a string:')
+
