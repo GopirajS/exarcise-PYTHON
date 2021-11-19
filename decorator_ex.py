@@ -1989,3 +1989,356 @@ enter a string:hellw world
 def normal_msg():
 	return input('enter a string:')
 
+
+>>>#=====================================================================
+
+
+
+>>> s='gopi'
+
+>>> def hello():
+	t='raj'
+	def inner():
+		print(s)
+	inner()
+
+	
+>>> hello()
+gopi
+
+
+>>> def outer(txt):
+	def inner():
+		print(txt)
+	return inner
+
+>>> obj=outer('hellow world')
+
+>>> obj()
+hellow world
+
+>>> obj
+<function outer.<locals>.inner at 0x00000180627A54C0>
+
+>>> obj.__name__
+'inner'
+
+>>> def fuc():
+	print('hellow world')
+
+	
+>>> fuc()
+hellow world
+
+>>> s=fuc
+
+>>> s()
+hellow world
+
+>>> def string():
+	s=input('enter a string :')
+	return s
+
+
+>>> string()
+enter a string :hellow world
+'hellow world'
+
+>>> def upper_d(func):
+	s=func()
+	return s.upper()
+
+
+>>> upper_d(string)
+enter a string :hellow woorld
+'HELLOW WOORLD'
+
+>>> def cap_d(func):
+	s=func()
+	r=s.split(' ')
+	l=[]
+	for i in r:
+		l.append(i.capitalize())
+	return l
+
+>>> cap_d(string)
+enter a string :hellow world
+['Hellow', 'World']
+
+>>> def cap_d(func):
+	s=func()
+	r=s.split(' ')
+	l=[]
+	for i in r:
+		l.append(i.capitalize())
+	return ' '.join(l)
+
+>>> cap_d(string)
+enter a string :hellow world
+'Hellow World'
+
+>>> @cap_d
+def string():
+	s=input('Enter your string :')
+	return s
+
+Enter your string :hellow world how are you ?
+
+>>> def cap_d(func):
+	def inner():
+		s=func()
+		s=s.split(' ')
+		l=[]
+		for i in s:
+			l.append(i.capitalize())
+		return ' '.join(l)
+	return inner
+
+
+
+>>> @cap_d
+def string():
+	string=input('Enter a string:')
+	return string
+
+
+>>> string()
+Enter a string:hellow world
+'Hellow World'
+
+>>> string()
+Enter a string:gopi raj sathish kuamr gowri gopal 
+'Gopi Raj Sathish Kuamr Gowri Gopal '
+
+>>> string()
+Enter a string:a s d f g h  k l z x c v b n m q w e r t y u i o p 
+'A S D F G H  K L Z X C V B N M Q W E R T Y U I O P '
+
+>>> def upper(func):
+	s=func()
+	return s.upper()
+
+
+>>> def lower(func):
+	s=func()
+	return s.lower()
+
+
+>>> def string():
+	s=input('enter a string :')
+	return s
+
+>>> string()
+enter a string :hellow gopi raj how are you ?
+'hellow gopi raj how are you ?'
+
+
+>>> cap_d(string)
+<function cap_d.<locals>.inner at 0x00000180627A5700>
+>>> def cap_d(func):
+	def inner():
+		s=func()
+		s=s.split(' ')
+		l=[]
+		for i in s:
+			l.append(i.capitalize())
+		return ' '.join(l)
+	return inner
+
+>>> cap_d(string)
+<function cap_d.<locals>.inner at 0x00000180627A55E0>
+
+
+>>> #-----------------------------------------------
+
+>>> def cap_d(func):
+	def inner():
+		s=func()
+		s=s.split(' ')
+		l=[]
+		for i in s:
+			l.append(i.capitalize())
+		return ' '.join(l)
+	return inner
+
+
+>>> def string():
+	s=input('Enter A String :')
+	return s
+
+
+>>> string()
+Enter A String :hellow how are you
+'hellow how are you'
+
+
+>>> cap_d(string)
+<function cap_d.<locals>.inner at 0x00000180627A55E0>
+
+>>> @cap_d
+def string():
+	s=input('Enter A String :')
+	return s
+
+
+>>> string()
+Enter A String :hell kk
+'Hell Kk'
+
+
+>>> string()
+Enter A String :k k k 
+'K K K '
+
+
+>>> string()
+Enter A String :kk dd aa tt 
+'Kk Dd Aa Tt '\
+
+>>> #--------------------------------
+
+>>> def upper(func):
+	s=func()
+	return s.upper()
+
+>>> def lower(func):
+	s=func()
+	return s.lower()
+
+
+>>> def string():
+	s=input('enter a string :')
+	return s
+
+
+>>> lower(string)
+enter a string :HELLE WORLD
+'helle world'
+
+>>> upper(string)
+enter a string :
+''
+
+>>> upper(string)
+enter a string :hello world
+'HELLO WORLD'
+
+>>> def deco1(fun):
+	def inner():
+		s=fun()
+		return s*s
+	return inner
+
+
+>>> def deco2(fun):
+	def wrape():
+		s=fun()
+		return s*2
+	return wrape
+
+>>> def cal():
+	return 10
+
+>>> deco1(cal)
+<function deco1.<locals>.inner at 0x00000180627A5A60>
+
+>>> s=deco1(cal)
+
+>>> s()
+100
+>>> s=deco2(cal)
+>>> 
+
+>>> s
+<function deco2.<locals>.wrape at 0x00000180627A5A60>
+
+>>> s()
+20
+
+>>> @deco1
+@deco2
+def cal():
+	return 10
+
+
+>>> cal()
+400
+
+>>> @deco1
+@deco2
+def cal():
+	num=int(input('enter a number:'))
+	return num
+
+
+>>> cal()
+enter a number:3
+36
+
+>>> cal()
+enter a number:1
+4
+
+>>> cal()
+enter a number:1
+4
+
+>>> cal()
+enter a number:2
+16
+
+>>> #----------------------------------------
+
+
+>>> def split_d(func):
+	def inner():
+		s=func()
+		return s.split(' ')
+	return inner
+
+>>> def cap(funs):
+	def inner():
+		s=funs()
+		l=[]
+		for i in s:
+			l.append(i.capitalize())
+		return ' '.join(l)
+	return inner
+
+>>> def string():
+	s=input('Enter A string :')
+	return s
+
+
+>>> string()
+Enter A string :helow worl
+'helow worl'
+
+
+>>> @cap
+@split_d
+def string():
+	s=input('Enter A string :')
+	return s
+
+
+>>> string()
+Enter A string :hellow world
+'Hellow World'
+
+
+
+>>> string()
+Enter A string :hellow how are you gopi raj ?
+'Hellow How Are You Gopi Raj ?'
+
+
+>>> string()
+Enter A string :a s d f g h j k l z x c v b n m q w e r t y u i o p
+'A S D F G H J K L Z X C V B N M Q W E R T Y U I O P'
+
+
+>>> string()
+Enter A string :aa ss dd ff gg hh jj kk ll qq ww ee rr tt yy uu ii oo pp zz xx cc vv bb nn mm 
+'Aa Ss Dd Ff Gg Hh Jj Kk Ll Qq Ww Ee Rr Tt Yy Uu Ii Oo Pp Zz Xx Cc Vv Bb Nn Mm '
+
