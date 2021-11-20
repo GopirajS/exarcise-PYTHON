@@ -2342,3 +2342,101 @@ Enter A string :a s d f g h j k l z x c v b n m q w e r t y u i o p
 Enter A string :aa ss dd ff gg hh jj kk ll qq ww ee rr tt yy uu ii oo pp zz xx cc vv bb nn mm 
 'Aa Ss Dd Ff Gg Hh Jj Kk Ll Qq Ww Ee Rr Tt Yy Uu Ii Oo Pp Zz Xx Cc Vv Bb Nn Mm '
 
+
+>>>#==================================================================================================
+
+
+Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> def fuction1():
+	print("im fuction one")
+
+	
+>>> def fuction2(func):
+	print('im fuction two ,im calling fuction one')
+	func()
+	print('printing fuction one')
+
+	
+>>> fuction2(fuction1)
+im fuction two ,im calling fuction one
+im fuction one
+printing fuction one
+>>> 
+>>> 
+>>>  def greet():
+	 
+SyntaxError: unexpected indent
+>>> def greet():
+	s=input("enter a string :")
+	return s
+
+>>> 
+>>> greet()
+enter a string :hellow world
+'hellow world'
+>>> 
+>>> greet()
+enter a string :'hellow world'
+"'hellow world'"
+>>> 
+>>> 
+>>> 
+>>> def deco(func):
+	def inner():
+		s=func()
+		return s.upper()
+	return inner
+
+>>> 
+>>> s=deco(greet)
+>>> s()
+enter a string :hellow world
+'HELLOW WORLD'
+>>> 
+>>> 
+>>> @deco
+def greet():
+	s=input("enter a string :")
+	return s
+
+>>> 
+>>> greet()
+enter a string :hellow world
+'HELLOW WORLD'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> #================================
+>>> 
+>>> 
+>>> # you can pass a perameter in decorator
+>>> 
+>>> def greet():
+	s=input('enter greating message:')
+	return s
+
+>>> 
+>>> def deco(exp):
+	def outer(funs):
+		def inner():
+			s=funs()
+			return s + exp
+		return inner
+	return outer
+
+>>> 
+>>> 
+>>> @deco(' Gopi Raj ')
+def greet():
+	s=input('enter a string:')
+	return s
+
+>>> 
+>>> greet()
+enter a string:how are Mr
+'how are Mr Gopi Raj '
+>>> 
+>>> 
+>>> 
