@@ -3028,3 +3028,198 @@ name: Gopi
 
 >>> s.getter()
 123
+
+
+>>>#============================================================================
+
+
+
+
+
+>>> class my_class():
+	def __init__(self,name,marks):
+		self.name=name
+		self.mark=marks
+	def msg(self):
+		return self.name +' got marks persentage'+self.mark
+
+	
+
+>>> s=my_class('Gopi',"60%")
+
+>>> s.msg()
+'Gopi got marks persentage60%'
+
+>>> name='Sathish Kumar'
+
+>>> m=456
+
+>>> marks=(m/500)*100
+
+>>> s=my_class(name,marks)
+
+
+>>> marks
+91.2
+
+>>> class my_class():
+	def __init__(self,name,marks):
+		self.name=name
+		self.mark=marks
+	def msg(self):
+		return self.name +' got marks persentage'+str(self.mark)
+
+	
+
+>>> obj=my_class('Gopi',60)
+
+>>> obj.msg()
+'Gopi got marks persentage60'
+
+>>> obj=my_class('Gopi',"60 %")
+
+>>> obj.msg()
+'Gopi got marks persentage60 %'
+
+>>> name='Sathish kumar'
+
+>>> m=345
+
+>>> marks=str((m/500)*100) + "%"
+
+>>> marks
+'69.0%'
+
+>>> s=my_class(name,marks)
+
+>>> s.msg()
+'Sathish kumar got marks persentage69.0%'
+
+>>> s.mark
+'69.0%'
+
+>>> s.name
+'Sathish kumar'
+
+>>> class my_class():
+	def __init__(self,name,marks):
+		self.name=name
+		self.mark=marks
+	def msg(self):
+		return self.name +' got marks persentage'+str(self.mark)
+
+	
+>>> s=my_class('Gopi','60 %')
+
+>>> s.mark
+'60 %'
+
+>>> s.name
+'Gopi'
+
+>>> s.msg()
+'Gopi got marks persentage60 %'
+
+
+>>> class my_class():
+	def __init__(self,name,marks):
+		self.name=name
+		self.mark=marks
+	def msg(self):
+		return self.name +' got marks persentage '+ str(self.mark)
+	@classmethod
+	def per(cls,name,marks):
+		return cls(name,str((marks/500)*100))
+
+
+>>> s=my_class('Gopi',224)
+
+>>> s.msg()
+'Gopi got marks persentage 224'
+
+
+>>> s.per('gopi',224)
+<__main__.my_class object at 0x0000015BC47AC280>
+
+>>> s=my_class.per('gopiraj',234)
+
+>>> s.mark
+'46.800000000000004'
+
+>>> s.msg()
+'gopiraj got marks persentage 46.800000000000004'
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.mark=mark
+	def persentage(self):
+		return self.name +"is got a persentage "+ str(self.mark)
+	def get_per(cls,name,mark):
+		return cls(name,str((mark/500)*100))
+	def get_age(age):
+		if age<18:
+			print('you are miner ')
+		else:
+			print('you are mager ')
+
+			
+
+>>> s=my_mark('Gopi',123)
+
+>>> s.mark
+123
+
+>>> s.name
+'Gopi'
+
+>>> s.persentage()
+'Gopiis got a persentage 123'
+
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.mark=mark
+	def persentage(self):
+		return self.name +"is got a persentage "+ str(self.mark)
+	@classmethod
+	def get_per(cls,name,mark):
+		return cls(name,str((mark/500)*100))
+	@staticmethod
+	def get_age(age):
+		if age<18:
+			print('you are miner ')
+		else:
+			print('you are mager ')
+
+			
+
+>>> s=my_mark.get_per('gopi',234)
+
+>>> s.persentage()
+'gopiis got a persentage 46.800000000000004'
+
+>>> s.mark
+'46.800000000000004'
+
+>>> s.mark
+'46.800000000000004'
+
+>>> s.name
+'gopi'
+
+>>> s.persentage()
+'gopiis got a persentage 46.800000000000004'
+
+>>> s.get_age(34)
+you are mager 
+
+>>> s.get_age(12)
+you are miner 
+
+>>> s.name='Sathish'
+
+>>> s.persentage()
+'Sathishis got a persentage 46.800000000000004'
+
