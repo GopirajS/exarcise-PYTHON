@@ -2438,6 +2438,593 @@ def greet():
 >>> greet()
 enter a string:how are Mr
 'how are Mr Gopi Raj '
->>> 
->>> 
->>> 
+
+>>>#=================================================================
+
+
+
+>>> for i in range(5):
+	if i==2:
+		print('i=2')
+else:
+	print('for loop is closed')
+
+	
+i=2
+for loop is closed
+
+>>> for i in range(5):
+	if i==2 or i==4:
+		print('i=2')
+else:
+	print('for loop is closed')
+
+	
+i=2
+i=2
+for loop is closed
+
+>>> for i in range(5):
+	if i==2 or i==4:
+		print('i=',i)
+else:
+	print('for loop is closed')
+
+	
+i= 2
+i= 4
+for loop is closed
+
+>>> class myclass():
+	def __init__(self,func):
+		self.func=func
+	def __call__(self,*arg):
+		for i in arg[1:]:
+			if i==0:
+				print('you canot divide by zero give proper inout !!!')
+		else:
+			return self.func(*arg)
+
+		
+
+>>> @myclass
+def greet(a,b):
+	return a/b
+
+
+>>> greet(1,3)
+0.3333333333333333\
+
+>>> greet(1,0)
+you canot divide by zero give proper inout !!!
+Traceback (most recent call last):
+  File "<pyshell#34>", line 1, in <module>
+    greet(1,0)
+  File "<pyshell#24>", line 9, in __call__
+    return self.func(*arg)
+  File "<pyshell#31>", line 3, in greet
+    return a/b
+ZeroDivisionError: division by zero
+
+>>> class myclass():
+	def __init__(self,func):
+		self.func=func
+	def __call__(self,*arg):
+		for i in arg[1:]:
+			if i==0:
+				print('you canot divide by zero give proper inout !!!')
+			else:
+				return self.func(*arg)
+
+			
+>>> @myclass
+def greet(a,b):
+	return a/b
+
+
+>>> greet(1,0)
+you canot divide by zero give proper inout !!!
+
+>>> #---------------------------------------------
+
+>>> class myclass():
+	def __init__(self,name,grade):
+		self.name=name
+		self.grade=grade
+		self.msg = self.name + " got " + self.grade
+
+		
+
+>>> s=myclass('gopi','B')
+
+>>> s.name
+'gopi'
+
+>>> s.grade
+'B'
+
+>>> s.msg
+'gopi got B'
+
+>>> s.name='sathish'
+
+>>> s.grade
+'B'
+
+>>> s.name
+'sathish'
+
+
+
+>>> s.name
+'sathish'
+
+>>> s.msg
+'gopi got B'
+
+>>> s.name
+'sathish'
+
+
+>>> class myclass():
+	def __init__(self,name,grade):
+		self.name=name
+		self.grade=grade
+	def msg(self):
+		self.grade +" got grade " + self.grade
+
+		
+
+>>> s=myclass('gopi',"D")
+
+>>> s.name
+'gopi'
+
+>>> s.grade
+'D'
+
+>>> s.msg()
+
+>>> s.msg
+<bound method myclass.msg of <__main__.myclass object at 0x000001AE56AAE7C0>>
+
+
+>>> class myclass():
+	def __init__(self,name,grade):
+		self.name=name
+		self.grade=grade
+	def msg(self):
+		return self.grade +" got grade " + self.grade
+
+	
+
+>>> s=myclass('gopi',"D")
+
+>>> s.msg()
+'D got grade D'
+
+>>> class myclass():
+	def __init__(self,name,grade):
+		self.name=name
+		self.grade=grade
+	def msg(self):
+		return self.name +" got grade " + self.grade
+
+	
+
+>>> s=myclass('Gopi','A')
+
+>>> s.name
+'Gopi'
+
+>>> s.grade
+'A'
+
+
+>>> s.msg()
+'Gopi got grade A'
+
+>>> s.name='sathish'
+
+
+
+>>> s.msg()
+'sathish got grade A'
+
+>>> s.name
+'sathish'
+
+>>> s.grade='S'
+
+>>> s.msg()
+'sathish got grade S'
+
+>>> def greet():
+	return 'hellow world'
+
+
+>>> @property
+def greet():
+	return 'hellow world'
+
+>>> greet
+<property object at 0x000001AE56AC3680>
+
+
+>>> print(greet)
+<property object at 0x000001AE56AC3680>
+
+>>> s=greet
+
+>>> s
+<property object at 0x000001AE56AC3680>
+
+>>> class myclass():
+	def __init__(self,name,grade):
+		self.name=name
+		self.grade=grade
+	@property	
+	def msg(self):
+		return self.name +" got grade " + self.grade
+
+	
+
+>>> s=myclass('gopi','G')
+
+>>> s.name
+'gopi'
+
+>>> s.msg
+'gopi got grade G'
+
+>>> s.grade
+'G'
+
+>>> s.msg
+'gopi got grade G'
+
+>>> s.name='Sathish'
+
+>>> s.grade='S'
+
+>>> s.msg
+'Sathish got grade S'
+
+>>> class myclass():
+	def __init__(self,name,grade):
+		self.name=name
+		self.grade=grade
+	@property
+	def msg(self):
+		return self.name +" got grade " + self.grade
+	@msg.setter
+	def msg(self,msg):
+		selt=msg.split(" ")
+		self.name=selt[0]
+		self.grade=selt[-1]
+
+		
+
+>>> s=myclass('Gopi','G')
+
+>>> s.name
+'Gopi'
+
+>>> s.grade
+'G'
+
+>>> s.msg
+'Gopi got grade G'
+
+>>> s.msg='Sathishnkumar got grade S'
+
+>>> s.name
+'Sathishnkumar'
+
+>>> s.msg
+'Sathishnkumar got grade S'
+
+>>> s.grade
+'S'
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	def persentage(self):
+		print('name:',self.name)
+		return (self.__mark/500)*100
+
+	
+
+>>> s=my_mark('Gopi',450)
+
+>>> s.name
+'Gopi'
+
+>>> s.persentage()
+name: Gopi
+90.0
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	def persentage(self):
+		print('name:',self.name)
+		return (self.__mark/500)*100 + '%'
+
+	
+>>> s=my_mark('Gopi',450)
+
+
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	def persentage(self):
+		print('name:',self.name)
+		return str((self.__mark/500)*100) + '%'
+
+	
+>>> s=my_mark('Gopi',450)
+
+>>> s.persentage()
+name: Gopi
+'90.0%'
+
+>>> s=my_mark('Gopi',477)
+
+>>> s.name
+'Gopi'
+
+>>> s.persentage
+<bound method my_mark.persentage of <__main__.my_mark object at 0x000001AE56A9B2E0>>
+
+
+>>> s.persentage()
+name: Gopi
+'95.39999999999999%'
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	def persentage(self):
+		print('name:',self.name)
+		return str((self.__mark/500)*100) + '%'
+
+	
+>>> s=my_mark('Gopi',356)
+
+>>> s.name
+'Gopi'
+
+>>> s.persentage()
+name: Gopi
+'71.2%'
+
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	def persentage(self):
+		print('name:',self.name)
+		return str((self.__mark/500)*100) + '%'
+	def setter(self,value):
+		self.__mark=value
+	def getter(self):
+		return self.__mark
+
+	
+
+>>> s=my_mark('Gopi',345)
+
+>>> s.getter()
+345
+
+>>> s.name
+'Gopi'
+
+>>> s.persentage
+<bound method my_mark.persentage of <__main__.my_mark object at 0x000001AE56A9B280>>
+
+>>> s.persentage()
+name: Gopi
+'69.0%'
+
+>>> s.setter('234')
+
+>>> s.setter(132)
+
+>>> s.persentage()
+name: Gopi
+'26.400000000000002%'
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	def persentage(self):
+		print('name:',self.name)
+		return str((self.__mark/500)*100) + '%'
+	def setter(self,value):
+		self.__mark=value
+	def getter(self):
+		return self.__mark
+
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	@property	
+	def mark(self):
+		return self.__mark
+	@mark.setter
+	def mark(self,value):
+		self.__mark=value
+	@mark.deleter	
+	def mark(self):
+		return self.__mark
+
+
+>>> s=my_mark('Gopi',234)
+
+>>> s.name
+'Gopi'
+
+>>> s.mark
+234
+
+>>> s.mark=234
+
+>>> s.mark=111
+
+>>> s.mark
+111
+
+>>> del s.mark
+
+>>> s.name
+'Gopi'
+
+>>> s.mark
+111
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	@property
+	def mark(self):
+		return self.__mark
+	@mark.setter
+	def mark(self,value):
+		self.__mark=value
+	@mark.deleter
+	def mark(self):
+		del self.__mark
+
+
+>>> s=my_mark('Gopi',234)
+
+>>> s.mark=345
+
+>>> s.mark
+345
+>>> s.name='Gopi'
+
+>>> s.mark
+345
+>>> s.name
+'Gopi'
+
+>>> del s.mark
+
+>>> s.name
+'Gopi'
+
+
+>>> del s.name
+
+>>> s.mark=123
+
+>>> s.mark
+123
+
+>>> class my_mark():
+	def __init__(self,name,mark):
+		self.name=name
+		self.__mark=mark
+	def getter(self):
+		return self.__mark
+	def setter(self,value):
+		self.__mark=value
+	def deleter(self):
+		del self.__mark
+	mark=property(getter,setter,deleter)
+
+	
+>>> s=my_mark('gopi',234)
+
+>>> s.mark
+234
+
+
+>>> class my_mark():
+	def __init__(self,mark):
+		self.__mark=mark
+	def per(self):
+		return (self.__mark/500)*100
+	def getter(self):
+		return self.__mark
+	def setter(self,value):
+		self.__mark = self.value
+	def deleter(self):
+		del self.__mark
+	mark=property(getter,setter,deleter)
+
+	
+
+>>> s=my_mark(234)
+
+>>> s.mark
+234
+
+>>> class my_mark():
+	def __init__(self,mark):
+		self.__mark=mark
+	def per(self):
+		return (self.__mark/500)*100
+	def getter(self):
+		return self.__mark
+	def setter(self,value):
+		if 0<value or 500>value:
+			self.__mark = self.value
+		else:
+			print('value is out or rasio,canot set values')
+	def deleter(self):
+		del self.__mark
+	mark=property(getter,setter,deleter)
+
+
+>>> s=my_mark(123)
+
+>>> s.mark
+123
+
+>>> s.per()
+24.6
+>>> s.setter
+<bound method my_mark.setter of <__main__.my_mark object at 0x000001AE56AAECD0>>
+
+>>> class my_mark():
+	def __init__(self,mark):
+		self.__mark=mark
+	def per(self):
+		return (self.__mark/500)*100
+	def getter(self):
+		return self.__mark
+	def setter(self,value):
+		if 0<value or value>500:
+			self.__mark = self.value
+		else:
+			print('value is out or rasio,canot set values')
+	def deleter(self):
+		del self.__mark
+	mark=property(getter,setter,deleter)
+
+
+>>> s=my_mark(123)
+
+>>> s.mark
+123
+
+>>> s.getter
+<bound method my_mark.getter of <__main__.my_mark object at 0x000001AE56AD16A0>>
+
+>>> s.getter()
+123
