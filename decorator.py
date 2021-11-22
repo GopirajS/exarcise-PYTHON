@@ -799,3 +799,342 @@ Enter a string hellow
 Enter a stringgopiraj
 'GOPIRAJ'
 
+>>>#======================================================================
+
+
+Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> 
+>>> 
+>>> def outer(func):
+	def inner():
+		s=func()
+		return s.upper()
+	return inner
+
+>>> 
+>>> def string():
+	return 'good  morning'
+
+>>> 
+>>> @outer
+def string():
+	return 'good  morning'
+
+>>> 
+>>> string()
+'GOOD  MORNING'
+>>> 
+>>> def outer(func):
+	def inner(string):
+		print(string)
+		s=func(string)
+		return s.upper()
+	return inner
+
+>>> 
+>>> @outer
+def string(strs):
+	return strs
+
+>>> 
+>>> string('good morning')
+good morning
+'GOOD MORNING'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def outer(func):
+	def inner():
+		print('is inner function')
+		return func
+	return inner
+
+>>> 
+>>> @outer
+def string(strs):
+	return strs
+
+>>> 
+>>> @outer
+def string():
+	return 'hellow world'
+
+>>> string()
+is inner function
+<function string at 0x000001674E9F8F70>
+>>> string()()
+is inner function
+'hellow world'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def decorator_fun(*arg,**kwarg):
+	print('inside decorators')
+	def oouter(func):
+		def inner():
+			s=func()
+			return s.upper()
+		return inner
+	return ooter
+
+>>> 
+>>> @decorator_fun('parimala')
+def string():
+	return 'good morning'
+
+inside decorators
+Traceback (most recent call last):
+  File "<pyshell#57>", line 1, in <module>
+    @decorator_fun('parimala')
+  File "<pyshell#52>", line 8, in decorator_fun
+    return ooter
+NameError: name 'ooter' is not defined
+
+>>> 
+>>> 
+>>> def decorator_fun(*arg,**kwarg):
+	print('inside decorators')
+	def inner(func):
+		s=func()
+		return s.upper()
+	return inner
+
+>>> 
+>>> @decorator_fun('parimala')
+def string():
+	return 'good morning'
+
+inside decorators
+>>> 
+>>> string()
+Traceback (most recent call last):
+  File "<pyshell#69>", line 1, in <module>
+    string()
+TypeError: 'str' object is not callable
+>>> string
+'GOOD MORNING'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def decorator_fun(func):
+	print("Inside decorator")
+	def inner(*args, **kwargs):
+		print("Inside inner function")
+		print("Decorated the function")
+		func()return inner
+		
+SyntaxError: invalid syntax
+>>> def decorator_fun(func):
+	print("Inside decorator")
+	def inner(*args, **kwargs):
+		print("Inside inner function")
+		print("Decorated the function")
+		func()return inner
+		
+SyntaxError: invalid syntax
+>>> def decorator_fun(func):
+	print("Inside decorator")
+	def inner(*args, **kwargs):
+		print("Inside inner function")
+		print("Decorated the function")
+		func()
+	return inner
+
+>>> 
+>>> @decorator_fun
+def func_to():
+    print("Inside actual function")
+
+    
+Inside decorator
+
+>>> func_to()
+Inside inner function
+Decorated the function
+Inside actual function
+>>> func_to('parimal')
+Inside inner function
+Decorated the function
+Inside actual function
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def outer(x,y):
+	def inner(func):
+		def wraps(name):
+			s=func()
+			return s.upper()
+		return wraps
+	return inner
+
+>>> 
+>>> 
+>>> 
+>>> def geets():
+	return 'good morning'
+
+>>> 
+>>> def outer(x,y):
+	def inner(func):
+		def wraps(name):
+			s=func()
+			print(x+y)
+			return s.upper()
+		return wraps
+	return inner
+
+>>> 
+>>> def geets():
+	return 'good morning'
+
+>>> 
+>>> 
+>>> outer(2,3)(geets)('gopi')
+5
+'GOOD MORNING'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def decorator(x,y):
+	def outer(func):
+		def inner(*args,**kwargs):
+			print('I like python')
+			print('{} + {}= {}'.format(x,y,x+y))
+			func(*args,**kwargs)
+		return inner
+	return outer
+
+>>> def greet(*args)
+SyntaxError: invalid syntax
+>>> def greet(*args):
+	for i in args:
+		print(i)
+
+		
+>>> 
+>>> decorator(2,3)(greet)('gopi','sathish','kumar')
+I like python
+2 + 3= 5
+gopi
+sathish
+kumar
+>>> 
+>>> 
+>>> def inner(x,y):
+	return lambda x,y:x+y
+
+>>> inner(2,4)
+<function inner.<locals>.<lambda> at 0x000001674EAE2820>
+>>> inner(2,4)()
+Traceback (most recent call last):
+  File "<pyshell#140>", line 1, in <module>
+    inner(2,4)()
+TypeError: <lambda>() missing 2 required positional arguments: 'x' and 'y'
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def inner():
+	return lambda x,y:x+y
+
+>>> inner()
+<function inner.<locals>.<lambda> at 0x000001674EAE28B0>
+>>> inner()(2,4)
+6
+>>> 
+>>> 
+>>> def inner(x,y):
+	lambda x,y:print(x+y)
+
+	
+>>> inner(2,3)
+>>> inner(2,3)(3,4)
+Traceback (most recent call last):
+  File "<pyshell#155>", line 1, in <module>
+    inner(2,3)(3,4)
+TypeError: 'NoneType' object is not callable
+>>> 
+>>> 
+>>> 
+>>> 
+>>> 
+>>> l=[1,2,3,4,5]
+>>> all(l)
+True
+>>> l=[1,2,3,4,5,0]
+>>> 
+>>> 
+>>> 
+>>> all([type(arg)==str for arg in l])
+False
+>>> 
+>>> 
+>>> def decorator(data_type,message1,message2):
+	def outer(func):
+		print(message1)
+		def inner(*args,**kwargs):
+			print(message2)
+			if all([type(arg)==data_type for arg in args])
+			
+SyntaxError: invalid syntax
+>>> def decorator(data_type,message1,message2):
+	def outer(func):
+		print(message1)
+		def inner(*args,**kwargs):
+			print(message2)
+			if all([type(arg)==data_type for arg in args]):
+				return func(*args,**kwargs)
+			return 'invalid input'
+		return inner
+	return outer
+
+>>> 
+>>> @decorator(str,'decorator for string join','string join')
+def stringJoin(*args):
+	st=''
+	for i in args:
+		st+=i
+	return st
+
+decorator for string join
+>>> stringJoin('i','love','my','fasion')
+string join
+'ilovemyfasion'
+>>> 
+>>> @decorator(str,'decorator for string join','string join')
+def stringJoin(*args):
+	st=''
+	for i in args:
+		st+=i
+		st+=' '
+	return st
+
+decorator for string join
+>>> stringJoin('i','love','my','fasion')
+string join
+'i love my fasion '
+>>> 
+>>> 
+>>> 
+>>> @decorator(int,'decorator for join int','integer added')
+def add(*args):
+	st=0
+	for i in args:
+		print(i,end=' ')
+		st+=i
+	return st
+
+decorator for join int
+>>> 
+>>> add(1,2,3,4,5,6,7,7)
+integer added
+1 2 3 4 5 6 7 7 35
+>>> 
