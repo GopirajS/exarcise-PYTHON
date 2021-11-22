@@ -199,3 +199,227 @@ class Polygon:
 			print("Side",i+1,"is",self.sides[i])
 
     
+    
+    
+>>>#===========================================================================================
+
+
+
+>>> class dog:
+	pass
+
+>>> dog
+<class '__main__.dog'>
+
+>>> s=dog()
+
+>>> s
+<__main__.dog object at 0x000001FDA326BDC0>
+
+>>> class dog:
+	attr1='mammal'
+	attr2='dog'
+	def fun(self):
+		print('im a',self.attr1)
+		print('im a',self.attr2)
+
+		
+>>> s=dog()
+
+>>> s.attr1
+'mammal'
+
+>>> s.attr2
+'dog'
+
+>>> s.fun()
+im a mammal
+im a dog
+
+>>> class my_class():
+	def __init__(self,name):
+		self.name=name
+	def say_hi(self):
+		print('hellow ,my name is ',self.name)
+
+		
+
+>>> obj=my_class('gopi')
+
+>>> obj.name
+'gopi'
+
+>>> obj.say_hi()
+hellow ,my name is  gopi
+
+>>> class my_dog():
+	animal='dog'
+	def __init__(self,breed):
+		self.breed=breed
+	def set_colore(self,colore):
+		self.colore=colore
+	def get_colore(self):
+		return self.colore
+
+
+>>> s=my_dog('pug')
+
+>>> s.animal
+'dog'
+
+>>> s.breed
+'pug'
+
+>>> s.set_colore('brown')
+
+>>> s.get_colore
+<bound method my_dog.get_colore of <__main__.my_dog object at 0x000001FDA326B2E0>>
+
+>>> s.get_colore()
+'brown'
+
+>>> s.set_colore('red')
+
+
+>>> s.colore
+'red'
+
+>>> s.animal
+'dog'
+
+>>> class my_class(object):
+	def __init__(self):
+		self.geek='hellow world '
+	def print_str(self):
+		print(self.geek)
+
+		
+>>> s=my_class()
+
+>>> s.geek
+'hellow world '
+
+>>> s.print_str()
+hellow world 
+
+>>> class adding(object):
+	def __init__(self,f,s):
+		self.f=f
+		self.s=s
+	def display(self):
+		print('first number :',self.f)
+		print('second number:',self.s)
+	def calculate(self):
+		self.answer=self.f+self.s
+
+		
+
+>>> s=adding(3,4)
+
+>>> s.f
+3
+
+>>> s.s
+4
+
+>>> s.display()
+first number : 3
+second number: 4
+
+>>> s.display()
+first number : 3
+second number: 4
+>>> s.calculate()
+
+>>> class adding(object):
+	def __init__(self,f,s):
+		self.f=f
+		self.s=s
+	def display(self):
+		print('first number :',self.f)
+		print('second number:',self.s)
+	def calculate(self):
+		self.answer=self.f+self.s
+		return self.answer
+
+	
+>>> s=adding(3,4)
+
+>>> s.display()
+first number : 3
+second number: 4
+
+>>> s.calculate()
+7
+
+>>> s.answer
+7
+
+>>> s.calculate()
+7
+
+>>> #------------------------------------------------
+
+>>> class my_class(object):
+	def __init__(self,name):
+		self.name=name
+	def __del__(self):
+		print('destructor')
+
+		
+
+
+>>> s=my_class('gopi')
+
+>>> s.name
+'gopi'
+
+>>> del s
+destructor
+>>> a=my_class('sathish')
+
+>>> a.name
+'sathish'
+
+>>> class employ:
+	def __init__(self):
+		print('employ created')
+	def __del__(self):
+		print("Destructor called")
+
+		
+>>> def creat_obj():
+	print("making object")
+	obj=employ()
+	print('fnction  end...')
+	return obj
+
+
+>>> obj=creat_obj()
+making object
+employ created
+fnction  end...
+
+>>> obj=employ()
+employ created
+Destructor called
+
+>>> obj
+<__main__.employ object at 0x000001FDA326BA30>
+
+>>> class A:
+	def __init__(self):
+		print('Employee create')
+	def __del__(self):
+		print('Destructor called')
+
+		
+
+>>> obj==A
+False
+
+>>> obj=A
+Destructor called
+
+>>> obj=A()
+Employee create
