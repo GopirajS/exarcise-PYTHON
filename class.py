@@ -975,4 +975,249 @@ im from constructor in my_class
 >>> del d
  im from destructor in my class
 
+>>>#===============================================================
+
+
+>>> class person():
+	def __init__(self,name):
+		self.name=name
+	def getName(self):
+		return self.name
+	def isEmployee(self):
+		return False
+
+
+>>> s=person("Gopi")
+
+>>> s.name
+'Gopi'
+
+>>> s.isEmployee
+<bound method person.isEmployee of <__main__.person object at 0x00000269B52EB310>>
+
+>>> s.isEmployee()
+False
+
+>>> s.getName
+<bound method person.getName of <__main__.person object at 0x00000269B52EB310>>
+
+>>> s.getName()
+'Gopi'
+
+>>> class Employee(person):
+	def __init__(self):
+		return True
+
+	
+
+>>> class Employee(person):
+	def isEmployee(self):
+		return True
+
+	
+>>> s=Employee('GOpi')
+
+>>> s.isEmployee
+<bound method Employee.isEmployee of <__main__.Employee object at 0x00000269B52EB2E0>>
+
+>>> s.isEmployee()
+True
+
+>>> s.name
+'GOpi'
+
+>>> s.getName
+<bound method person.getName of <__main__.Employee object at 0x00000269B52EB2E0>>
+
+>>> s.getName()
+'GOpi'
+
+
+>>> class person(object):
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def print_msg(self):
+		print(self.name)
+		print(self.age)
+
+		
+
+>>> s=person('Gopi',21)
+
+>>> s.age
+21
+
+>>> s.name
+'Gopi'
+
+>>> s.print_msg()
+Gopi
+21
+
+>>> class child(person):
+	def __init__(self,name,age,city,education):
+		self.city=city
+		self.education=education
+
+		
+
+>>> s=child('Gopi',21,'salem','B.Sc Math')
+
+>>> s.city
+'salem'
+
+>>> s.education
+'B.Sc Math'
+
+
+
+>>> class child(person):
+	def __init__(self,name,age,city,education):
+		self.city=city
+		self.education=education
+		person.__init__(self,name,age)
+
+		
+>>> s=child('Gopi',21,'salem','B.Sc Math')
+
+>>> s.age
+21
+
+>>> s.city
+'salem'
+
+>>> s.education
+'B.Sc Math'
+
+>>> s.city
+'salem'
+
+>>> s.print_msg()
+Gopi
+21
+
+
+>>> class base1(object):
+	def __init__(self):
+		self.str1='gopi raj 1'
+		print('base 1')
+
+		
+
+>>> class base2(object):
+	def __init__(self):
+		self.str2='gopi raj 2'
+		print('base 2')
+
+		
+>>> class parent(base1,base2):
+	def __init__(self):
+		base1.__init__(self)
+		base2.__init__(self)
+		print('Derived')
+	def print_str(self):
+		print(self.str1)
+		print(self.str2)
+
+		
+>>> s=parent()
+base 1
+base 2
+Derived
+
+>>> s.str1
+'gopi raj 1'
+
+>>> s.str2
+'gopi raj 2'
+
+>>> s.print_str()
+gopi raj 1
+gopi raj 2
+
+>>> class parent(base1,base2):
+	def __init__(self):
+		base1.__init__(self)
+		#base2.__init__(self)
+		print('Derived')
+	def print_str(self):
+		print(self.str1)
+		print(self.str2)
+
+		
+
+
+>>> s=parent()
+base 1
+Derived
+
+>>> s.str1
+'gopi raj 1'
+
+
+
+
+>>> #---------------------------------------------
+
+
+>>> class base(object):
+	def __init__(self,name):
+		self.name=name
+	def get_name(self):
+		return self.name
+
+	
+
+>>> class child(base):
+	def __init__(self,name,age):
+		base.__init__(self,name)
+		self.age=age
+	def get_age(self):
+		return self.age
+
+	
+
+>>> class parent(child):
+	def __init__(self,name,age,city):
+		parent.__init__(self,name,age)
+		self.city=city
+	def get_city(self):
+		return self.city
+
+	
+>>> class parent(child):
+	def __init__(self,name,age,city):
+		child.__init__(self,name,age)
+		self.city=city
+	def get_city(self):
+		return self.city
+
+	
+
+>>> s=parent('Gopi',21,'salem')
+
+>>> s.age
+21
+
+>>> s.city
+'salem'
+
+>>> s.get_age()
+21
+
+>>> s.get_name()
+'Gopi'
+
+>>> s.get_city()
+'salem'
+
+>>> s.name
+'Gopi'
+
+>>> s.age
+21
+
+>>> s.city
+'salem'
 
