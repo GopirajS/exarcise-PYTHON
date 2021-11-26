@@ -1579,3 +1579,388 @@ im from parent fuction 1
 >>> obj2.fuction3()
 im from fuction3 in younger son
 
+
+>>>#============================================================
+
+
+
+
+>>> # Encapsulation in python
+
+>>> class base(object):
+	def __init__(self):
+		self.a='hellow world'
+		self._c='this is protected member'
+
+	
+>>> class derived(base):
+	def __init__(self):
+		base.__init__(self)
+		print(self._c)
+
+		
+>>> s=base()
+
+>>> s.a
+'hellow world'
+
+>>> s._c
+'this is protected member'
+
+>>> obj=derived()
+this is protected member
+
+>>> class Map:
+    def __init__(self, iterate):
+        self.list = []
+        self.__geek(iterate)
+    def geek(self, iterate):
+        for item in iterate:
+            self.list.append(item)
+
+            
+
+
+
+>>> class Map:
+    def __init__(self, iterate):
+        self.list = []
+        self.__geek(iterate)
+    def geek(self, iterate):
+        for item in iterate:
+            self.list.append(item)
+    __geek = geek
+
+    
+>>> class MapSubclass(Map):
+     
+    # provides new signature for geek() but
+    # does not break __init__()
+    def geek(self, key, value):       
+        for i in zip(keys, value):
+            self.list.append(i)
+
+            
+
+>>> l=[1,2,3,4,5,6,7]
+
+
+>>> s=MapSubclass(l)
+
+>>> s.list
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> s.geek
+<bound method MapSubclass.geek of <__main__.MapSubclass object at 0x00000120015CC850>>
+
+
+>>> class base(object):
+	def __init__(self):
+		self.a='gopiraj'
+		self.__c='sathish kumar'
+
+		
+>>> class derive(base):
+	def __init__(self):
+		base.__init__(self)
+		print(self.__c)
+
+		
+>>> s=base()
+
+>>> s.a
+'gopiraj'
+
+
+>>> class base(object):
+	def __init__(self):
+		self.a='gopiraj'
+		self._c='sathish kumar'
+
+		
+
+>>> class derive(base):
+	def __init__(self):
+		base.__init__(self)
+		print(self.__c)
+
+		
+
+>>> class derive(base):
+	def __init__(self):
+		base.__init__(self)
+		print(self._c)
+
+		
+
+>>> ss=derive()
+sathish kumar
+
+>>> ss.a
+'gopiraj'
+
+>>> #---------------------------------------
+
+>>> #               polymorphism in python
+
+>>> print(len('geeks'))
+5
+
+>>> print(len([1,2,3,4,5,6]))
+6
+
+>>> print(len([1,2,3,4,5,6,'gopiraj']))
+7
+
+>>> def add(x=0,y=0,z=0):
+	return x+y+z
+
+
+>>> add(1,2,3)
+6
+
+>>> add(1,2)
+3
+
+>>> add()
+0
+
+>>> class india(object):
+	def capital(self):
+		print('New delhi is capital of india')
+	def language(self):
+		print('Tamil language is most widely speaking language')
+	def type(self):
+		print('india is devaloped country')
+
+		
+>>> class USA(object):
+	def capital(self):
+		print('washington D.C is capital of USA')
+	def language(self):
+		print('English is primery language of USA')
+	def type(self):
+		print('USA is developed county')
+
+		
+>>> obj=india()
+
+>>> obj.capital()
+New delhi is capital of india
+
+>>> obj.language()
+Tamil language is most widely speaking language
+
+>>> obj.type()
+india is devaloped country
+
+>>> obj=india()
+
+>>> obj2=USA()
+
+>>> for i in (obj,obj2):
+	i.capital()
+	i.language()
+	i.type()
+
+	
+New delhi is capital of india
+Tamil language is most widely speaking language
+india is devaloped country
+washington D.C is capital of USA
+English is primery language of USA
+USA is developed county
+
+
+
+>>> class bird(object):
+	def intro(self):
+		print('there are many type of birds.')
+	def flight(self):
+		print('Most of the bird can be fly but some one canot')
+
+		
+
+
+>>> class sparrow(bird):
+	def flight(self):
+		print('sparrow can be fly')
+
+		
+>>> class ostrich(bird):
+	def flight(self):
+		print('ostrich canot fly')
+
+		
+
+>>> s=bird()
+
+>>> s.flight()
+Most of the bird can be fly but some one canot
+
+>>> s.intro()
+there are many type of birds.
+
+>>> s=sparrow()
+
+>>> s.intro()
+there are many type of birds.
+
+>>> s.flight()
+sparrow can be fly
+
+
+>>> s=ostrich()
+
+>>> s.intro()
+there are many type of birds.
+
+>>> s.flight()
+ostrich canot fly
+
+
+>>> class base(object):
+	stream='B.Sc'
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+
+		
+
+>>> s=base('Gopi raj',21)
+
+>>> s.age
+21
+
+>>> s.name
+'Gopi raj'
+
+>>> s.stream
+'B.Sc'
+
+>>> b=base('Sathish kumar',27)
+
+>>> b.name
+'Sathish kumar'
+
+>>> b.age
+27
+
+>>> b.stream
+'B.Sc'
+
+>>> b.stream="BE bio tech"
+
+>>> s.stream
+'B.Sc'
+
+>>> b.stream
+'BE bio tech'
+
+>>> base.stream='CSC'
+
+>>> b.stream
+'BE bio tech'
+
+>>> s.stream
+'CSC'
+
+>>> import datetime
+
+>>> import datetime as t
+
+>>> t.date.today()
+datetime.date(2021, 11, 26)
+
+>>> t.date.today().year
+2021
+
+>>> _-1999
+22
+
+>>> class person():
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	@classmethod
+	def frombithyear(cls,name,year):
+		return cls(name,t.date.today().year-year)
+	def isAdult(age):
+		return 18<age
+
+
+>>> s=person('gopi',21)
+
+>>> s.name
+'gopi'
+
+
+>>> class person():
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	@classmethod
+	def frombithyear(cls,name,year):
+		return cls(name,t.date.today().year-year)
+	def isAdult(age):
+		return 18<age
+
+
+>>> class person():
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	@classmethod
+	def frombithyear(cls,name,year):
+		return cls(name,t.date.today().year-year)
+	@staticmethod
+	def isAdult(age):
+		return 18<age
+
+	
+
+>>> s=person('Gopi',21)
+
+
+>>> b=person.frombithyear('Gopi',1999)
+
+>>> b.age
+22
+
+>>> b.name
+'Gopi'
+
+>>> b.isAdult
+<function person.isAdult at 0x000001200169BC10>
+
+>>> b.isAdult(22)
+True
+
+>>> b.frombithyear('gopi',2000)
+<__main__.person object at 0x000001200166BEB0>
+
+>>> b.name
+'Gopi'
+
+>>> b.age
+22
+
+>>> s.name
+'Gopi'
+
+>>> s.age
+21
+
+>>> s.isAdult(21)
+True
+
+>>> s=person.frombithyear('Sathish kumar',1991)
+
+>>> s.name
+'Sathish kumar'
+
+>>> s.age
+30
+
+>>> s.isAdult(30)
+True
