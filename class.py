@@ -1221,3 +1221,361 @@ Derived
 >>> s.city
 'salem'
 
+
+>>> class A(object):
+	def __init__(self):
+		self.a=123
+		self.__s='Gopi'
+
+	
+
+>>> class B(A):
+	def __init__(self):
+		self.__g='Sathish Kumar'
+		A.__init__(self)
+
+		
+
+>>> a=B()
+
+>>> a.a
+123
+
+>>> class base(object):
+	def __init__(self,name):
+		self.name=name
+	def get_name(self):
+		return 'Hellow '+self.name
+
+	
+>>> s=base('Gopi raj')
+
+
+>>> s.name
+'Gopi raj'
+
+>>> s.get_name()
+'Hellow Gopi raj'
+
+>>>#==========================================================
+
+>>> class child(base):
+	def __init__(self,name,age):
+		self.age=age
+		base.__init__(self,name)
+	def get_age(self):
+		return self.name +'age is '+self.age
+
+	
+>>> s=child('Gopi',21)
+
+>>> s.name
+'Gopi'
+
+>>> s.age
+21
+
+
+>>> class child(base):
+	def __init__(self,name,age):
+		self.age=age
+		base.__init__(self,name)
+	def get_age(self):
+		return self.name +'age is '+str(self.age)
+
+	
+
+>>> s=child('Gopi',21)
+
+>>> s.get_age()
+'Gopiage is 21'
+
+>>> class child(base):
+	def __init__(self,name,age):
+		self.age=age
+		base.__init__(self,name)
+	def get_age(self):
+		return self.name +' age is '+str(self.age)
+
+	
+
+>>> s=child('Gopi',21)
+
+>>> s.name
+'Gopi'
+
+>>> s.age
+21
+
+>>> s.get_age()
+'Gopi age is 21'
+
+>>> s.get_name()
+'Hellow Gopi'
+
+
+>>> s=child('Gopi Raj',21)
+
+>>> s.name
+'Gopi Raj'
+
+>>> s.age
+21
+
+>>> s.get_age()
+'Gopi Raj age is 21'
+
+>>> s.get_name()
+'Hellow Gopi Raj'
+
+>>> class base(object):
+	def __init__(self,name):
+		self.name=name
+	def get_name(self):
+		return 'hellow '+self.name
+	def isEmployee(self):
+		return False
+
+	
+>>> class child(base):
+	def isEmployee(self):
+		return True
+
+	
+>>> s=child('Gopi')
+
+>>> s.name
+'Gopi'
+
+>>> s.get_name()
+'hellow Gopi'
+
+>>> s.isEmployee()
+True
+
+>>> class my_class1(object):
+	def fuction1(self):
+		print('im from fuction1 in my_class1')
+
+		
+>>> class my_class(my_class1):
+	def fuction2(self):
+		print('im from fuction2 in my_claSS')
+
+		
+>>> s=my_class()
+
+>>> s.fuction1
+<bound method my_class1.fuction1 of <__main__.my_class object at 0x0000015D3DB2C850>>
+
+>>> s.fuction1()
+im from fuction1 in my_class1
+
+>>> s.fuction2()
+im from fuction2 in my_claSS
+
+
+>>> d=my_class1()
+
+>>> d.fuction1()
+im from fuction1 in my_class1
+
+>>> # multiple inheritence
+
+>>> def father(object):
+	father=''
+	def father(self):
+		return self.father
+
+	
+>>> class father(object):
+	father=''
+	def father(self):
+		return self.father
+
+	
+>>> s=father()
+
+>>> s.father
+<bound method father.father of <__main__.father object at 0x0000015D3DBCBFD0>>
+
+>>> s.father()
+<bound method father.father of <__main__.father object at 0x0000015D3DBCBFD0>>
+
+>>> s.father
+<bound method father.father of <__main__.father object at 0x0000015D3DBCBFD0>>
+
+>>> s.father()
+<bound method father.father of <__main__.father object at 0x0000015D3DBCBFD0>>
+
+>>> s.father='Shanmugam'
+
+
+
+>>> class father(object):
+	father=''
+	def father_fun(self):
+		return self.father
+
+	
+>>> s=father()
+
+>>> s.father
+''
+
+>>> s.father_fun()
+''
+
+>>> class mother:
+	mother=''
+	def mother(self):
+		return self.mother
+
+	
+>>> s=mother()
+
+>>> s.mother
+<bound method mother.mother of <__main__.mother object at 0x0000015D3DBCBFD0>>
+
+>>> class mother:
+	mother=''
+	def mother_fun(self):
+		return self.mother
+
+	
+
+>>> s=mother()
+
+>>> s.mother
+''
+
+>>> s.mother_fun()
+''
+>>> s.mother='Parimal'
+
+>>> s.mother_fun
+<bound method mother.mother_fun of <__main__.mother object at 0x0000015D3DBDEB20>>
+
+>>> s.mother_fun()
+'Parimal'
+
+>>> s.mother
+'Parimal'
+
+>>> class child(father,mother):
+	def parent(self):
+		print('father name:',self.father)
+		print('mother name:',self.mother)
+
+		
+
+>>> s=child()
+
+>>> s.father
+''
+
+>>> s.mother
+''
+
+>>> s.father_fun()
+''
+
+>>> s.mother_fun()
+''
+>>> s.parent()
+father name: 
+mother name: 
+
+>>> s.father='Shanmugam'
+
+>>> s.mother='Parimala'
+
+
+>>> s.father_fun()
+'Shanmugam'
+
+>>> s.mother_fun()
+'Parimala'
+
+>>> s.father
+'Shanmugam'
+
+>>> #-----------------------------------------
+
+
+>>> class g_father(object):
+	def __init__(self,g_f_name):
+		self.g_fathername=g_f_name
+
+		
+
+>>> class father(g_father):
+	def __init__(self,f_n,g_f_n):
+		self.father_name=f_n
+		g_father.__init__(self,g_f_n)
+
+		
+>>> s=father('Shanmugam','sudukaru Raja')
+
+>>> s.g_fathername
+'sudukaru Raja'
+
+>>> s.father_name
+'Shanmugam'
+
+
+>>> class son(father):
+	def __init__(self,son_name,father_name,g_father_name):
+		self.son_name=son_name
+		father.__init__(self,father_name,g_father_name)
+
+		
+>>> s=son('Gopi raj','shanmugam','athanari saami')
+
+>>> s.father_name
+'shanmugam'
+
+>>> s.g_fathername
+'athanari saami'
+>>> s.son_name
+'Gopi raj'
+
+>>> #------------------------------------
+
+>>> #  hierarchical inheritance
+
+
+>>> class parent(object):
+	def function1(self):
+		print('im from parent fuction 1')
+
+		
+>>> class yielder_son(parent):
+	def fuction2(self):
+		print('im from fuction 2 in yielder_son')
+
+		
+>>> class younger_son(parent):
+	def fuction3(self):
+		print('im from fuction3 in younger son')
+
+		
+
+>>> obj1=yielder_son()
+
+>>> obj1.function1()
+
+im from parent fuction 1
+
+>>> obj1.fuction2()
+im from fuction 2 in yielder_son
+
+
+>>> obj2=younger_son()
+
+>>> obj2.function1()
+im from parent fuction 1
+
+>>> obj2.fuction3()
+im from fuction3 in younger son
+
