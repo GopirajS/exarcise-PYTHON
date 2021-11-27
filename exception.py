@@ -456,4 +456,341 @@ else:
     
 Enter a number upto 100: 1
 1 is within the allowed range
+
+
+
+>>>#========================================================================
+
+
+
+Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
 >>> 
+>>> 
+>>> amount=1000
+>>> 
+>>> if (amount>100)
+SyntaxError: invalid syntax
+>>> 
+>>> 
+>>> mark=1000
+\
+>>> mark
+1000
+>>> 
+>>> a=mark/0
+Traceback (most recent call last):
+  File "<pyshell#10>", line 1, in <module>
+    a=mark/0
+ZeroDivisionError: division by zero
+>>> 
+>>> 
+>>> 
+>>> a=[1,2,3,4]
+>>> a[0]
+1
+>>> a[2]
+3
+
+>>> a[3]
+4
+>>> a[4]
+Traceback (most recent call last):
+  File "<pyshell#18>", line 1, in <module>
+    a[4]
+IndexError: list index out of range
+>>> 
+>>> 
+>>> try:
+	print('second element of list of a d%'%(a[1]))
+except:
+	print('list index is out of range')
+
+	
+list index is out of range
+>>> try:
+	print('second element of list of a d%' %(a[1]))
+except:
+	print('list index is out of range')
+
+	
+list index is out of range
+>>>  a[1]
+ 
+SyntaxError: unexpected indent
+>>> a[1]
+2
+>>> 
+>>> 
+>>> try:
+	print('second element of list of a :' ,a[1])
+except:
+	print('list index is out of range')
+
+	
+second element of list of a : 2
+>>> 
+>>> 
+>>> 
+>>> try:
+	print('second element of list of a :' ,a[1])
+	print('out of range element a:',a[10])
+except:
+	print('list index is out of range')
+
+	
+second element of list of a : 2
+list index is out of range
+>>> 
+>>> try:
+	print('out of range element a:',a[10])
+	print('second element of list of a :' ,a[1])
+	
+except:
+	print('list index is out of range')
+
+	
+list index is out of range
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def fun(x):
+	b=x/(x-3)
+	print('value of b =',b)
+
+	
+>>> fun(3)
+Traceback (most recent call last):
+  File "<pyshell#50>", line 1, in <module>
+    fun(3)
+  File "<pyshell#49>", line 2, in fun
+    b=x/(x-3)
+ZeroDivisionError: division by zero
+>>> fun('gopi')
+Traceback (most recent call last):
+  File "<pyshell#51>", line 1, in <module>
+    fun('gopi')
+  File "<pyshell#49>", line 2, in fun
+    b=x/(x-3)
+TypeError: unsupported operand type(s) for -: 'str' and 'int'
+>>> 
+>>> 
+>>> fun(5)
+value of b = 2.5
+>>> 
+>>> 
+>>> 
+>>> def fun(x):
+	if x<4:
+		b=x/(x-3)
+	print()
+
+	
+>>> def fun(x):
+	if x<4:
+		b=x/(x-3)
+	print(b)
+
+	
+>>> fun(3)
+Traceback (most recent call last):
+  File "<pyshell#65>", line 1, in <module>
+    fun(3)
+  File "<pyshell#64>", line 3, in fun
+    b=x/(x-3)
+ZeroDivisionError: division by zero
+>>> fun(4)
+Traceback (most recent call last):
+  File "<pyshell#66>", line 1, in <module>
+    fun(4)
+  File "<pyshell#64>", line 4, in fun
+    print(b)
+UnboundLocalError: local variable 'b' referenced before assignment
+>>> fun(5)
+Traceback (most recent call last):
+  File "<pyshell#67>", line 1, in <module>
+    fun(5)
+  File "<pyshell#64>", line 4, in fun
+    print(b)
+UnboundLocalError: local variable 'b' referenced before assignment
+>>> 
+>>> 
+>>> 
+>>> x=3
+>>> if x>2:
+	s=x+2
+
+	
+>>> s
+5
+>>> 
+>>> 
+>>> def fun(a):
+    if a < 4:
+        b = a/(a-3)
+ 
+    print("Value of b = ", b)
+
+    
+>>> fun(3)
+Traceback (most recent call last):
+  File "<pyshell#80>", line 1, in <module>
+    fun(3)
+  File "<pyshell#79>", line 3, in fun
+    b = a/(a-3)
+ZeroDivisionError: division by zero
+>>> fun(5)
+Traceback (most recent call last):
+  File "<pyshell#81>", line 1, in <module>
+    fun(5)
+  File "<pyshell#79>", line 5, in fun
+    print("Value of b = ", b)
+UnboundLocalError: local variable 'b' referenced before assignment
+>>> 
+>>> 
+>>> try:
+    fun(3)
+    fun(5)
+ 
+# note that braces () are necessary here for
+# multiple exceptions
+except ZeroDivisionError:
+    print("ZeroDivisionError Occurred and Handled")
+except NameError:
+    print("NameError Occurred and Handled")
+
+    
+ZeroDivisionError Occurred and Handled
+>>> try:
+    #fun(3)
+    fun(5)
+
+# note that braces () are necessary here for
+# multiple exceptions
+except ZeroDivisionError:
+    print("ZeroDivisionError Occurred and Handled")
+except NameError:
+    print("NameError Occurred and Handled")
+
+    
+NameError Occurred and Handled
+>>> 
+>>> 
+>>> def fun(a):
+    if a < 4:
+        b = a/(a-3)
+
+    print("Value of b = ", b)
+
+    
+>>> try:
+    #fun(3)
+    fun(5)
+
+# note that braces () are necessary here for
+# multiple exceptions
+except ZeroDivisionError:
+    print("ZeroDivisionError Occurred and Handled")
+except UnboundLocalError:
+    print("local variable 'b' referenced before assignment")
+
+    
+local variable 'b' referenced before assignment
+>>> 
+>>> try:
+    fun(3)
+    fun(5)
+
+# note that braces () are necessary here for
+# multiple exceptions
+except ZeroDivisionError:
+    print("ZeroDivisionError Occurred and Handled")
+except UnboundLocalError:
+    print("local variable 'b' referenced before assignment")
+
+    
+ZeroDivisionError Occurred and Handled
+>>> try:
+    fun(5)
+
+# note that braces () are necessary here for
+# multiple exceptions
+except ZeroDivisionError:
+    print("ZeroDivisionError Occurred and Handled")
+except UnboundLocalError:
+    print("local variable 'b' referenced before assignment")
+
+    
+local variable 'b' referenced before assignment
+>>> try:
+    fun(3)
+
+# note that braces () are necessary here for
+# multiple exceptions
+except ZeroDivisionError:
+    print("ZeroDivisionError Occurred and Handled")
+except UnboundLocalError:
+    print("local variable 'b' referenced before assignment")
+
+    
+ZeroDivisionError Occurred and Handled
+>>> 
+>>> 
+>>> 
+>>> 
+>>> def fun(a,b):
+	try:
+		c=((a+b)/(a-b))
+	except ZeroDivisionError:
+		print('a/b is divisin answer : 0')
+	else:
+		print(c)
+
+		
+>>> 
+>>> fun(1,2)
+-3.0
+>>> fun(3,3)
+a/b is divisin answer : 0
+>>> fun(3,4)
+-7.0
+>>> fun(3,2)
+5.0
+>>> fun(7,2)
+1.8
+>>> 
+
+>>> def fun(a,b):
+	try:
+		c=((a+b)/(a-b))
+	except ZeroDivisionError:
+		print('a/b is divisin answer : 0')
+	else:
+		print(c)
+	finally:
+		print('this is always exequat in finally')
+
+		
+>>> 
+>>> fun(1,2)
+-3.0
+this is always exequat in finally
+>>> fun(1,1)
+a/b is divisin answer : 0
+this is always exequat in finally
+>>> 
+>>> 
+>>> raise NameError('hi hellow')
+Traceback (most recent call last):
+  File "<pyshell#129>", line 1, in <module>
+    raise NameError('hi hellow')
+NameError: hi hellow
+>>> 
+>>> try:
+	raise NameError ('hi hellow')
+except NameError:
+	print('An exception')
+
+	
+An exception
