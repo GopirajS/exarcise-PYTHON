@@ -794,3 +794,306 @@ except NameError:
 
 	
 An exception
+
+
+>>>#======================================================
+
+>>>#===============================================
+
+>>> if(11>=10):
+	print('true')
+
+	
+true
+
+>>> if(11>=10)
+	print('true')
+	
+SyntaxError: invalid syntax
+
+>>> for i in range123
+SyntaxError: invalid syntax
+
+>>> for i in range(asd):
+	print(i)
+
+	
+Traceback (most recent call last):
+  File "<pyshell#9>", line 1, in <module>
+    for i in range(asd):
+NameError: name 'asd' is not defined
+
+>>> for i in range(asd)
+	print(i}
+	
+SyntaxError: invalid syntax
+
+>>> def div(x,y)
+SyntaxError: invalid syntax
+
+>>> def div(x,y):
+	try
+	
+SyntaxError: invalid syntax
+
+>>> def div(x,y):
+	try:
+		result=x//y
+		print('Yea! your ans is :',result)
+	except:
+		print('sorry your dividing by zero')
+
+	
+>>> div(2,3)
+Yea! your ans is : 0
+
+>>> div(2,35)
+Yea! your ans is : 0
+
+>>> div(7,35)
+Yea! your ans is : 0
+
+
+>>> 2//2
+1
+
+>>> div(7,3)
+Yea! your ans is : 2
+
+>>> div(1,0)
+sorry your dividing by zero
+
+>>> def div(x,y):
+	try:
+		result=x//y
+		print('Yea! your ans is :',result)
+	except:
+		print('exception cac')
+	except ZeroDivisionError:
+		print("ZeroDivisionError")
+		
+SyntaxError: default 'except:' must be last
+
+>>> def div(x,y):
+	try:
+		result=x//y
+		print('Yea! your ans is :',result)
+	except:
+		print('exception cac')
+	except: ZeroDivisionError:
+		print("ZeroDivisionError")
+		
+SyntaxError: invalid syntax
+
+
+>>> def div(x,y):
+	try:
+		result=x//y
+		print('Yea! your ans is :',result)
+
+	except ZeroDivisionError:
+		print("ZeroDivisionError")
+
+		
+>>> div(1,0)
+ZeroDivisionError
+
+>>> div(1,1)
+Yea! your ans is : 1
+
+>>> def div(x,y):
+	try:
+		result=x//y
+		print('Yea! your ans is :',result)
+
+	except ZeroDivisionError:
+		print("ZeroDivisionError")
+	except:
+		print('string')
+
+		
+>>> div('a','b')
+string
+
+>>> def div(x,y):
+	try:
+		result=x//y
+		print('Yea! your ans is :',result)
+	except:
+		print('string')	
+
+	except ZeroDivisionError:
+		print("ZeroDivisionError")
+
+SyntaxError: default 'except:' must be last
+
+>>> def div(x,y):
+	try:
+		c=x/y
+		print('result is :',c)
+	except:
+		print('exception accured')
+	except ZeroDivisionError:
+		print('canot divided by zero')
+		
+SyntaxError: default 'except:' must be last
+
+>>> def div(x,y):
+	try:
+		c=x/y
+		print('result is :',c)
+
+	except ZeroDivisionError:
+		print('canot divided by zero')
+	except:
+		print('exception accured')
+
+		
+>>> div(1,2)
+result is : 0.5
+
+>>> div(12,3)
+result is : 4.0
+
+>>> div(12,0)
+canot divided by zero
+
+>>> div(12,'a')
+exception accured
+
+>>> def div(x,y):
+	try:
+		c=x/y
+		
+
+	except ZeroDivisionError:
+		print('canot divided by zero')
+	except:
+		print('exception accured')
+	else:
+		print('result is :',c)
+
+		
+>>> div(1,2)
+result is : 0.5
+
+>>> div(12,34)
+result is : 0.35294117647058826
+
+>>> div(4,5)
+result is : 0.8
+
+>>> div(4,0)
+canot divided by zero
+
+>>> div(4,'A')
+exception accured
+
+>>> div(4,6)
+result is : 0.6666666666666666
+
+>>> def div(x,y):
+	try:
+		c=x/y
+
+
+	except ZeroDivisionError:
+		print('canot divided by zero')
+	except:
+		print('exception accured')
+	else:
+		print('result is :',c)
+	finally:
+		print('this code succusefully exsucute')
+
+		
+>>> div(2,3)
+result is : 0.6666666666666666
+this code succusefully exsucute
+
+>>> div(2,0)
+canot divided by zero
+this code succusefully exsucute
+
+>>> div(2,'A')
+exception accured
+this code succusefully exsucute
+
+>>> class myclas:
+	def __init__(self,name):
+		self.name=name
+	def print_msg(self):
+		print(self.name)
+
+		
+
+>>> myclas('Gopi')
+<__main__.myclas object at 0x000001DAA5E3EC70>
+
+>>> s=myclas('Gopi')
+
+>>> s.print_msg='myattribute'
+
+>>> s.print_msg
+'myattribute'
+
+>>> d=myclas('Sathish')
+
+>>> d.name
+'Sathish'
+
+>>> d.print_msg
+<bound method myclas.print_msg of <__main__.myclas object at 0x000001DAA7EFD850>>
+
+>>> d.print_msg()
+Sathish
+
+>>> d.name=gopi
+Traceback (most recent call last):
+  File "<pyshell#115>", line 1, in <module>
+    d.name=gopi
+NameError: name 'gopi' is not defined
+
+>>> d.name='gopi'
+
+>>> d.name
+'gopi'
+
+>>> d.print_msg
+<bound method myclas.print_msg of <__main__.myclas object at 0x000001DAA7EFD850>>
+
+>>> d.print_msg()
+gopi
+
+>>> d.print_msg='asdfghj'
+
+>>> d.print_msg
+'asdfghj'
+
+>>> d.name
+'gopi'
+
+>>> def fun(x):
+	try:
+		if x==1:
+			raise NameError ('this is NameError')
+		else:
+			raise SyntaxError('we occures syntax Error')
+	except NameError as e:
+		print(e)
+	except SyntaxError as e:
+		print(e)
+
+		
+>>> fun(1)
+this is NameError
+
+>>> fun(2)
+we occures syntax Error
+
+>>> fun()
+Traceback (most recent call last):
+  File "<pyshell#140>", line 1, in <module>
+    fun()
+TypeError: fun() missing 1 required positional argument: 'x'
+
