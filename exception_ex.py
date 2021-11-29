@@ -408,6 +408,139 @@ myclass('gopi')
 >>> s.with_traceback
 <built-in method with_traceback of myclass object at 0x000002AB866C4B80>
 
+	 
+	 
+>>>#================================================================
+
+
+>>> class myclass(Exception):
+	def __init__(self,value):
+		self.value=value
+	def __str__(self):
+		return self.value
+
+	
+>>> s=myclass('Error')
+
+>>> s.value
+'Error'
+
+>>> s.args
+('Error',)
+
+>>> class myclass():
+	def __init__(self,value):
+		self.value=value
+	def __str__(self):
+		return self.value
+
+	
+>>> s=myclass('Error')
+
+>>> s.value
+'Error'
+
+>>> raise s.value
+Traceback (most recent call last):
+  File "<pyshell#23>", line 1, in <module>
+    raise s.value
+TypeError: exceptions must derive from BaseException
+
+>>> class myclass(Exception):
+	def __init__(self,value):
+		self.value=value
+	def __str__(self):
+		return self.value
+
+	
+>>> s=myclass('Error')
+
+>>> raise s.value
+Traceback (most recent call last):
+  File "<pyshell#27>", line 1, in <module>
+    raise s.value
+TypeError: exceptions must derive from BaseException
+
+>>> try:
+	raise myclass('Gopi')
+except myclass as error:
+	print(error)
+
+	
+Gopi
+
+>>> class error(Exception):
+	pass
+
+
+>>> class my_class(error):
+	def __init__(self,prev,mul,resu):
+		self.prev=prev
+		self.mul=mul
+		self.resu=resu
+
+		
+
+>>> try:
+	raise(my_class('mul',2*3,'Not Allowed'))
+except my_class as e:
+	print('error occured is:',e.resu)
+
+	
+error occured is: Not Allowed
+
+>>> try:
+	raise(my_class('mul',2*3,'Not Allowed'))
+except my_class as error:
+	print('error occured is:',error.resu)
+
+	
+error occured is: Not Allowed
+
+>>> class my_class(RuntimeError):
+	def __init__(self,value):
+		self.value=value
+
+		
+
+>>> try:
+	raise my_class('error')
+except my_class as e:
+	print('erroe occured is:',e.args)
+
+	
+erroe occured is: ('error',)
+
+>>> try:
+	raise my_class('error')
+except my_class as e:
+	print(e.args)
+
+	
+('error',)
+
+>>> try:
+	raise my_class("error")
+except my_class as e:
+	print(e.args)
+
+	
+('error',)
+
+>>> class my_class(RuntimeError):
+	def __init__(self,value):
+		self.value=value
+
+		
+>>> s=my_class('Gopiraj')
+
+>>> s.args
+('Gopiraj',)
+
+>>> s.value
+'Gopiraj'
+
+	 
 >>> s.with_traceback()
 Traceback (most recent call last):
   File "<pyshell#148>", line 1, in <module>
