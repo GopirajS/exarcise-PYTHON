@@ -546,3 +546,143 @@ Traceback (most recent call last):
   File "<pyshell#148>", line 1, in <module>
     s.with_traceback()
 TypeError: BaseException.with_traceback() takes exactly one argument (0 given)
+
+	 
+
+>>> try:
+	print(10/0)
+except:
+	print('an exception raiced')
+finally:
+	print('stop the coding')
+
+	
+an exception raiced
+stop the coding
+
+>>> try:
+	amount=input('enter your amount:')	if
+	
+SyntaxError: invalid syntax
+
+>>> try:
+	amount=input('enter your amount:')
+	if amount<2000:
+		raise ValueError('you account money lower then minmun level')
+	print('your account current level maintaing')
+except ValueError as e:
+	print(e)
+finally:
+	print('coding success fully run')
+
+	
+enter your amount:1234
+coding success fully run
+Traceback (most recent call last):
+  File "<pyshell#24>", line 3, in <module>
+    if amount<2000:
+TypeError: '<' not supported between instances of 'str' and 'int'
+
+
+
+>>> try:
+	amount=int(input('enter your amount:'))
+	if amount<2000:
+		raise ValueError('you account money lower then minmun level')
+	print('your account current level maintaing')
+except ValueError as e:
+	print(e)
+finally:
+	print('coding success fully run')
+
+	
+enter your amount:1233
+you account money lower then minmun level
+coding success fully run
+
+
+>>> try:
+	amount=int(input('enter your amount:'))
+	if amount<2000:
+		raise ValueError('you account money lower then minmun level')
+	print('your account current level maintaing')
+except ValueError as e:
+	print(e)
+finally:
+	print('coding success fully run')
+
+	
+enter your amount:12345
+your account current level maintaing
+coding success fully run
+
+>>> print('local() method:::',locals())
+local() method::: {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'amount': 12345}
+
+>>> print('global() method:::',global())
+SyntaxError: invalid syntax
+
+>>>  globals()
+ 
+SyntaxError: unexpected indent
+
+>>> globals()
+{'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'amount': 12345}
+
+>>> def fun():
+	n='gopi'
+	a=21
+	c='salem'
+
+	
+>>> def fun():
+	n='gopi'
+	a=21
+	c='salem'
+	print(locals())
+
+	
+>>> fun()
+{'n': 'gopi', 'a': 21, 'c': 'salem'}
+
+
+>>> def fun():
+	n='gopi'
+	a=21
+	c='salem'
+	print('loval::',locals())
+	print('globals::',globals())
+
+	
+>>> fun()
+loval:: {'n': 'gopi', 'a': 21, 'c': 'salem'}
+globals:: {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'amount': 12345, 'fun': <function fun at 0x000001EEA2533550>}
+
+>>> def fun():
+	n='gopi'
+	a=21
+	c='salem'
+	print('loval::',locals()['n']='sathish')
+	print(n)
+	print('globals::',globals())
+	
+SyntaxError: expression cannot contain assignment, perhaps you meant "=="?
+
+>>> def fun():
+	n='gopi'
+	a=21
+	c='salem'
+	print('loval::',locals())
+	locals()['n']='sathish'
+	print(n)
+	print('globals::',globals())
+
+	
+>>> fun()
+loval:: {'n': 'gopi', 'a': 21, 'c': 'salem'}
+gopi
+globals:: {'__name__': '__main__', '__doc__': None, '__package__': None, '__loader__': <class '_frozen_importlib.BuiltinImporter'>, '__spec__': None, '__annotations__': {}, '__builtins__': <module 'builtins' (built-in)>, 'amount': 12345, 'fun': <function fun at 0x000001EEA25334C0>}
+
+
+	 
+	 
