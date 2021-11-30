@@ -685,4 +685,452 @@ globals:: {'__name__': '__main__', '__doc__': None, '__package__': None, '__load
 
 
 	 
+>>>#===================================================================================
+	 
+	 
+
+>>> try:
+	a=10/0
+	print(a)
+except:
+	print('Zerodivition error')
+finally:
+	print('coding is run succesh fully')
+
+	
+Zerodivition error
+coding is run succesh fully
+
+
+>>> try:
+	a=10/0
+	print(a)
+except ArithmeticError as  a:
+	print('Zerodivition error:',a)
+finally:
+	print('coding is run succesh fully')
+
+	
+Zerodivition error: division by zero
+coding is run succesh fully
+
+
+>>> try:
+	a=10/0
+	print(a)
+except Exception as a
+	print('Zerodivition error:',a)
+finally:
+	print('coding is run succesh fully')
+	
+SyntaxError: invalid syntax
+
+
+>>> try:
+	a=10/0
+	print(a)
+except Exception as a:
+	print('Zerodivition error:',a)
+finally:
+	print('coding is run succesh fully')
+
+	
+Zerodivition error: division by zero
+coding is run succesh fully
+
+
+>>> try:
+	a=10/0
+	print(a)
+except ZeroDivisionError as a:
+	print('Zerodivition error:',a)
+finally:
+	print('coding is run succesh fully')
+
+	
+Zerodivition error: division by zero
+coding is run succesh fully
+
+
+>>> try:
+	a=[1,2,3,4]
+	print(a[4])
+except LookupError as a:
+	print(a)
+finally:
+	print('success')
+
+	
+list index out of range
+success
+
+>>> class attribute(object):
+	pass
+
+>>> s=attribute()
+
+>>> s.attribute
+Traceback (most recent call last):
+  File "<pyshell#38>", line 1, in <module>
+    s.attribute
+AttributeError: 'attribute' object has no attribute 'attribute'
+
+>>> s.__str__()
+'<__main__.attribute object at 0x000001C30A53C850>'
+
+>>> s.__ge__('GOPi')
+NotImplemented
+
+>>> while True:
+	Name=input('enter your name')
+	print('hello ',Name)
+
+	
+enter your namegopi
+hello  gopi
+enter your namesathish
+hello  sathish
+enter your namegopal
+hello  gopal
+enter your nameindumathi
+hello  indumathi
+enter your namegowri
+hello  gowri
+enter your name
+Traceback (most recent call last):
+  File "<pyshell#49>", line 2, in <module>
+    Name=input('enter your name')
+KeyboardInterrupt
+
+
+>>> import math
+
+>>> help(math.exp)
+Help on built-in function exp in module math:
+
+exp(x, /)
+    Return e raised to the power of x.
+
+
+>>> math.exp(3)
+20.085536923187668
+
+>>> math.exp(1)
+2.718281828459045
+
+
+>>> print()
+
+>>> print(math.exp(3))
+20.085536923187668
+
+>>> print(math.exp(3000))
+Traceback (most recent call last):
+  File "<pyshell#62>", line 1, in <module>
+    print(math.exp(3000))
+OverflowError: math range error
+
+>>> math.exp(3000)
+Traceback (most recent call last):
+  File "<pyshell#63>", line 1, in <module>
+    math.exp(3000)
+OverflowError: math range error
+
+>>> try:
+	for i in range(5):
+		print('Yielded:',i)
+		yield i
+except GeneratorExit as a:
+	print(a)
+	
+SyntaxError: 'yield' outside function
+
+>>> try:
+	for i in range(5):
+		print('Yielded:',i)
+		yield i
+except GeneratorExit:
+	print("Exiting error")
+	
+SyntaxError: 'yield' outside function
+
+
+>>> try:
+	for i in range(5):
+		print('Yielded:',i)
+	yield i
+except GeneratorExit:
+	print("Exiting error")
+	
+SyntaxError: 'yield' outside function
+
+>>> try:
+	for i in range(5):
+		print('Yielded:',i)
+		yield i
+except GeneratorExit:
+	print("Exiting error")
+	
+SyntaxError: 'yield' outside function
+
+>>> import dummy_modules
+Traceback (most recent call last):
+  File "<pyshell#84>", line 1, in <module>
+    import dummy_modules
+ModuleNotFoundError: No module named 'dummy_modules'
+
+>>> from math import factorial
+
+>>> factorial(3)
+6
+
+>>> from math import factorials
+Traceback (most recent call last):
+  File "<pyshell#89>", line 1, in <module>
+    from math import factorials
+ImportError: cannot import name 'factorials' from 'math' (unknown location)
+
+>>> from math import factorial as f
+
+>>> f(3)
+6
+
+>>> array=[1,2,3]
+
+>>> array[4]
+Traceback (most recent call last):
+  File "<pyshell#97>", line 1, in <module>
+    array[4]
+IndexError: list index out of range
+
+>>> d={'name':}
+SyntaxError: invalid syntax
+
+>>> d={'name':'gopi','age':'21'}
+
+>>> d['name']
+'gopi'
+
+>>> d['city']
+Traceback (most recent call last):
+  File "<pyshell#104>", line 1, in <module>
+    d['city']
+KeyError: 'city'
+
+>>> def fun(x):
+	factorial=[]
+	for i in range(1,x+1):
+		if x%i==0:
+			factorial.append(i)
+	return factorial
+
+>>> num=123
+
+>>> fun(num)
+[1, 3, 41, 123]
+
+>>> num=600851475143
+
+>>> fun(num)
+Traceback (most recent call last):
+  File "<pyshell#118>", line 1, in <module>
+    fun(num)
+  File "<pyshell#114>", line 4, in fun
+    if x%i==0:
+KeyboardInterrupt
+
+>>> fun(num)
+Traceback (most recent call last):
+  File "<pyshell#119>", line 1, in <module>
+    fun(num)
+  File "<pyshell#114>", line 4, in fun
+    if x%i==0:
+KeyboardInterrupt
+
+
+>>> print 'gopi'
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print('gopi')?
+
+>>> def fun()
+SyntaxError: invalid syntax
+
+>>> def fun():
+	print ans
+	
+SyntaxError: Missing parentheses in call to 'print'. Did you mean print(ans)?
+>>> def fun():
+	print(namem)
+
+	
+>>> fun()
+Traceback (most recent call last):
+  File "<pyshell#128>", line 1, in <module>
+    fun()
+  File "<pyshell#127>", line 2, in fun
+    print(namem)
+NameError: name 'namem' is not defined
+
+
+>>> class my_class(object):
+	def print_msg(self):
+		print(self.__class__.__name__)
+
+		
+>>> s=my_class()
+
+>>> s.print_msg()
+my_class
+
+
+>>> class my_class(object):
+	def print_msg(self):
+		print(self.__class__)
+
+		
+
+>>> s=my_class()
+
+>>> s.print_msg()
+<class '__main__.my_class'>
+
+>>> class bash_class(object):
+	def __init__(self):
+		super(bash_class,self).__init__()
+	def do_somthing(self):
+		raise NotImplementedError(self.__class__.__name__)
+
+	
+
+>>> class my_class(bash_class):
+	def do_somthing(self):
+		print(self.__class__.__name__)
+
+		
+>>> my_class().do_somthing()
+my_class
+
+>>> bash_class().do_somthing()
+Traceback (most recent call last):
+  File "<pyshell#159>", line 1, in <module>
+    bash_class().do_somthing()
+  File "<pyshell#153>", line 5, in do_somthing
+    raise NotImplementedError(self.__class__.__name__)
+NotImplementedError: bash_class
+
+>>> import sys
+
+>>> print('regular integer:',sys.maxsize)
+regular integer: 9223372036854775807
+
+>>> 9223372036854775807+12
+9223372036854775819
+
+>>> 9223372036854775807*123
+1134474760533137424261
+
+>>> 9223372036854775807*12345678
+113868781241213194875412146
+
+>>> 9223372036854775807*12345678123456789
+113868782379901090297892426447103723
+
+>>> 9223372036854775807*123456781234567891234567890
+1138687823799010914365803218695840034471037230
+
+
+
+>>> import sys
+
+>>> try:
+	i=sys.maxsize*3
+	print('	NO Overflow for ',type(i),'i=',i)
+except OverflowError as e:
+	print(e)
+
+	
+	NO Overflow for  <class 'int'> i= 27670116110564327421
+
+>>> try:
+	i=sys.maxsize*3
+	print('	NO Overflow for ',type(i),'i=',i)
+except OverflowError ,err:
+	print(err)
+	
+SyntaxError: invalid syntax
+
+>>> arr=[1,2,3,4]
+
+>>> i=iter(arr)
+
+>>> for i in i:
+	print(next(i))
+
+	
+Traceback (most recent call last):
+  File "<pyshell#17>", line 2, in <module>
+    print(next(i))
+TypeError: 'int' object is not an iterator
+
+>>> i
+1
+
+>>> i
+1
+
+>>> arr=[4,3,2,1]
+
+>>> num=iter(arr)
+
+>>> num
+<list_iterator object at 0x0000015C8D58BD90>
+
+>>> next(num)
+4
+
+>>> next(num)
+3
+
+>>> next(num)
+2
+
+>>> next(num)
+1
+
+>>> next(num)
+Traceback (most recent call last):
+  File "<pyshell#31>", line 1, in <module>
+    next(num)
+StopIteration
+
+>>> eval('gopiraj sathish kuamr')
+Traceback (most recent call last):
+  File "<pyshell#34>", line 1, in <module>
+    eval('gopiraj sathish kuamr')
+  File "<string>", line 1
+    gopiraj sathish kuamr
+            ^
+SyntaxError: invalid syntax
+
+>>> try:
+	eval('gopiraj sathish kuamr')
+except SyntaxError as s:
+	print(s.filename,s.lineno,s.offset,s.text)
+
+	
+<string> 1 9 gopiraj sathish kuamr
+
+>>> try:
+	s=eval('gopiraj sathish kuamr')
+except SyntaxError as s:
+	print(s.filename,s.lineno,s.offset,s.text)
+
+	
+<string> 1 9 gopiraj sathish kuamr
+
+>>> s
+Traceback (most recent call last):
+  File "<pyshell#44>", line 1, in <module>
+    s
+NameError: name 's' is not defined
+	 
 	 
