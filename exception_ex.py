@@ -1338,4 +1338,9 @@ Enter a number12 33
 >>> print(x, '' ,y)
 12  33	 
 	 
+>>>print(x)
+12
+	 
+>>>print('Gopiraj')	 
+Gopiraj
 	 
