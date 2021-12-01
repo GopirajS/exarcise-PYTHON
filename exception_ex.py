@@ -1134,3 +1134,208 @@ Traceback (most recent call last):
 NameError: name 's' is not defined
 	 
 	 
+
+	 
+>>>#======================================================
+	 
+	 
+>>> class Networkerror(RuntimeError):
+	def __init__(self,name):
+		self.name=name
+
+	
+>>> s=Networkerror('gopiraj')
+
+>>> s.args
+('gopiraj',)
+
+>>> s.name
+'gopiraj'
+
+
+>>> try:
+	raise Networkerror('Gopiraj')
+except Networkerror as e:
+	print(e)
+
+	
+Gopiraj
+
+
+>>> class myerror(Exception):
+	def __init__(self,value):
+		self.value=value
+	def __str__(self):
+		return repr(self.value)
+
+	
+
+>>> try:
+	raise myerror('user define error is: NOT VALIED')
+except myerror as s:
+	print(s)
+
+	
+'user define error is: NOT VALIED'
+
+
+>>> class myerror(Exception):
+	def __init__(self,value):
+		self.value=value
+	def __str__(self):
+		return self.value
+
+	
+
+
+>>> try:
+	raise myerror('user define error is: NOT VALIED')
+except myerror as s:
+	print(s)
+
+	
+user define error is: NOT VALIED
+
+
+>>> class Error(Exception):
+	def __init__(self,value):
+		self.value=value
+
+	
+
+>>> class Error(Exception):
+	pass
+
+
+
+
+
+>>> class TransitionError(Error):
+	def __init__(self,value):
+		self.value=value
+	def __str__(self):
+		return self.value
+
+	
+
+
+>>> try:
+	raise TransitionError('super class exception : NOt VALIED')
+except TransitionError as e:
+	print(e)
+
+	
+super class exception : NOt VALIED
+
+
+>>> class Networkerro(RuntimeError):
+	def __init__(self,value):
+		print(value)
+
+		
+
+>>> try:
+	raise Networkerro('user definr super class exception : NOT VALIED')
+except Networkerro as e:
+	print(e)
+
+	
+user definr super class exception : NOT VALIED
+user definr super class exception : NOT VALIED
+
+
+>>> try:
+	raise Networkerro('user definr super class exception : NOT VALIED')
+except Networkerro as e:
+	print(e)
+
+	
+user definr super class exception : NOT VALIED
+user definr super class exception : NOT VALIED
+
+
+>>> class Networkerror(RuntimeError):
+	def __init__(self,name):
+		self.name=name
+
+		
+>>> try:
+	raise Networkerror('Gopiraj')
+except Networkerror as e:
+	print(e)
+
+	
+Gopiraj
+
+
+>>> try:
+	raise Networkerror('user definr super class exception : NOT VALIED')
+except Networkerror as e:
+	print(e)
+
+	
+user definr super class exception : NOT VALIED
+
+
+
+>>> class Networkerro(RuntimeError):
+
+	def __init__(self,value):
+		self.value=value
+
+		
+
+>>> try:
+	raise Networkerro('user definr super class exception : NOT VALIED')
+except Networkerro as e:
+	print(e)
+
+	
+user definr super class exception : NOT VALIED
+
+
+>>> class myclass(object):
+	def __init__(self,value):
+		print(value)
+
+		
+
+>>> s=myclass('Gopi')
+Gopi
+
+>>> s.__str__
+<method-wrapper '__str__' of myclass object at 0x000001B4E7E5EC70>
+
+>>> s.__str__()
+'<__main__.myclass object at 0x000001B4E7E5EC70>'
+
+
+>>> str
+<class 'str'>
+
+
+
+>>> x,y=input('Enter a number').split(' ')
+Enter a number12 33
+
+>>> x
+'12'
+
+>>> y
+'33'
+
+>>> x=int(x)
+
+>>> x
+12
+
+>>> y=int(y)
+
+>>> y
+33
+
+
+>>> print(x, '' ,y)
+12  33	 
+	 
+	 
