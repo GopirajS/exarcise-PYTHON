@@ -1344,3 +1344,285 @@ Enter a number12 33
 >>>print('Gopiraj')	 
 Gopiraj
 	 
+>>>#=========================================================
+	 
+	 
+	 
+	 
+
+>>> from math import cube
+Traceback (most recent call last):
+  File "<pyshell#1>", line 1, in <module>
+    from math import cube
+ImportError: cannot import name 'cube' from 'math' (unknown location)
+
+>>> l=[1,2,3,4]
+
+>>> l[0]
+1
+
+>>> l[2]
+3
+
+>>> l[3]
+4
+
+>>> l[5]
+Traceback (most recent call last):
+  File "<pyshell#8>", line 1, in <module>
+    l[5]
+IndexError: list index out of range
+
+
+>>> i=iter(l)
+
+>>> next(i,'list out of range')
+1
+
+>>> next(i,'list out of range')
+2
+
+>>> next(i,'list out of range')
+3
+
+>>> next(i,'list out of range')
+4
+
+>>> next(i,'list out of range')
+'list out of range'
+
+>>> next(i,'list out of range')
+'list out of range'
+
+>>> next(i)
+Traceback (most recent call last):
+  File "<pyshell#17>", line 1, in <module>
+    next(i)
+StopIteration
+
+>>> d={'name':'Gopiraj','age':'21'}
+
+>>> d['name']
+'Gopiraj'
+
+>>> d.values('name')
+Traceback (most recent call last):
+  File "<pyshell#24>", line 1, in <module>
+    d.values('name')
+TypeError: dict.values() takes no arguments (1 given)
+
+>>> d.values()
+dict_values(['Gopiraj', '21'])
+
+>>> s=d.values()
+
+>>> for i in s:
+	i
+
+	
+'Gopiraj'
+'21'
+
+>>> '2'+2
+Traceback (most recent call last):
+  File "<pyshell#32>", line 1, in <module>
+    '2'+2
+TypeError: can only concatenate str (not "int") to str
+
+>>> '2'*2
+'22'
+
+>>> 2+'2'
+Traceback (most recent call last):
+  File "<pyshell#34>", line 1, in <module>
+    2+'2'
+TypeError: unsupported operand type(s) for +: 'int' and 'str'
+
+>>> age
+Traceback (most recent call last):
+  File "<pyshell#38>", line 1, in <module>
+    age
+NameError: name 'age' is not defined
+
+
+>>> x=100/0
+Traceback (most recent call last):
+  File "<pyshell#41>", line 1, in <module>
+    x=100/0
+ZeroDivisionError: division by zero
+
+>>> x
+Traceback (most recent call last):
+  File "<pyshell#42>", line 1, in <module>
+    x
+NameError: name 'x' is not defined
+
+>>> while True:
+	name=input('Enter your name:')
+	print(name)
+
+	
+Enter your name:gopi
+gopi
+Enter your name:sathish
+sathish
+Enter your name:parimal
+parimal
+Enter your name:
+Traceback (most recent call last):
+  File "<pyshell#51>", line 2, in <module>
+    name=input('Enter your name:')
+KeyboardInterrupt
+
+
+>>> try:
+	x=12
+	y='9'
+	ans=x+y
+	print(ans)
+except:
+	print('Some Error Occured')
+
+	
+Some Error Occured
+
+
+>>> try:
+	x=12
+	y='9'
+	ans=x+y
+	print(ans)
+except TypeError:
+	print('Unsupport Operator find')
+
+	
+Unsupport Operator find
+
+>>> try:
+	ans=12/0
+	print(ans)
+except TypeError:
+	print('Unsupport operaor')
+except ZeroDivisionError:
+	print('canot divided number by zero')
+
+	
+canot divided number by zero
+
+
+>>> try:
+	print('Try block')
+	n=int(input("Enter a number:"))
+	m=int(input('Enter a number:'))
+	ans=n/m
+except ZeroDivisionError:
+	print('Except ZerodivisionError block')
+	print('Canot divided a number by zero')
+else:
+	print('Else Block')
+	print("Division is :",ans)
+finally:
+	print('finally block')
+
+	
+Try block
+Enter a number:2
+Enter a number:3
+Else Block
+Division is : 0.6666666666666666
+finally block
+
+>>> x
+12
+
+>>> n
+2
+
+>>> m
+3
+
+>>> try:
+	print('Try block')
+	n=int(input("Enter a number:"))
+	m=int(input('Enter a number:'))
+	ans=n/m
+except ZeroDivisionError:
+	print('Except ZerodivisionError block')
+	print('Canot divided a number by zero')
+else:
+	print('Else Block')
+	print("Division is :",ans)
+finally:
+	print('finally block')
+	n,m=0,0
+
+	
+Try block
+Enter a number:
+finally block
+Traceback (most recent call last):
+  File "<pyshell#110>", line 3, in <module>
+    n=int(input("Enter a number:"))
+ValueError: invalid literal for int() with base 10: ''
+
+
+>>> try:
+	print('Try block')
+	n=int(input("Enter a number:"))
+	m=int(input('Enter a number:'))
+	ans=n/m
+except ZeroDivisionError:
+	print('Except ZerodivisionError block')
+	print('Canot divided a number by zero')
+else:
+	print('Else Block')
+	print("Division is :",ans)
+finally:
+	print('finally block')
+	n,m=0,0
+
+	
+Try block
+Enter a number:3
+Enter a number:5
+Else Block
+Division is : 0.6
+finally block
+
+
+>>> n
+0
+
+>>> m
+0
+
+
+>>> try:
+	x=int(input("enter a number:"))
+	if x>100:
+		raise ValueError(x)
+except ValueError:
+	print(x,'Is out of allowed range')
+else:
+	print(x,'is within the allowed range')
+
+	
+enter a number:3
+3 is within the allowed range
+
+
+>>> try:
+	x=int(input("enter a number:"))
+	if x>100:
+		raise ValueError(x)
+except ValueError:
+	print(x,'Is out of allowed range')
+else:
+	print(x,'is within the allowed range')
+
+	
+enter a number:123
+123 Is out of allowed range	 
+	 
+	 
+	 
