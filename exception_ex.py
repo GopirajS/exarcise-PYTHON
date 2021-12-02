@@ -1625,4 +1625,367 @@ enter a number:123
 123 Is out of allowed range	 
 	 
 	 
+>>>#=====================================================
+
+
+>>> x=0
+
+
+>>> assert x>0
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    assert x>0
+AssertionError
+
+>>> x=0
+
+>>> assert x>=0
+
+>>> print('x value is :',x)
+x value is : 0
+
+
+>>> def fun(x):
+	assert x>=0,'only positive number alllowed'
+	print(x*x)
+
+	
+>>> fun(2)
+4
+
+>>> fun(-2)
+Traceback (most recent call last):
+  File "<pyshell#17>", line 1, in <module>
+    fun(-2)
+  File "<pyshell#15>", line 2, in fun
+    assert x>=0,'only positive number alllowed'
+AssertionError: only positive number alllowed
+
+>>> try:
+	fun(2)
+except AssertionError as msg:
+	print(msg)
+
+	
+4
+
+>>> try:
+	fun(22)
+except AssertionError as msg:
+	print(msg)
+
+	
+484
+
+>>> try:
+	fun(22)
+except AssertionError as msg:
+	print(msg)
+
+	
+484
+
+>>> try:
+	fun(-22)
+except AssertionError as msg:
+	print(msg)
+
+	
+only positive number alllowed
+
+
+
+>>> class Student(object):
+	attr='Muthayammal collage of Arts & Science' #class atrribute
+	def __init__(self,name,age):
+		self.name=name #instance Attribute
+		self.age=age # insstance Attribute
+
+		
+
+>>> obj=Student('GOPIRAJ',22)
+
+>>> obj.attr
+'Muthayammal collage of Arts & Science'
+
+>>> obj.age
+22
+
+>>> obj.name
+'GOPIRAJ'
+
+>>> class Student(object):
+	_attr='Muthayammal collage of Arts & Science' #class atrribute
+	def __init__(self,name,age):
+		self.name=name #instance Attribute
+		self.age=age # insstance Attribute
+
+		
+>>> obj=Student('GOPIRAJ',22)
+
+>>> obj.age
+22
+
+>>> obj.name
+'GOPIRAJ'
+
+>>> obj._attr
+'Muthayammal collage of Arts & Science'
+
+
+>>> class Student(object):
+	_attr='Muthayammal collage of Arts & Science' #class atrribute
+	def __init__(self,name,age):
+		self.name=name #instance Attribute
+		self.age=age # insstance Attribute
+	def msg(self):
+		print(self.name ' collage is :',self._attr)
+		
+SyntaxError: invalid syntax
+
+
+>>> class Student(object):
+	_attr='Muthayammal collage of Arts & Science' #class atrribute
+	def __init__(self,name,age):
+		self.name=name #instance Attribute
+		self.age=age # insstance Attribute
+	def msg(self):
+		print(self.name ,' collage is :',self._attr)
+
+		
+>>> obj=Student('GOPIRAJ',22)
+
+>>> obj.age
+22
+
+>>> obj.msg()
+GOPIRAJ  collage is : Muthayammal collage of Arts & Science
+
+
+>>> class Student(object):
+	_attr='Muthayammal collage of Arts & Science' #class atrribute
+	def __init__(self,name,age):
+		self.name=name #instance Attribute
+		self.age=age # insstance Attribute
+	def msg(self):
+		print(self.name ,' collage is :',self.attr)
+
+		
+>>> obj=Student('GOPIRAJ',22)
+
+>>> obj.msg()
+Traceback (most recent call last):
+  File "<pyshell#77>", line 1, in <module>
+    obj.msg()
+  File "<pyshell#75>", line 7, in msg
+    print(self.name ,' collage is :',self.attr)
+AttributeError: 'Student' object has no attribute 'attr'
+
+
+>>> class Student(object):
+	_attr='Muthayammal collage of Arts & Science' #class atrribute
+	def __init__(self,name,age):
+		self.name=name #instance Attribute
+		self.age=age # insstance Attribute
+	def msg(self):
+		print(self.name ,' collage is :',Student._attr)
+
+		
+>>> obj=Student('GOPIRAJ',22)
+
+>>> obj.msg()
+GOPIRAJ  collage is : Muthayammal collage of Arts & Science
+
+
+>>> class Student(object):
+	_attr='Muthayammal collage of Arts & Science' #class atrribute
+	def __init__(self,name,age):
+		self.name=name #instance Attribute
+		self.age=age # insstance Attribute
+	def msg(self):
+		print(self.name ,' collage is :',Student.attr)
+
+		
+>>> obj=Student('GOPIRAJ',22)
+
+>>> obj.msg()
+Traceback (most recent call last):
+  File "<pyshell#89>", line 1, in <module>
+    obj.msg()
+  File "<pyshell#87>", line 7, in msg
+    print(self.name ,' collage is :',Student.attr)
+AttributeError: type object 'Student' has no attribute 'attr'
+
+
+>>> class base(object):
+	_clg=MCAS
+	def __init__(self,name):
+		self.name=name
+	def greet(self):
+		print('hellow mr ',self.name)
+
+		
+Traceback (most recent call last):
+  File "<pyshell#99>", line 1, in <module>
+    class base(object):
+  File "<pyshell#99>", line 2, in base
+    _clg=MCAS
+NameError: name 'MCAS' is not defined
+
+>>> class base(object):
+	_clg='MCAS'
+	def __init__(self,name):
+		self.name=name
+	def greet(self):
+		print('hellow mr ',self.name)
+
+		
+>>> class superclass(base):
+	def __init__(self):
+		super(base).__init__()
+	def msg(self):
+		print(base._clg)
+
+		
+
+>>> s=superclass()
+
+>>> s.greet
+<bound method base.greet of <__main__.superclass object at 0x000001F215F4E1C0>>
+
+>>> s.greet()
+Traceback (most recent call last):
+  File "<pyshell#113>", line 1, in <module>
+    s.greet()
+  File "<pyshell#103>", line 6, in greet
+    print('hellow mr ',self.name)
+AttributeError: 'superclass' object has no attribute 'name'
+
+>>> class superclass(base):
+	def __init__(self):
+		super(base).__init__('GOPi')
+	def msg(self):
+		print(base._clg)
+
+		
+>>> s=superclass()
+Traceback (most recent call last):
+  File "<pyshell#116>", line 1, in <module>
+    s=superclass()
+  File "<pyshell#115>", line 3, in __init__
+    super(base).__init__('GOPi')
+TypeError: super() argument 1 must be type, not str
+
+
+>>> class base(object):
+	def __init__(self,name):
+		self._name=name
+		
+	def name(self):
+		print('Hellow mr ',self._name)
+	def setter(self,new_name):
+		self._name=new_name
+
+		
+>>> b=base('Gopi')
+
+>>> b.name()
+Hellow mr  Gopi
+
+>>> b.setter('Sathish kumar')
+
+>>> b.name()
+Hellow mr  Sathish kumar
+
+
+>>> class base(object):
+	def __init__(self,name):
+		self._name=name
+	@property	
+	def name(self):
+		print('Hellow mr ',self._name)
+	@name.setter	
+	def name(self,new_name):
+		self._name=new_name
+
+		
+
+>>> s=base('Gopi')
+
+>>> s.name
+Hellow mr  Gopi
+
+>>> s.name='sathish kuamr'
+
+>>> s.name
+Hellow mr  sathish kuamr
+
+>>> class base():
+	def __init__(self,name):"
+	
+SyntaxError: EOL while scanning string literal
+
+>>> class base():
+	__clg="MCAS
+	def __init__(self,name):
+		self.__name=name
+		
+SyntaxError: EOL while scanning string literal
+
+>>> class base():
+
+	__clg="MCAS"
+	def __init__(self,name):
+		self.__name=name
+	def msg(self):
+		print("hellow mr.",self.__name)
+		print('His collage is ',__clg)
+
+		
+>>> s=base('Gopi raj')
+
+>>> s.msg()
+hellow mr. Gopi raj
+Traceback (most recent call last):
+  File "<pyshell#156>", line 1, in <module>
+    s.msg()
+  File "<pyshell#154>", line 7, in msg
+    print('His collage is ',__clg)
+NameError: name '_base__clg' is not defined
+
+
+>>> class base():
+	__clg="MCAS"
+	def __init__(self,name):
+		self.__name=name
+	def msg(self):
+		print("hellow mr.",self.__name)
+		print('His collage is ',base.__clg)
+
+		
+>>> s=base('Gopi raj')
+
+
+>>> s.msg()
+hellow mr. Gopi raj
+His collage is  MCAS
+
+>>> s._base.__name
+Traceback (most recent call last):
+  File "<pyshell#169>", line 1, in <module>
+    s._base.__name
+AttributeError: 'base' object has no attribute '_base'
+
+>>> s._base__name
+'Gopi raj'
+
+>>> s._base__name=
+SyntaxError: invalid syntax
+
+>>> s._base__name='sathish kumar'
+
+
+>>> s.msg()
+hellow mr. sathish kumar
+His collage is  MCAS
 	 
