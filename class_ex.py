@@ -560,3 +560,245 @@ Setting value to Indu
 Getting value
 'Indu'
 
+>>>#======================================================================================
+
+
+>>> class data(object):
+	attr1='mammal'
+	attr2='dog'
+	def print_msg(self):
+		print('i m ',data.attr1)
+		print('andd ,im ',data.attr2)
+
+		
+>>> obj=data()  # obj is identity of class
+
+
+>>> obj.attr1
+'mammal'
+
+>>> obj.attr2  # attr2 is reference of class attribute
+'dog'
+
+
+>>> obj.attr1
+'mammal'
+
+>>> obj.print_msg()
+i m  mammal
+andd ,im  dog
+
+
+>>> class data(object):
+	def __init__(self,name,age,sex):
+		self.name=name
+		self.age=age
+		self.sex=sex
+	def display(self):
+		if self.sex=='male':
+			print('Hellow MR.',self.name)
+			print('and his age is',self.age)
+		else:
+			print('Hellow MIS.',self.name)
+			print('ans her age is',self.age)
+		print('Thanking you...')
+
+		
+
+>>> s=data('Gopi',21,'male')
+
+>>> s.sex
+'male'
+
+>>> s.age
+21
+
+>>> s.name
+'Gopi'
+
+>>> s.display()
+Hellow MR. Gopi
+and his age is 21
+Thanking you...
+
+
+>>> s=data('Indumathi',21,'female')
+
+>>> s.name
+'Indumathi'
+
+>>> s.sex
+'female'
+
+>>> s.age
+21
+
+>>> s.display()
+Hellow MIS. Indumathi
+ans her age is 21
+Thanking you...
+
+
+
+>>> class animal(object):
+	def __init__(self,breed,color):
+		self.breed=breed
+		self.color=color
+	def print_msg(self):
+		print('breed name is :',self.breed)
+		print('breed color is :',self.color)
+
+		
+>>> s=animal('Buls','brown')
+
+>>> s.print_msg()
+breed name is : Buls
+breed color is : brown
+
+>>> s.breed
+'Buls'
+
+>>> s.color
+'brown'
+
+>>> class animal(object):
+	animal='dog'
+	def __init__(self,breed,color):
+		self.breed=breed
+		self.color=color
+	def print(self):
+		print('breed is',self.breed)
+	def color(self,value):
+		self.color=value
+
+		
+
+>>> s=animal('jermen_sufferd','brown')
+
+
+>>> s.print()
+breed is jermen_sufferd
+
+>>> s.color
+'brown'
+
+>>> s.color('black')
+Traceback (most recent call last):
+  File "<pyshell#84>", line 1, in <module>
+    s.color('black')
+TypeError: 'str' object is not callable
+
+
+>>> class animal(object):
+	animal='dog'
+	def __init__(self,breed,color):
+		self.breed=breed
+		self._color=color
+	def print(self):
+		print('breed is',self.breed)
+	def color(self,value):
+		self._color=value
+
+		
+>>> s=animal('bugs','white')
+
+>>> s.animal
+'dog'
+
+>>> s.breed
+'bugs'
+
+>>> s.print()
+breed is bugs
+
+>>> s.color('black')
+
+
+>>> s.color
+<bound method animal.color of <__main__.animal object at 0x0000024E0719B970>>
+
+>>> class animal(object):
+	animal='dog'
+	def __init__(self,breed,color):
+		self.breed=breed
+		self._color=color
+	def print(self):
+		print('breed is',self.breed)
+		print('color is ',self.color)
+	def color(self,value):
+		self._color=value
+
+		
+
+>>> s=animal('buts','brown')
+
+>>> s.animal
+'dog'
+
+>>> s.breed
+'buts'
+
+>>> s.color
+<bound method animal.color of <__main__.animal object at 0x0000024E0719BE20>>
+
+>>> s.print()
+breed is buts
+color is  <bound method animal.color of <__main__.animal object at 0x0000024E0719BE20>>
+
+>>> s.color('black')
+
+>>> s.print()
+breed is buts
+color is  <bound method animal.color of <__main__.animal object at 0x0000024E0719BE20>>
+
+
+>>> class animal(object):
+	animal='dog'
+	def __init__(self,breed,color):
+		self.breed=breed
+		self._color=color
+	def color(self,value):
+		self._color=value
+	def print(self):
+		print('breed is',self.breed)
+		print('color is ',self.color)
+
+
+>>> s=animal('buts','brown')
+
+>>> s.print()
+breed is buts
+color is  <bound method animal.color of <__main__.animal object at 0x0000024E0719B970>>
+
+
+>>> class animal(object):
+	animal='dog'
+	def __init__(self,breed,color):
+		self.breed=breed
+		self._color=color
+	def color(self,value):
+		self._color=value
+	def print(self):
+		print('breed is',self.breed)
+		print('color is ',self._color)
+
+		
+>>> s=animal('buts','brown')
+
+>>> s.print()
+breed is buts
+color is  brown
+
+>>> s.breed
+'buts'
+
+>>> s.color
+<bound method animal.color of <__main__.animal object at 0x0000024E071AEA00>>
+
+>>> s.color('black')
+
+>>> s.print()
+breed is buts
+color is  black
+
+
