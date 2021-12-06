@@ -802,3 +802,338 @@ breed is buts
 color is  black
 
 
+
+
+>>> class person:
+	def __init__(self,name,age):
+		self.name=name
+		self.age=age
+	def print_msg(self):
+		print('Hellow Mr.',self.name,'How are you man ?.')
+		print('and his age is :',self.age)
+
+		
+>>> s=person('Gopiraj',22)
+
+>>> s.age
+22
+
+>>> s.name
+'Gopiraj'
+
+>>> s.print_msg()
+Hellow Mr. Gopiraj How are you man ?.
+and his age is : 22
+
+>>> class person:
+	def __init__(myobject,name,age):
+		myobject.name=name
+		myobject.age=age
+	def print_msg(abc):
+		print('Hellow Mr.',abc.name,'How are you man ?.')
+		print('and his age is :',abc.age)
+
+		
+
+>>> obj=person('GOpiraj',22)
+
+>>> obj.age
+22
+
+>>> obj.name
+'GOpiraj'
+
+>>> obj.print_msg()
+Hellow Mr. GOpiraj How are you man ?.
+and his age is : 22
+
+>>> obj.clg='Muthayammal Collage of Arts and Scince'
+
+>>> obj.clg
+'Muthayammal Collage of Arts and Scince'
+>>> del obj.clg
+
+
+>>> obj.print_msg()
+Hellow Mr. GOpiraj How are you man ?.
+and his age is : 22
+
+
+>>> class person(object):
+	def __init__(self,fname,lname):
+		self.fname=fname
+		self.lname=lname
+	def print_msg(self):
+		print(self.fname,' ',self.lname)
+
+		
+
+>>> s=person('Gopi',"Raj")
+
+>>> s.lname
+'Raj'
+
+
+>>> s.print_msg()
+Gopi   Raj
+
+>>> class base(person):
+	def __init__(self,fname,lname):
+		person.__init__(self,fname,lname)
+
+		
+>>> s=base('Gopi','Raj')
+
+>>> s.print_msg()
+Gopi   Raj
+
+>>> s.lname
+'Raj'
+
+>>> class base(person):
+	def __init__(self,fn,ln):
+		person.__init__(self,fname,lname)
+
+	
+
+>>> class base(person):
+	def __init__(self,fname,lname):
+		super().__init__(fname,lname)
+
+		
+>>> s=base('Gopi','raj')
+
+>>> s.print_msg()
+Gopi   raj
+>>> class base(person):
+	def __init__(self,fname,lname):
+		person.__init__(self,fname,lname)
+
+		
+
+>>> s=base('Gopi','Raj')
+
+>>> s.fname
+'Gopi'
+
+>>> s.lname
+'Raj'
+
+>>> s.print_msg()
+Gopi   Raj
+
+>>> class base(person):
+	def __init__(self,fname,lname):
+		person.__init__(self,fname,lname)
+		self.clg='Muthayammal collage of arts and science'
+
+		
+>>> s=base('Gopi','Raj')
+
+>>> s.clg
+'Muthayammal collage of arts and science'
+
+>>> s.fname
+'Gopi'
+
+>>> s.lname
+'Raj'
+
+>>> s.print_msg()
+Gopi   Raj
+
+>>> class person(object):
+	def __init__(self,fname,lname):
+		self.fname=fname
+		self.lname=lname
+	def print_msg(self):
+		print('Hellow mr.',self.fname,' ',self.lname)
+
+		
+
+>>> class base(person):
+	def __init__(self,fname,lname):
+		super().__init__('Gopi',"raj")
+		self.firstname=fname
+		self.lastname=lname
+	def print_msgbase():
+		print("hellow mr.",self.firstname,' ',self.lastname)
+	def welcom(self):
+		print(self.fname,'',self.lname)
+
+		
+>>> s=base('sathish','Kumar')
+
+>>> s.firstname
+'sathish'
+
+>>> s.lastname
+'Kumar'
+
+>>> s.fname
+'Gopi'
+
+>>> s.lname
+'raj'
+
+>>> s.print_msg()
+Hellow mr. Gopi   raj
+
+>>> s.print_msgbase()
+Traceback (most recent call last):
+  File "<pyshell#124>", line 1, in <module>
+    s.print_msgbase()
+TypeError: print_msgbase() takes 0 positional arguments but 1 was given
+
+
+>>> class base(person):
+	def __init__(self,fname,lname):
+		super().__init__('Gopi',"raj")
+		self.firstname=fname
+		self.lastname=lname
+	def print_msgbase(self):
+		print("hellow mr.",self.firstname,' ',self.lastname)
+	def welcom(self):
+		print(self.fname,'',self.lname)
+
+		
+
+>>> s=base('sathish','Kumar')
+
+>>> s.firstname
+'sathish'
+
+>>> s.fname
+'Gopi'
+
+>>> s.lastname
+'Kumar'
+
+>>> s.lname
+'raj'
+
+>>> s.print_msg()
+Hellow mr. Gopi   raj
+
+>>> s.print_msgbase()
+hellow mr. sathish   Kumar
+
+>>> s.welcom()
+Gopi  raj
+
+
+>>> class person(object):
+	def __init__(self,fname,lname):
+		self.fname=fname
+		self.lname=lname
+	def print_msg(self):
+		print('Hellow mr.',self.fname,' ',self.lname)
+
+		
+>>> class base(person):
+	def __init__(self,fname,lname):
+		super().__init__(fname,lname)
+		self.firstname=fname
+		self.lastname=lname
+	def print_msgbase(self):
+		print("hellow mr.",self.firstname,' ',self.lastname)
+	def welcom(self):
+		print(self.fname,'',self.lname)
+
+		
+
+
+
+>>> s=base('Gopi',"raj")
+
+>>> s.firstname
+'Gopi'
+
+>>> s.fname
+'Gopi'
+
+>>> s.lname
+'raj'
+
+>>> s.print_msg()
+Hellow mr. Gopi   raj
+
+>>> s.print_msgbase()
+hellow mr. Gopi   raj
+
+>>> s.welcom()
+Gopi  raj
+
+
+>>> class myclass:
+	def __iter__(self):
+		self.a=1
+		return self
+
+	
+>>> s=myclass()
+
+>>> a=iter(s)
+Traceback (most recent call last):
+  File "<pyshell#164>", line 1, in <module>
+    a=iter(s)
+TypeError: iter() returned non-iterator of type 'myclass'
+
+>>> class myclass:
+	def __iter__(self):
+		self.a=1
+		return self
+	def __next__(self):
+		x=self.a
+		self.a+=1
+		return x
+
+	
+>>> obj=myclass()
+
+>>> s=iter(obj)
+
+>>> s.a
+1
+
+>>> s.a
+1
+
+>>> s.a
+1
+
+>>> next(s)
+1
+
+>>> next(s)
+2
+
+>>> next(s)
+3
+
+>>> next(s)
+4
+
+
+>>> next(s)
+5
+
+>>> next(s)
+6
+
+>>> next(s)
+7
+
+>>> next(s)
+8
+
+>>> next(s)
+9
+>>> import platform
+
+>>> import platform as p
+
+>>> x=p.system()
+
+>>> print(x)
+Windows
