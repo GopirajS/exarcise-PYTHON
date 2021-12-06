@@ -1137,3 +1137,4 @@ TypeError: iter() returned non-iterator of type 'myclass'
 
 >>> print(x)
 Windows
+>>>
