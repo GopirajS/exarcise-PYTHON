@@ -745,3 +745,241 @@ value: 12
 
 >>> value
 10
+
+
+>>>#======================================================================
+
+
+
+>>> value=21
+
+>>> def fun():
+	global value
+	value=value+21
+	print(value)
+
+	
+>>> fun()
+42
+
+>>> value
+42
+
+>>> def outer():
+	def inner():
+		v='gopi'
+		print('inner funtion:',v)
+	inner()
+	print('outer  funtion:',v)
+
+	
+
+>>> s=1+2+3+\
+   3+4+\
+   4+\
+   \
+   3
+
+>>> s
+20
+
+>>> n=()
+
+
+>>> n=(12+3+4+\
+   34+\
+   4+\
+   3)
+
+>>> n
+60
+
+>>> name=['gopi',
+      'sathish kuanr',
+      'gopal',
+      'parimal']
+
+>>> name
+['gopi', 'sathish kuanr', 'gopal', 'parimal']
+
+
+>>> name='gopi';
+
+>>> name='gopi'; age='21';sex='male'
+
+>>> name
+'gopi'
+
+>>> age
+'21'
+
+>>> sex
+'male'
+
+>>> True if True else False
+True
+
+>>> False if False else True
+True
+
+>>> False if True else True
+False
+
+>>> input()
+gopiraj
+'gopiraj'
+
+>>> input('enter a string:')
+enter a string:gopi
+'gopi'
+
+>>> input('enter a string:')
+enter a string:'gopi'
+"'gopi'"
+
+>>> input('enter a string:')
+enter a string:1243
+'1243'
+
+
+>>> n=int(input('enter number first:'))
+enter number first:3
+
+>>> n2=int(input('enter nuber second:'))
+enter nuber second:4
+
+>>> print(n+n2)
+7
+
+>>> n=float(input('enter number first:'))
+enter number first:12.234
+
+>>> n2=float(input('enter nuber second:'))
+enter nuber second:12
+
+>>> print(n+n2)
+24.234
+
+>>> x,y=input('enter a number').split()
+
+
+>>> x,y=input('enter a number').split()
+enter a number1 2
+
+>>> x
+'1'
+
+>>> y
+'2'
+
+
+>>> x,y=input('enter a number').split()
+enter a number123 4556
+
+>>> x
+'123'
+
+>>> y
+'4556'
+
+
+>>> x=list(map(int,input('enter iter number').split()))
+
+>>> x=list(map(int,input('enter iter number').split()))
+enter iter number1 2 3 4 5 6
+
+>>> x
+[1, 2, 3, 4, 5, 6]
+
+>>> x=list(map(str,input('enter iter number').split()))
+enter iter number1 2 3 4 5 6
+
+>>> x
+['1', '2', '3', '4', '5', '6']
+
+>>> x=list(map(float,input('enter iter number').split()))
+enter iter number1 2 3 4 5 6
+
+
+>>> x
+[1.0, 2.0, 3.0, 4.0, 5.0, 6.0]
+
+
+
+>>> x=input('enter numbrt :')
+enter numbrt :1 ,2,3,4,5,56\
+
+>>> x
+'1 ,2,3,4,5,56\\'
+
+>>> x=list(input('enter numbrt :').split())
+
+
+>>> x=list(input('enter numbrt :').split())
+enter numbrt :1,2,3,4,5,6
+
+>>> x
+['1,2,3,4,5,6']
+
+>>> x=list(input('enter numbrt :').split())
+enter numbrt :1 2 3 4 5 6
+
+>>> x
+['1', '2', '3', '4', '5', '6']
+
+>>> x[2]
+'3'
+
+>>> x=list(input('enter numbrt :').split(','))
+enter numbrt :1,2,3,4,5,6,7,8
+
+>>> x
+['1', '2', '3', '4', '5', '6', '7', '8']
+
+
+>>> x=[int(x) for x in input('enter a number:').split()]
+enter a number:1 2 3 4 6
+
+>>> x
+[1, 2, 3, 4, 6]
+
+>>> x,y=[int(x) for x in input('enter a number:').split()]
+enter a number:1 2
+
+>>> x
+1
+
+>>> y
+2
+
+>>> x,y,z=[int(x) for x in input('enter a number:').split()]
+enter a number:1 2 3
+
+>>> z
+3
+
+
+>>> x,y,z=[x for x in input('enter a number:').split()]
+enter a number:gopi raj sathish
+
+>>> x
+'gopi'
+
+>>> y
+'raj'
+
+>>> z
+'sathish'
+
+>>> x,y,z=[x for x in input('enter a number:').split()]
+enter a number:'gopi' 'sathish' 'kumar'
+
+>>> x
+"'gopi'"
+
+>>> y
+"'sathish'"
+
+>>> z
+"'kumar'"
+
