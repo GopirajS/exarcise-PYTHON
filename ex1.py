@@ -263,3 +263,86 @@ gopi and 21 and sathish
 >>> print('{0[name]:s} and {0[age]} and {1[name]}'.format(d,d2))
 gopi and 21 and sathish
 
+
+
+>>>#=================================================================
+
+
+Python 3.9.6 (tags/v3.9.6:db3ff76, Jun 28 2021, 15:26:21) [MSC v.1929 64 bit (AMD64)] on win32
+Type "help", "copyright", "credits" or "license()" for more information.
+>>> a=2
+>>> b=4
+>>> add=a+b
+>>> sub=a-b
+>>> div=a/b
+>>> div2=a//b
+>>> 
+>>> print(add)
+6
+>>> print(sub)
+-2
+>>> print(div)
+0.5
+>>> print(div2)
+0
+>>> mul=a*b
+>>> print(mal)
+Traceback (most recent call last):
+  File "<pyshell#12>", line 1, in <module>
+    print(mal)
+NameError: name 'mal' is not defined
+>>> print(mul)
+8
+>>> 
+>>> 
+>>> mod=a%b
+>>> mod
+2
+>>> 
+>>> 
+>>> a=12
+>>> b=13
+>>> 
+>>> a>b
+False
+>>> a<b
+True
+>>> a==b
+False
+>>> a!=b
+True
+>>> 
+>>> a>=b
+False
+>>> a<=b
+True
+>>> 
+>>> 
+>>> a and b
+13
+>>> a or b
+12
+>>> a or b
+12
+>>> 
+>>> 
+>>> a=True
+>>> b=False
+>>> 
+>>> a and b
+False
+>>> a or b
+True
+>>> a not b
+SyntaxError: invalid syntax
+>>> not b
+True
+>>> not a
+False
+>>> 
+>>> 
+>>> bin(10)
+'0b1010'
+>>> 0b10
+2
+>>> 
