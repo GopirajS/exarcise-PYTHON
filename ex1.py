@@ -345,4 +345,572 @@ False
 '0b1010'
 >>> 0b10
 2
->>> 
+
+>>> 'gopi' and 'Raj'
+'Raj'
+
+>>> 'gopi' or 'Raj'
+'gopi'
+
+
+>>> 2&3
+2
+
+>>> bin(2)
+'0b10'
+
+>>> bin(3)
+'0b11'
+
+>>> 3&8
+0
+
+>>> 3&9
+1
+
+>>> 3&1
+1
+
+>>> 3&5
+1
+
+>>> 3&54
+2
+
+>>> 3&542
+2
+
+>>> 1&1
+1
+
+>>> 1&2
+0
+
+>>> 1&3
+1
+
+>>> 1&4
+0
+
+>>> 1&7
+1
+
+>>> 1&8
+0
+
+>>> 1&9
+1
+
+>>> 1&11
+1
+
+>>> 1&12
+0
+
+>>> 1&20
+0
+
+>>> 1&21
+1
+
+>>> 1&22
+0
+
+>>> 1&23
+1
+
+>>> 1&24
+0
+
+>>> 1&25
+1
+
+>>> 1&26
+0
+
+>>> 1&40
+0
+
+>>> 1&42
+0
+
+>>> 1&60
+0
+
+>>> 1&61
+1
+
+>>> 34&23
+2
+
+>>> 34&24
+0
+
+>>> 34&25
+0
+
+>>> 34&26
+2
+
+>>> 34&27
+2
+
+>>> 34&28
+0
+
+>>> 34&29
+0
+
+>>> 34&30
+2
+
+>>> 34&300
+32
+
+
+>>> ~3
+-4
+
+>>> ~5
+-6
+
+>>> ~9
+-10
+
+>>> ~12345
+-12346
+
+>>> 1^4
+5
+
+>>> 1^5
+4
+
+>>> 1^6
+7
+
+>>> 1^7
+6
+
+>>> class Geek():
+    def __init__(self, value):
+        self.value = value
+ 
+    def __and__(self, obj):
+        print("And operator overloaded")
+        if isinstance(obj, Geek):
+            return self.value & obj.value
+        else:
+            raise ValueError("Must be a object of class Geek")
+ 
+    def __or__(self, obj):
+        print("Or operator overloaded")
+        if isinstance(obj, Geek):
+            return self.value | obj.value
+        else:
+            raise ValueError("Must be a object of class Geek")
+ 
+    def __xor__(self, obj):
+        print("Xor operator overloaded")
+        if isinstance(obj, Geek):
+            return self.value ^ obj.value
+        else:
+            raise ValueError("Must be a object of class Geek")
+ 
+    def __lshift__(self, obj):
+        print("lshift operator overloaded")
+        if isinstance(obj, Geek):
+            return self.value << obj.value
+        else:
+            raise ValueError("Must be a object of class Geek")
+ 
+    def __rshift__(self, obj):
+        print("rshift operator overloaded")
+        if isinstance(obj, Geek):
+            return self.value & obj.value
+        else:
+            raise ValueError("Must be a object of class Geek")
+ 
+    def __invert__(self):
+        print("Invert operator overloaded")
+        return ~self.value
+
+ 
+>>> a=Geek(10)
+
+>>> b=Geek(12)
+
+>>> a & b
+
+And operator overloaded
+8
+
+>>> 10 &12
+8
+
+>>> a | b
+Or operator overloaded
+14
+
+>>> class myclass:
+	def print_mag(self):
+		print('helllow world')
+
+		
+>>> s=myclass()
+
+>>> isinstance(s,myclass)
+True
+
+>>> a << b
+lshift operator overloaded
+40960
+
+>>> 10 << 12
+40960
+
+>>> 10 >> 12
+0
+
+>>> a >> b
+rshift operator overloaded
+8
+
+>>> a & b
+And operator overloaded
+8
+
+>>> class myclass:
+	def __init__(self,value):
+		self.value=value
+	def __str__(self,obj):
+		return self.value + obj.value
+
+	
+
+>>> s=myclass('Gopi')
+
+>>> d=myclass('raj')
+
+
+>>> print('gopi' in 'gopiraj')
+True
+
+>>> print('gopi' in 'gopi raj')
+True
+
+>>> print('gopi' not in 'gopi raj')
+False
+
+>>> print('gopi' is 'gopi raj')
+False
+
+>>> print('gopi' is 'gopi')
+True
+
+>>> print('gopi' is 'gopi')
+True
+
+
+>>> name='gopi'
+
+>>> print(name is 'gopi')
+True
+
+>>> print(name is 'gopiraj')
+False
+
+>>> print(name is not 'gopiraj')
+True
+
+
+>>> x=21
+
+>>> l=[1,2,3,4,5]
+
+>>> if (x not in l):
+	print('21 not in list of l')
+else:
+	print('21 in list of l')
+
+	
+21 not in list of l
+
+>>> a=10
+
+>>> b=20
+
+>>> print ("Both a and b are equal" if a == b else "a is greater than b"
+
+        if a > b else "b is greater than a")
+b is greater than a
+
+
+>>> if a==b:
+	print('Both a and b are equal')
+else:
+	if a>b:
+		print()
+
+		
+>>> if a==b:
+	print('Both a and b are equal')
+else:
+	if a>b:
+		print('a is greater than b')
+	else:
+		print('b is greater than a')
+
+		
+b is greater than a
+
+
+>>> 'Both a and b are equal' if a==b  else 'a is greater than b'if a>b else 'b is greater than a'
+'b is greater than a'
+
+>>> a=10
+
+>>> b=10
+
+>>> 'Both a and b are equal' if a==b  else 'a is greater than b'if a>b else 'b is greater than a'
+'Both a and b are equal'
+
+
+>>> ('true','false')[12>123]
+'true'
+
+>>> ('gopi','raj')[12>123]
+'gopi'
+
+>>> ('gopi','raj')[12>1]
+'raj'
+
+>>> (False,True)[12>123]
+False
+
+>>> (False,True)[126>123]
+True
+
+>>> {True:"gopi",False:'raj'}[12>1]
+'gopi'
+
+>>> {True:"gopi",False:'raj'}[0>1]
+'raj'
+
+>>> a=12
+
+>>> b=23
+
+>>> print(a,'is greater')if(a>b)else print(b,'is greater')
+23 is greater
+
+>>> s=a<b and a or b
+
+>>> s
+12
+
+>>> a<b
+True
+
+
+>>> True and a
+12
+
+>>> True and a or b
+12
+
+
+>>>#==================================================
+
+>>> class fun():
+	def __init__(self,n):
+		self.n=n
+	def __add__(self,other)	:
+		print('adding over loding')
+		return self.n + other.n
+
+	
+>>> a=fun(3)
+
+>>> b=fun(5)
+
+>>> a+b
+adding over loding
+8
+
+>>> class complex:
+	def __init__(self,a,b):
+		self.a=a
+		self.b=b
+	def __add__(self,other):
+		print('comlex number added')
+		return self.a+other.a,self.b+other.b
+
+	
+>>> a=complex(1,1)
+
+>>> b=complex(2,2)
+
+>>> a + b
+comlex number added
+(3, 3)
+
+>>> a=21
+
+>>> b=12
+
+>>> print((lambda :a,lambda :b)[a>b]())
+12
+
+>>> print((lambda :a,lambda :b)[a<b]())
+21
+
+>>> a=12
+
+>>> b=21
+
+>>> 'a is greater then' if a>b else 'b is greater then' if a!=b else 'a and b are equals'
+'b is greater then'
+
+>>> a,b=12,12
+
+>>> 'a is greater then' if a>b else 'b is greater then' if a!=b else 'a and b are equals'
+'a and b are equals'
+
+>>> def fun(a,b):
+	return 'a is greater then' if a>b else 'b is greater then' if a!=b else 'a and b are equals'
+
+>>> fun(12,2)
+'a is greater then'
+
+>>> fun(12,28)
+'b is greater then'
+
+>>> fun(12,12)
+'a and b are equals'
+
+>>> fun(12,-1)
+'a is greater then'
+
+>>> def funtion(a,b):
+	if a!=b:
+		if a>b:
+			print('a is greater then b')
+		else:
+			print('b is greater then a')
+	else:
+		print('a and b are equals')
+
+		
+>>> funtion(21,21)
+a and b are equals
+
+>>> class fun():
+	def __init__(self,a):
+		self.a=a
+	def __gt__(self,b):
+		return self.a>b.a
+
+	
+
+>>> a=fun(2)
+
+>>> b=fun(4)
+
+>>> a>b
+False
+
+>>> a<b
+True
+
+>>> a>b
+False
+
+>>> class fun():
+	def __init__(self,a):
+		self.a=a
+	def __gt__(self,b):
+		print('printing')
+		return self.a>b.a
+
+	
+>>> a=fun(2)
+
+
+>>> b=fun(4)
+
+>>> a>b
+printing
+False
+
+>>> a<b
+printing
+True
+
+
+>>> class fun():
+	def __init__(self,a):
+		self.a=a
+	def __gt__(self,b):
+		print('printing')
+		return self.a>b.a
+	def __eq__(self,b):
+		return self.a==b.a
+
+	
+>>> a=fun(2)
+
+>>> b=fun(4)
+
+>>> a==b
+False
+
+
+>>> class fun():
+	def __init__(self,a):
+		self.a=a
+	def __gt__(self,b):
+		print('printing')
+		return self.a>b.a
+	def __eq__(self,b):
+		print('cheking equal:')
+		return self.a==b.a
+
+	
+>>> a=fun(2)
+
+>>> b=fun(4)
+
+>>> a==b
+cheking equal:
+False
+
+>>> a!=b
+cheking equal:
+True
+
+
+>>> a<b
+printing
+True
+
+
+>>> l=[]
+
+>>> for i in range(1,11):
+	l.append(i*4)
+	
+>>> l
+[4, 8, 12, 16, 20, 24, 28, 32, 36, 40]
+
+
+>>> l[9]
+40
+
+>>> any(l)
+True
+
+>>> all(l)
+True
+
+
