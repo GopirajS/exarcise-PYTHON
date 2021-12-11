@@ -914,3 +914,150 @@ True
 True
 
 
+
+>>> import operator
+
+
+>>> a=12
+
+>>> b=21
+
+>>> operator.add(a,b)
+33
+
+>>> operator.mul(a,b)
+252
+
+>>> operator.sub(a,b)
+-9
+
+>>> operator.truediv(a,b)
+0.5714285714285714
+
+>>> operator.floordiv(a,b)
+0
+
+>>> operator.mod(a,b)
+12
+
+>>> #less then
+
+>>> operator.lt(a,b)
+True
+
+>>> operator.le(a,b)
+True
+
+>>> operator.gt(a,b)
+False
+
+>>> operator.ge(a,b)
+False
+
+>>> operator.ne(a,b)
+True
+
+>>> operator.abs(12)
+12
+
+>>> operator.iadd.__doc__
+'Same as a += b.'
+
+>>> operator.iadd(12,3)
+15
+
+>>> a
+12
+
+>>> b
+21
+
+>>> operator.iadd(a,b)
+33
+
+>>> a
+12
+
+>>> l=[1,4,6,8,5,3]
+
+
+>>> for i in l:
+	print(i,end=' ')
+
+	
+1 4 6 8 5 3 
+
+>>> operator.setitem(l,3,5)
+
+>>> l
+[1, 4, 6, 5, 5, 3]
+
+>>> operator.delitem(l,3)
+
+>>> l
+[1, 4, 6, 5, 3]
+
+>>> operator.getitem(l,1)
+4
+
+
+>>> operator.setitem(l,slice(0,4),[1,2,3,5])
+
+>>> l
+[1, 2, 3, 5, 3]
+
+>>> operator.setitem(l,slice(0,4),[7,8,9,0])
+
+>>> l
+[7, 8, 9, 0, 3]
+
+>>> operator.delitem(l,slice(0,3))
+
+>>> l
+[0, 3]
+
+>>> l=[0,1,2,3,4,5,6,7,8]
+
+
+>>> operator.getitem(l,4)
+4
+
+>>> operator.getitem(l,slice(0,4))
+[0, 1, 2, 3]
+
+
+>>> operator.add('gopi','raj')
+'gopiraj'
+
+>>> operator.concat('gopi','raj')
+'gopiraj'
+
+>>> operator.contains('gopi','gopiraj')
+False
+
+>>> operator.contains('gopiraj','gopi')
+True
+
+>>> a
+12
+
+>>> b
+21
+
+>>> operator.and_(a,b)
+4
+
+>>> operator.or_(a,b)
+29
+
+>>> b
+21
+
+>>> a
+12
+
+>>> operator.or_.__doc__
+'Same as a | b.'
+
+>>> 12 | 21
+29
