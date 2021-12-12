@@ -1061,3 +1061,476 @@ True
 
 >>> 12 | 21
 29
+
+
+>>>#==============================================
+
+>>> s='gopiraj'
+
+>>> s[0]
+'g'
+
+>>> s[0]='G'
+Traceback (most recent call last):
+  File "<pyshell#2>", line 1, in <module>
+    s[0]='G'
+TypeError: 'str' object does not support item assignment
+
+>>> s
+'gopiraj'
+
+>>> l=[1,12.234,'gopi','A']
+
+>>> l.append('Sathish kuamr')
+
+>>> l
+[1, 12.234, 'gopi', 'A', 'Sathish kuamr']
+
+>>> l.pop()
+'Sathish kuamr'
+
+>>> l
+[1, 12.234, 'gopi', 'A']
+
+>>> l[1]
+12.234
+
+>>> l[1]='sathish kumar'
+
+
+>>> l
+[1, 'sathish kumar', 'gopi', 'A']
+
+>>> t=('gopi','G',123,123.123)
+
+>>> t
+('gopi', 'G', 123, 123.123)
+
+>>> t[1]
+'G'
+
+>>> t[4]
+Traceback (most recent call last):
+  File "<pyshell#19>", line 1, in <module>
+    t[4]
+IndexError: tuple index out of range
+
+>>> t[3]
+123.123
+
+>>> t[0]='gopi'
+Traceback (most recent call last):
+  File "<pyshell#21>", line 1, in <module>
+    t[0]='gopi'
+TypeError: 'tuple' object does not support item assignment
+
+
+>>> i=0
+
+>>> while i<11:
+	print(i)
+	i+=1
+
+	
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+
+>>> s='hellow world'
+
+>>> for i in s:
+	print(i)
+
+	
+h
+e
+l
+l
+o
+w
+ 
+w
+o
+r
+l
+d
+
+>>> l=[1,2,3,4,5,'a','f','gopiraj']
+
+
+>>> for i in l:
+	print(i)
+
+	
+1
+2
+3
+4
+5
+a
+f
+gopiraj
+
+
+>>> for i in range(0,10):
+	print(i)
+
+	
+0
+1
+2
+3
+4
+5
+6
+7
+8
+9
+
+>>> d={}
+
+
+>>> d['name']='gopi'
+
+>>> d
+{'name': 'gopi'}
+
+>>> d['age']=21
+
+>>> d['city']='salem'
+
+>>> d
+{'name': 'gopi', 'age': 21, 'city': 'salem'}
+
+
+>>> s={'gopi':'name'}
+
+>>> s
+{'gopi': 'name'}
+
+>>> s['gopi']
+'name'
+
+>>> s[1]
+Traceback (most recent call last):
+  File "<pyshell#64>", line 1, in <module>
+    s[1]
+KeyError: 1
+
+>>> s[0]
+Traceback (most recent call last):
+  File "<pyshell#65>", line 1, in <module>
+    s[0]
+KeyError: 0
+
+
+
+
+>>> x='name'
+
+>>> y='gopi'
+
+>>> d={}
+
+>>> d[x]=y
+
+>>> d
+{'name': 'gopi'}
+
+
+
+
+>>> x,y=input('enter your key and value:').split()
+enter your key and value:name gopi
+
+>>> x
+'name'
+
+>>> y
+'gopi'
+
+>>> def fun():
+	d={}
+	x,y=input('enter your key and value:').split(',')
+	d[x]=y
+
+	
+>>> fun()
+enter your key and value:name,gopi
+
+>>> d
+{'name': 'gopi'}
+
+>>> fun()
+enter your key and value:age,21
+
+>>> d
+{'name': 'gopi'}
+
+>>> d
+{'name': 'gopi'}
+
+>>> s={}
+
+>>> s
+{}
+
+>>> def fun():
+	x,y=input('enter your key and value:').split(',')
+	s[x]=y
+
+	
+>>> fun()
+enter your key and value:name,gopi
+
+>>> s
+{'name': 'gopi'}
+
+>>> fun()
+enter your key and value:city,salem
+
+>>> s
+{'name': 'gopi', 'city': 'salem'}
+
+>>> fun()
+enter your key and value:age,21
+
+>>> s
+{'name': 'gopi', 'city': 'salem', 'age': '21'}
+
+>>> s
+{'name': 'gopi', 'city': 'salem', 'age': '21'}
+
+>>> for i in s:
+	i
+
+	
+'name'
+'city'
+'age'
+
+>>> for i in s:
+	print(i,'-->',s[i])
+
+	
+name --> gopi
+city --> salem
+age --> 21
+
+>>> s
+{'name': 'gopi', 'city': 'salem', 'age': '21'}
+
+
+
+>>> for i in s:
+	print('%s  , %s '%(i,s[i]))
+
+	
+name  , gopi 
+city  , salem 
+age  , 21 
+
+>>> enumerate
+<class 'enumerate'>
+
+>>> enumerate.__doc__
+'Return an enumerate object.\n\n  iterable\n    an object supporting iteration\n\nThe enumerate object yields pairs containing a count (from start, which\ndefaults to zero) and a value yielded by the iterable argument.\n\nenumerate is useful for obtaining an indexed list:\n    (0, seq[0]), (1, seq[1]), (2, seq[2]), ...'
+
+
+
+>>> for index,key in enumerate(s):
+	print(index,key,s[key])
+
+	
+0 name gopi
+1 city salem
+2 age 21
+
+>>> l=[1,2,3,4,5,6,7,'gopi','satish','kuamr']
+
+
+>>> for i,j in enumerate(l):
+	print(i,j)
+
+	
+0 1
+1 2
+2 3
+3 4
+4 5
+5 6
+6 7
+7 gopi
+8 satish
+9 kuamr
+
+>>> l=[1,2,3,4,5,6,7]
+
+>>> def breakTest():
+	for i in l:
+		if i==5:
+			break
+		print(i)
+	print('')
+
+	
+>>> breakTest()
+1
+2
+3
+4
+
+
+>>> def continueTest():
+	for i in l:
+		if i==5:
+			continue
+		print(i)
+	print('')
+
+	
+>>> continueTest()
+1
+2
+3
+4
+6
+7
+
+
+>>> l
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> def breakTest():
+	for i in l:
+		if i==5:
+			print('bresk the loop ')
+			break
+		print(i)
+	print('')
+
+	
+>>> breakTest()
+1
+2
+3
+4
+bresk the loop 
+
+>>> def continueTest():
+	for i in l:
+		if i==5:
+			print('mising elment 5')
+			continue
+		print(i)
+	print('')
+
+	
+
+>>> continueTest()
+1
+2
+3
+4
+mising elment 5
+6
+7
+
+
+>>> def passTest(value):
+	pass
+
+>>> passTest(l)
+
+>>> l
+[1, 2, 3, 4, 5, 6, 7]
+
+>>> list(map(lambda x:x**3,l))
+[1, 8, 27, 64, 125, 216, 343]
+
+>>> s=list(map(lambda x:x**3,l))
+
+>>> s
+[1, 8, 27, 64, 125, 216, 343]
+
+>>> (lambda x:x**5)
+<function <lambda> at 0x00000140841F2670>
+
+>>> (lambda x:x**5)(3)
+243
+
+>>> (lambda x:x**5)(3)
+243
+
+>>> def outer(a):
+	a+=1
+	def inner(b):
+		b=a+b
+		def final(c):
+			c=a+b+c
+			print(c)
+		return final
+	return inner
+
+
+
+>>> def outer(a):
+	a+=1
+	def inner(b):
+		b=a+b
+		def final(c):
+			c=a+b+c
+			print(c)
+		print('b',b)
+		return final
+	print('a',a)
+	return inner
+
+>>> outer(1)(2)(3)
+a 2
+b 4
+9
+
+>>> m=range(-10,10)
+
+>>> m
+range(-10, 10)
+
+>>> print(m)
+range(-10, 10)
+
+>>> filter(lambda x:x<9,m)
+<filter object at 0x00000140841BEC70>
+
+>>> list(filter(lambda x:x<9,m))
+[-10, -9, -8, -7, -6, -5, -4, -3, -2, -1, 0, 1, 2, 3, 4, 5, 6, 7, 8]
+
+>>> for i in filter(lambda x:x<9,m):
+	print(i,end=' ')
+
+	
+-10 -9 -8 -7 -6 -5 -4 -3 -2 -1 0 1 2 3 4 5 6 7 8 
+
+>>> x=[2,3,4,5,6]
+
+>>> y=[]
+
+>>> for i in x:
+	if i%2:
+		y+=[i*5]
+	print(y)
+
+	
+[]
+[15]
+[15]
+[15, 25]
+[15, 25]
