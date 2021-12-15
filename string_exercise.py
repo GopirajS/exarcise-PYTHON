@@ -1319,3 +1319,178 @@ jaripog
 
 		     
 		     
+
+>>> import string
+
+>>> string.ascii_letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> string.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+
+>>> string.ascii_uppercase
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> string.capwords('G')
+'G'
+
+>>> string.capwords('a')
+'A'
+
+>>> string.capwords('gopi')
+'Gopi'
+
+>>> string.digits
+'0123456789'
+
+>>> type(string.digits)
+<class 'str'>
+
+>>> string.hexdigits
+'0123456789abcdefABCDEF'
+
+>>> string.hexdigits
+'0123456789abcdefABCDEF'
+
+>>> string.octdigits
+'01234567'
+
+>>> string.printable
+'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+
+>>> string.__doc__
+'A collection of string constants.\n\nPublic module variables:\n\nwhitespace -- a string containing all ASCII whitespace\nascii_lowercase -- a string containing all ASCII lowercase letters\nascii_uppercase -- a string containing all ASCII uppercase letters\nascii_letters -- a string containing all ASCII letters\ndigits -- a string containing all ASCII decimal digits\nhexdigits -- a string containing all ASCII hexadecimal digits\noctdigits -- a string containing all ASCII octal digits\npunctuation -- a string containing all ASCII punctuation characters\nprintable -- a string containing all ASCII characters considered printable\n\n'
+
+
+>>> string.octdigits
+'01234567'
+
+
+>>> import random
+
+
+>>> random.__doc__
+'Random variable generators.\n\n    bytes\n    -----\n           uniform bytes (values between 0 and 255)\n\n    integers\n    --------\n           uniform within range\n\n    sequences\n    ---------\n           pick random element\n           pick random sample\n           pick weighted random sample\n           generate random permutation\n\n    distributions on the real line:\n    ------------------------------\n           uniform\n           triangular\n           normal (Gaussian)\n           lognormal\n           negative exponential\n           gamma\n           beta\n           pareto\n           Weibull\n\n    distributions on the circle (angles 0 to 2pi)\n    ---------------------------------------------\n           circular uniform\n           von Mises\n\nGeneral notes on the underlying Mersenne Twister core generator:\n\n* The period is 2**19937-1.\n* It is one of the most extensively tested generators in existence.\n* The random() method is implemented in C, executes in a single Python step,\n  and is, therefore, threadsafe.\n\n'
+
+
+
+>>> random.choice.__doc__
+'Choose a random element from a non-empty sequence.'
+
+
+
+
+>>> p = ''.join([random.choice(
+                        string.ascii_letters + string.digits)
+                        for n in range(10)])
+
+>>> p
+'jRreynPe9M'
+
+>>> p
+'jRreynPe9M'
+
+>>> p = ''.join([random.choice(
+                        string.ascii_letters + string.digits)
+                        for n in range(10)])
+>>> p
+'E9roLfaPM3'
+
+>>> p = ''.join([random.choice(
+                        string.ascii_letters + string.digits)
+                        for n in range(10)])
+
+>>> p
+'yTSfaHWtEA'
+>>> p = ''.join([random.choice(string.ascii_letters + string.digits)for n in range(10)])
+
+
+>>> random.choice(string.ascii_letters+string.hexdigits)
+'R'
+
+>>> random.choice(string.ascii_letters+string.hexdigits)
+'I'
+
+>>> random.choice(string.ascii_letters+string.hexdigits)
+'0'
+
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) if True else 'false']
+['a']
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) if True else 'false']
+['Q']
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) if True else 'false']
+['4']
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) if False else True ]
+[True]
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) if False else True ]
+[True]
+
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) for i in range(10) ]
+['b', 'M', 'u', '3', 'W', '9', 'E', 'k', 'm', 'Z']
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) for i in range(10) ]
+['c', 'X', 'f', 'b', 'E', '9', 'f', 'D', 'F', 'L']
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) for i in range(10) ]
+['C', 's', 'r', 'R', 'W', 'y', '8', 'L', 'd', 'I']
+
+>>> [random.choice(string.ascii_letters+string.hexdigits) for i in range(10) ]
+['A', 'u', 'd', 'B', 'C', 'S', '5', 'y', '8', 'c']
+
+>>> ''.join([random.choice(string.ascii_letters+string.hexdigits) for i in range(10) ])
+'jVabTAaDbi'
+
+
+>>> ''.join([random.choice(string.ascii_letters+string.hexdigits) for i in range(10) ])
+'F6CTKYF9Ea'
+
+>>> random.choice('gopiraj')
+'g'
+
+>>> random.choice('gopiraj')
+'p'
+
+>>> random.choice('gopiraj')
+'g'
+
+>>> random.choice('gopiraj')
+'p'
+
+>>> random.choice('gopiraj')
+'o'
+
+>>> random.choice('gopiraj')
+'o'
+
+>>> random.choice('gopiraj')
+'j'
+
+>>> random.choice('gopiraj')
+'r'
+
+>>> random.choice('gopiraj')
+'j'
+
+>>> random.choice('asdfghertyuw345567')
+'t'
+
+>>> random.choice('asdfghertyuw345567')
+'5'
+
+>>> random.choice('asdfghertyuw345567')
+'e'
+
+>>> random.choice('1234567890')
+'0'
+
+>>> random.choice('1234567890')
+'7'
+
+>>> random.choice('1234567890')
+'4'
