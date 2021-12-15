@@ -687,3 +687,635 @@ class myclass(builtins.object)
 
 >>> len(patten)
 3
+
+		     
+>>>#==============================================================
+
+		    
+
+>>> import collections
+
+>>> import collections as s
+
+>>> s.Counter('gopiraj')
+Counter({'g': 1, 'o': 1, 'p': 1, 'i': 1, 'r': 1, 'a': 1, 'j': 1})
+
+>>> d=s.Counter('gopiraj')
+
+>>> d.keys()
+dict_keys(['g', 'o', 'p', 'i', 'r', 'a', 'j'])
+
+>>> d.values()
+dict_values([1, 1, 1, 1, 1, 1, 1])
+
+>>> def fun(string):
+	d=s.Counter(string)
+	for i in d.values():
+		if i==1:
+			print('{} is {} times'.format(d[i],i))
+
+		
+
+>>> fun('gopiraj')
+0 is 1 times
+0 is 1 times
+0 is 1 times
+0 is 1 times
+0 is 1 times
+0 is 1 times
+0 is 1 times
+
+>>> d
+Counter({'g': 1, 'o': 1, 'p': 1, 'i': 1, 'r': 1, 'a': 1, 'j': 1})
+
+>>> for i in d.keys():
+	print(i,end=' ')
+
+	
+g o p i r a j 
+
+>>> for i in d.values():
+	print(i,end=' ')
+
+	
+1 1 1 1 1 1 1 
+
+>>> d[1]
+0
+
+>>> d[2]
+0
+
+>>> d
+Counter({'g': 1, 'o': 1, 'p': 1, 'i': 1, 'r': 1, 'a': 1, 'j': 1})
+
+
+>>> def fun(string):
+	d=s.Counter(string)
+	for i in d.values():
+		if i==1:
+			print('{} is {} times'.format(d[i],i))
+
+			
+>>> fun('gopi')
+0 is 1 times
+0 is 1 times
+0 is 1 times
+0 is 1 times
+
+>>> d
+Counter({'g': 1, 'o': 1, 'p': 1, 'i': 1, 'r': 1, 'a': 1, 'j': 1})
+
+>>> for i in d.keys():
+	print(i,end=' ')
+
+	
+g o p i r a j 
+
+>>> for i in d.keys():
+	print(d[i])
+
+	
+1
+1
+1
+1
+1
+1
+1
+
+>>> for i in d.keys():
+	print(i,end=' ')
+	print(d[i])
+
+	
+g 1
+o 1
+p 1
+i 1
+r 1
+a 1
+j 1
+
+>>> def fun(string):
+	d=s.Counter(string)
+	for i in d.values():
+		print(i,'-->',d[i])
+
+		
+>>> fun('gopiraj')
+1 --> 0
+1 --> 0
+1 --> 0
+1 --> 0
+1 --> 0
+1 --> 0
+1 --> 0
+
+>>> def fun(string):
+	d=s.Counter(string)
+	for i in d.key():
+		print(i)
+
+		
+
+>>> def counter(value):
+	d=s.Counter(value)
+	print(d)
+
+	
+>>> counter('Gopi')
+Counter({'G': 1, 'o': 1, 'p': 1, 'i': 1})
+
+>>> def counter(value):
+
+	d=s.Counter(value)
+	for i in d.keys():
+		if d[i]==1:
+			print(i,'-->',d[i])
+
+			
+>>> counter('gopiraj')
+g --> 1
+o --> 1
+p --> 1
+i --> 1
+r --> 1
+a --> 1
+j --> 1
+
+>>> def counter(value):
+	d=s.Counter(value)
+	for i in d.keys():
+		print(i,'-->',d[i])
+
+		
+>>> counter('gopiraj')
+g --> 1
+o --> 1
+p --> 1
+i --> 1
+r --> 1
+a --> 1
+j --> 1
+
+
+>>> def counter(value):
+	d=s.Counter(value)
+	d.pop(d[' ']
+	for i in d.keys():
+		print(i,'-->',d[i])
+	      
+
+>>> def counter(value):
+	d=s.Counter(value)
+	d.pop(d[' '])
+	for i in d.keys():
+		print(i,'-->',d[i])
+
+		
+
+
+
+>>> d
+Counter({'g': 1, 'o': 1, 'p': 1, 'i': 1, 'r': 1, 'a': 1, 'j': 1})
+
+>>> s.Counter('gopi raj')
+Counter({'g': 1, 'o': 1, 'p': 1, 'i': 1, ' ': 1, 'r': 1, 'a': 1, 'j': 1})
+
+>>> f=s.Counter('gopi raj')
+
+>>> f.elements()
+
+<itertools.chain object at 0x0000020F1493E520>
+>>> for i in f:
+
+	print(i,end=' ')
+
+	
+g o p i   r a j 
+
+>>> f
+Counter({'g': 1, 'o': 1, 'p': 1, 'i': 1, ' ': 1, 'r': 1, 'a': 1, 'j': 1})
+
+>>> f.get('g')
+1
+
+>>> f.most_common()
+[('g', 1), ('o', 1), ('p', 1), ('i', 1), (' ', 1), ('r', 1), ('a', 1), ('j', 1)]
+
+>>> f.pop('g')
+1
+
+>>> d
+Counter({'g': 1, 'o': 1, 'p': 1, 'i': 1, 'r': 1, 'a': 1, 'j': 1})
+
+>>> def counter(value):
+	d=s.Counter(value)
+	d.pop(' ')
+	for i in d.keys():
+		print(i,'-->',d[i])
+
+		
+
+>>> counter('gopi raj')
+g --> 1
+o --> 1
+p --> 1
+i --> 1
+r --> 1
+a --> 1
+j --> 1
+
+>>> counter('gopi raj sayish')
+g --> 1
+o --> 1
+p --> 1
+i --> 2
+r --> 1
+a --> 2
+j --> 1
+s --> 2
+y --> 1
+h --> 1
+
+>>> l=[1,2,3,4]
+
+>>> reversed(l)
+<list_reverseiterator object at 0x0000020F1493E490>
+
+>>> print(reversed(l))
+<list_reverseiterator object at 0x0000020F1493EAF0>
+
+>>> for i in reversed(l):
+	print(i,end=' ')
+
+	
+4 3 2 1 
+
+>>> for i in reversed('gopiraj'):
+	print(i)
+
+	
+j
+a
+r
+i
+p
+o
+g
+
+>>> def funtion(s):
+	str=''
+	for i in s:
+		str=i+str
+	return str
+
+
+>>> s='gopiraj'
+
+>>> print('original string is:',s)
+original string is: gopiraj
+
+>>> print('reversed string is :',s,end='\n')
+reversed string is : gopiraj
+
+>>> funtion(s)
+'jaripog'
+
+>>> def funtion(s):
+	str=''
+	for i in s:
+		str=str+i
+	return str
+
+>>> funtion(s)
+'gopiraj'
+
+>>> s
+'gopiraj'
+
+>>> def fun(s):
+	if len(s)==0:
+		return s
+	else:
+		return reversed(s[1:])
+
+	
+>>> fun(s)
+<reversed object at 0x0000020F1492BA00>
+
+>>> for i in fun(s):
+	print(i,end='')
+
+	
+jaripo
+
+>>> def fun(s):
+	if len(s)==0:
+		return s
+	else:
+		return reversed(s[1:])+s[0]
+
+	
+
+>>> def fun(s):
+	if len(s)==0:
+		return s
+	else:
+		d=reversed(s[1:])
+		return d+s[0]
+
+	
+
+>>> def fun(s):
+	if len(s)==0:
+		return s
+	else:
+		return reversed(s[1:]) + s[0]
+
+	
+
+>>> return
+SyntaxError: 'return' outside function
+return
+
+>>> True = return
+SyntaxError: cannot assign to True
+
+>>> string='gopiraj'
+
+>>> string=''.join(reversed(string))
+
+>>> print(string)
+jaripog
+
+>>> l=''
+
+>>> l=[1,2,3,4,5]
+
+>>> s=' '.join(l)
+Traceback (most recent call last):
+  File "<pyshell#174>", line 1, in <module>
+    s=' '.join(l)
+TypeError: sequence item 0: expected str instance, int found
+
+>>> l=['gopi','raj','sathish']
+
+>>> ''.join(l)
+'gopirajsathish'
+
+>>> ' '.join(l)
+'gopi raj sathish'
+
+>>> reversed(l)
+<list_reverseiterator object at 0x0000020F1492BA00>
+
+>>> for i in reversed(l):
+	print(i,end=' ')
+
+	
+sathish raj gopi 
+
+>>> for i in reversed(l):
+	print(i)
+
+	
+sathish
+raj
+gopi
+
+>>> list(reversed(l))
+['sathish', 'raj', 'gopi']
+
+>>> string
+'jaripog'
+
+>>> s='gopiraj'
+
+>>> s
+'gopiraj'
+
+>>> 7/2
+3.5
+
+>>> int(7/2)
+3
+
+>>> def funtion(s):
+	s=s.lower()
+	l=len(s)
+	if l<2:
+		return "true"
+	elif s[0]==s[l-1]:
+		return funtion(s[0:l-1])
+	else:
+		return 'false'
+
+	
+>>> funtion('gopiraj')
+'false'
+
+>>> funtion('gh')
+'false'
+
+>>> len('gj')
+2
+
+>>> len('g')
+1
+
+>>> funtion('g')
+'true'
+
+>>> funtion('malayalam')
+'false'
+
+>>> funtion('malayalam')
+'false'
+
+>>> s='malayalam'
+
+>>> l=len(s)
+
+>>> s[1:l-1]
+'alayala'
+
+>>> s=s[1:l-1]
+
+>>> s[1:l-1]
+'layala'
+
+>>> s=s[1:l-1]
+
+>>> s[1:l-1]
+'ayala'
+
+>>> s=s[1:l-1]
+
+>>> s[1:l-1]
+'yala'
+
+>>> s=s[1:l-1]
+
+>>> s[1:l-1]
+'ala'
+
+>>> s=s[1:l-1]
+
+>>> s[1:l-1]
+'la'
+
+>>> s=s[1:l-1]
+
+>>> s[1:l-1]
+'a'
+
+>>> def isPalindrome(s):
+       
+    #to change it the string is similar case
+    s = s.lower()
+    # length of s
+    l = len(s)
+     
+    # if length is less than 2
+    if l < 2:
+        return True
+ 
+    # If s[0] and s[l-1] are equal
+    elif s[0] == s[l - 1]:
+        
+        # Call is pallindrome form substring(1,l-1)
+        return isPalindrome(s[1: l - 1])
+ 
+    else:
+        return False
+
+
+>>> isPalindrome('malayalm')
+False
+
+>>> isPalindrome('malayal')
+False
+
+>>> isPalindrome('m')
+True
+
+>>> def funtion(s):
+	s=s.lower()
+	l=len(s)
+	if l==3:
+		return "true"
+	elif s[0]==s[l-1]:
+		return funtion(s[0:l-1])
+	else:
+		return 'false'
+
+	
+>>> funtion('malayalam')
+'false'
+
+
+>>> def funtion(s):
+	s=s.lower()
+	l=len(s)
+	if l==7:
+		return "true"
+	elif s[0]==s[l-1]:
+		return funtion(s[0:l-1])
+	else:
+		return 'false'
+
+	
+>>> funtion('malayalam')
+'false'
+
+>>> def funtion(s):
+	s=s.lower()
+	l=len(s)
+	if l==9:
+		return "true"
+	elif s[0]==s[l-1]:
+		return funtion(s[0:l-1])
+	else:
+		return 'false'
+
+	
+>>> funtion('malayalam')
+'true'
+
+
+
+>>> def funtion(s):
+	s=s.lower()
+	l=len(s)
+	if l==2:
+		return True
+	elif s[0]==s[l-1]:
+		return funtion(s[1:l-1])
+	else:
+		return False
+
+	
+
+>>> def funtion(s):
+	s=s.lower()
+	l=len(s)
+	if l<2:
+		return True
+	elif s[0]==s[l-1]:
+		return funtion(s[1:l-1])
+	else:
+		return False
+
+	
+>>> funtion('ala')
+True
+
+>>> funtion('malam')
+True
+
+>>> s='ala'
+
+>>> l=len(s)
+
+>>> s[1]
+'l'
+
+>>> s[1:l-1]
+'l'
+
+>>> s
+'ala'
+
+>>> s='gopiraj'
+
+>>> reversed(s)
+
+<reversed object at 0x0000020F1493E460>
+
+>>> for i in s:
+	print(i,end= ' ')
+
+	
+g o p i r a j 
+
+>>> for i in reversed(s):
+	print(i,end='')
+
+	
+jaripog
+
+>>> s=''.join(s)
+
+>>> s
+'gopiraj'
+
+>>> ''.join(s)
+'gopiraj'
+
+>>> ''.join(reversed(s))
+'jaripog'
+
+		     
+		     
