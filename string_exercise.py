@@ -1494,3 +1494,231 @@ jaripog
 
 >>> random.choice('1234567890')
 '4'
+
+
+>>>#==============================================
+
+
+
+>>> import string as a
+
+>>> a.ascii_uppercase
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> s=a.ascii_uppercase
+
+
+>>> s
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> s
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> def fun(value):
+	
+	for i in value:
+		if i not in a.ascii_letters:
+			return False
+	return True
+
+>>> fun('gopiraj')
+True
+
+>>> fun('gopiraj ')
+False
+
+>>> fun('gop iraj ')
+False
+
+>>> fun('gop iraj @@')
+False
+
+>>> def fun(value):
+
+	for i in value:
+		if i  in a.ascii_letters:
+			return False
+	return True
+
+
+>>> fun('gopiraj')
+False
+
+>>> def fun(s):
+	for i in s:
+		if i in 'asdfgh':
+			return 'True'
+		elif i in 'jklzxv':
+			return 'YES'
+		else:
+			return 'NO'
+	return 'Complete'
+
+>>> fun('gopirajxyz@@%^')
+'True'
+
+>>> fun('opirajxyz@@%^')
+'NO'
+
+>>> fun('pirajxyz@@%^')
+'NO'
+
+>>> fun('rajxyz@@%^')
+'NO'
+
+>>> fun('ajxyz@@%^')
+'True'
+
+>>> fun('jxyz@@%^')
+'YES'
+
+>>> fun('jxyz@@%^')
+'YES'
+
+
+>>> def fun(s):
+	for i in s:
+		if i in 'asdfgh':
+			print('True')
+		elif i in 'jklzxv':
+			print('YES')
+		else:
+			print('No')
+	print('complete')
+
+	
+>>> fun('gopirajxyz@@%^')
+True
+No
+No
+No
+No
+True
+YES
+YES
+No
+YES
+No
+No
+No
+No
+complete
+
+>>> def fun(s):
+	for i in s:
+		if i in 'asdfgh':
+			print(i,'=','True')
+		elif i in 'jklzxv':
+			print(i,'=','YES')
+		else:
+			print(i,'=','No')
+	print('complete')
+
+	
+
+>>> fun('gopirajxyz@@%^')
+g = True
+o = No
+p = No
+i = No
+r = No
+a = True
+j = YES
+x = YES
+y = No
+z = YES
+@ = No
+@ = No
+% = No
+^ = No
+complete
+
+>>> a.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+>>> a.Formatter()
+<string.Formatter object at 0x000001DDA88ABA30>
+
+>>> a.Formatter.__doc__
+
+>>> a.Formatter.__doc__
+
+>>> print(a.Formatter.__doc__)
+None
+
+>>> a.Formatter
+<class 'string.Formatter'>
+
+>>> a.Formatter()
+<string.Formatter object at 0x000001DDA88ABB20>
+
+>>> a.Formatter('gopiraj')
+Traceback (most recent call last):
+  File "<pyshell#55>", line 1, in <module>
+    a.Formatter('gopiraj')
+TypeError: Formatter() takes no arguments
+
+>>> s=a.Formatter()
+
+>>> s
+<string.Formatter object at 0x000001DDA88BE280>
+
+>>> s.parse
+<bound method Formatter.parse of <string.Formatter object at 0x000001DDA88BE280>>
+
+
+>>> t=a.Template('$name is good man' )
+
+>>> t.flags
+re.IGNORECASE
+
+
+>>> import string as s
+
+>>> s.ascii_letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> s.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+
+>>> s.ascii_uppercase
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> s.capwords
+<function capwords at 0x000001DDA6A70670>
+
+>>> s.capwords('g')
+'G'
+
+>>> s.digits
+'0123456789'
+
+>>> s.hexdigits
+'0123456789abcdefABCDEF'
+
+>>> s.hexdigits
+'0123456789abcdefABCDEF'
+
+>>> s.octdigits
+'01234567'
+
+>>> s.printable
+'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+
+>>> print(s.printable)
+0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~ 	
+
+
+
+>>> s.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+>>> s.whitespace
+' \t\n\r\x0b\x0c'
+
+>>> print(s.whitespace)
+ 	
+
+	     	      
+	      
+	      
