@@ -1722,3 +1722,523 @@ re.IGNORECASE
 	     	      
 	      
 	      
+>>>#=============================================================
+
+
+
+>>> import string as s
+
+>>> s.whitespace
+' \t\n\r\x0b\x0c'
+
+>>> print(s.whitespace)
+ 	
+
+
+>>> s.ascii_letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> s.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+
+>>> s.ascii_uppercase
+'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> s.capwords
+<function capwords at 0x000001AA8FC00670>
+
+>>> s.capwords('G')
+'G'
+
+>>> s.digits
+'0123456789'
+
+>>> s.hexdigits
+'0123456789abcdefABCDEF'
+
+>>> s.octdigits
+'01234567'
+
+>>> s.printable
+'0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c'
+
+>>> s.punctuation
+'!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~'
+
+>>> s.whitespace
+' \t\n\r\x0b\x0c'
+
+>>> s.Template
+<class 'string.Template'>
+
+>>> 
+
+
+>>> s.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+
+>>> s.ascii_lowercase='gopi'
+
+>>> s
+<module 'string' from 'C:\\Users\\gopir\\AppData\\Local\\Programs\\Python\\Python39\\lib\\string.py'>
+
+>>> s.ascii_lowercase
+'gopi'
+
+>>> s.ascii_lowercase
+'gopi'
+
+>>> import string as s
+
+>>> s.ascii_letters
+'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ'
+
+>>> s.ascii_lowercase
+'gopi'
+
+>>> s.ascii_lowercase='abcdefghijklmnopqrstuvwxyz'
+
+>>> s.ascii_lowercase
+'abcdefghijklmnopqrstuvwxyz'
+
+>>> text='raj'
+
+>>> text='gopiraj'
+
+>>> result=text.endswith('raj')
+
+>>> result
+True
+
+>>> result=text.endswith('raj.')
+
+>>> result
+False
+
+>>> len(text)
+7
+
+>>> result=text.endswith('raj',0,7)
+
+>>> result
+True
+
+>>> result=text.endswith('raj',0,6)
+
+>>> result
+False
+
+>>> result=text.endswith('raj',0,8)
+
+>>> result
+True
+
+>>> result=text.endswith('raj',0,5)
+
+>>> result
+False
+
+>>> result=text.endswith('raj',0,7)
+
+
+>>> text.startswith('gopi',0,7)
+True
+
+>>> text.startswith('gopi',0)
+True
+
+>>> text.startswith('gopi',7)
+False
+
+>>> text.startswith('opi',1)
+True
+
+>>> text.startswith('opi',)
+False
+
+>>> text.startswith('opi',)
+False
+
+>>> number=123
+
+>>> number.isdigite()
+Traceback (most recent call last):
+  File "<pyshell#67>", line 1, in <module>
+    number.isdigite()
+AttributeError: 'int' object has no attribute 'isdigite'
+
+>>> number='123456asd'
+
+>>> number.isdigit()
+False
+
+>>> number='123456'
+
+>>> number.isdigit()
+True
+
+
+>>> chr(1)
+'\x01'
+
+>>> chr(2)
+'\x02'
+
+>>> print(chr(2))
+
+
+>>> type(chr(2))
+<class 'str'>
+
+>>> s=chr(2)
+
+>>> s.isdigit()
+False
+
+
+
+>>> count=0
+
+
+>>> count=0
+
+>>> newstring=''
+
+	b=chr(i)
+	if b.isdigit()==True:
+		count+=1
+		newstring+=b
+
+		
+>>> count
+7
+
+>>> newstring
+'0123456'
+
+>>> chr(1)
+'\x01'
+
+>>> chr(55)
+'7'
+
+>>> chr(3)
+'\x03'
+
+>>> for i in range(55):
+	print(chr(i),end=' ')
+
+	
+         	 
+   
+                     ! " # $ % & ' ( ) * + , - . / 0 1 2 3 4 5 6 
+
+>>> s = '\u00B23455'
+
+>>> s
+'²3455'
+
+
+>>> chr('\u00BD')
+Traceback (most recent call last):
+  File "<pyshell#113>", line 1, in <module>
+    chr('\u00BD')
+TypeError: an integer is required (got type str)
+
+>>> print('{}'.format('gopiraj'))
+gopiraj
+
+>>> print('{}'.format(122))
+122
+
+>>> '{} is {} in {}'.format('gopiraj','math student','muthayammal collage of atrs and science')
+'gopiraj is math student in muthayammal collage of atrs and science'
+
+>>> ' hi! my name is{} and im {} years old'.format('gopiraj',22)
+' hi! my name isgopiraj and im 22 years old'
+
+>>> '1:{}2:{}3:{}4:{}'.format('one','two','three','four')
+'1:one2:two3:three4:four'\
+
+>>> '{3} {2} {1} {0}'.format('first','second','third','fourth')
+'fourth third second first'
+
+>>> '{0} is bad boy and his also {1}'.format('gopi','bad')
+'gopi is bad boy and his also bad'
+
+>>> '{0:} is bad boy and his also {1}'.format('gopi','bad')
+'gopi is bad boy and his also bad'
+
+>>> '{0:7} is bad boy and his also {1}'.format('gopi','bad')
+'gopi    is bad boy and his also bad'
+
+>>> '{0:4} is bad boy and his also {1}'.format('gopi','bad')
+'gopi is bad boy and his also bad'
+
+>>> '{0:5} is bad boy and his also {1}'.format('gopi','bad')
+'gopi  is bad boy and his also bad'
+
+>>> '{0:5} is bad boy and his also {1:10}'.format('gopi','bad')
+'gopi  is bad boy and his also bad       '
+
+>>> '{0:5} is bad boy and his also {1:10}'.format('gopi','bad')
+'gopi  is bad boy and his also bad       '
+
+>>> def fun(a,b):
+	for i in range(a,b):
+		print(i,  i**2,  i**3,  i**4)
+
+		
+
+>>> fun(1,6)
+1 1 1 1
+2 4 8 16
+3 9 27 81
+4 16 64 256
+5 25 125 625
+
+>>> def fun(a,b):
+	for i in range(a,b):
+		print('{0:6}{1:6}{2:6}'.format(i,  i**2,  i**3))
+
+		
+>>> fun(1,6)
+     1     1     1
+     2     4     8
+     3     9    27
+     4    16    64
+     5    25   125
+>>> def fun(a,b):
+	for i in range(a,b):
+		print('{0:<6}{1:<6}{2:<6}'.format(i,  i**2,  i**3))
+
+		
+
+>>> fun(1,6)
+1     1     1     
+2     4     8     
+3     9     27    
+4     16    64    
+5     25    125   
+
+>>> def fun(a,b):
+	for i in range(a,b):
+		print('{0:^6}{1:^6}{2:^6}'.format(i,  i**2,  i**3))
+
+		
+>>> fun(1,6)
+  1     1     1   
+  2     4     8   
+  3     9     27  
+  4     16    64  
+  5     25   125  
+
+
+>>> def fun(a,b):
+	for i in range(a,b):
+		print('{0:*^6}{1:^6}{2:^6}'.format(i,  i**2,  i**3))
+
+		
+
+>>> fun(1,6)
+**1***  1     1   
+**2***  4     8   
+**3***  9     27  
+**4***  16    64  
+**5***  25   125  
+
+
+>>> def fun(a,b):
+	for i in range(a,b):
+		print('{0:*^6}{1:$^6}{2:@^6}'.format(i,  i**2,  i**3))
+
+		
+>>> fun(1,6)
+**1***$$1$$$@@1@@@
+**2***$$4$$$@@8@@@
+**3***$$9$$$@@27@@
+**4***$$16$$@@64@@
+**5***$$25$$@125@@
+
+>>> string='{first} {second} {third} '
+
+>>> d={'first':'gopiraj','second':'sathish kumar','third':'gopal'}
+
+
+>>> string.format(**d)
+'gopiraj sathish kumar gopal '
+
+
+
+>>> string.format(**d)
+'gopiraj sathish kumar gopal '
+
+>>> s='gopiraj'
+
+>>> s.index('gopi')
+0
+
+
+>>> s.find('gopi')
+0
+
+>>> s.find('gi')
+-1
+
+
+>>> len('11123 DC')
+8
+
+>>> len('11123 DC')-2
+6
+
+>>> d='11123 DC'
+
+>>> d[6]
+'D'
+>>> d[6]!='D'
+False
+
+
+>>> bit_len=d.index('DC')-1
+
+>>> bit_len
+5
+
+>>> '\f'
+'\x0c'
+
+>>> print('\f')
+
+
+>>> print('\r')
+
+
+>>> print('')
+
+>>> ''.isspace()
+False
+
+>>> 'gopi'.isspace()
+False
+
+>>> 'gopi'.isspace()
+False
+
+>>> 'gopi\r'.isspace()
+False
+
+>>> '\r'.isspace()
+True
+
+>>> '\r gopi'.isspace()
+False
+
+
+>>> s='my name is gopi raj'
+
+>>> c=0
+
+>>> for i in s:
+	if s.isspace()==True:
+		c+=1
+
+		
+>>> c
+0
+
+>>> for i in s:
+	if (s.isspace())==True:
+		c+=1
+
+		
+>>> for i in s:
+	if (s.isspace())==True:
+		c+=1
+
+	
+>>> print(c)
+0
+
+>>> string = 'My name is Ayush'
+
+>>> for i in s:
+
+	if (string.isspace())==True:
+		c+=1
+
+		
+>>> c
+0
+
+
+>>> count=0
+
+
+>>> string = 'My name is Ayush'
+
+>>> for a in string:
+    if (a.isspace()) == True:
+        count+=1
+
+        
+>>> count
+3
+
+
+>>> ''.isspace()
+False
+
+>>> ' '.isspace()
+True
+
+>>> '  g'.isspace()
+False
+
+>>> for i in string:
+	if i.isspace():
+		count+=1
+
+		
+>>> count
+6
+
+>>> string
+'My name is Ayush'
+
+>>> count=0
+
+>>> for i in string:
+	if i.isspace():
+		count+=1
+
+		
+>>> count
+3
+
+>>> s='gopiRAJ sathish KUMAR'
+
+>>> s.swapcase()
+'GOPIraj SATHISH kumar'
+
+
+>>> s='satring'
+
+>>> s.swapcase()
+'SATRING'
+
+
+>>> s='gopi is gopi and gopi is gopi'
+
+>>> s.replace('gopi','Gopiraj')
+'Gopiraj is Gopiraj and Gopiraj is Gopiraj'
+
+>>> s.replace('gopi','Gopiraj',3)
+
+'Gopiraj is Gopiraj and Gopiraj is gopi'
+
+>>> s='gopi gopi gopi'
+
+>>> s.replace('o','O')
+'gOpi gOpi gOpi'
+	      
