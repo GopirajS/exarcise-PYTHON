@@ -2242,3 +2242,471 @@ False
 >>> s.replace('o','O')
 'gOpi gOpi gOpi'
 	      
+
+>>>=========================================================
+
+
+
+>>> s='gopiraj'
+
+>>> s.capitalize()
+'Gopiraj'
+
+>>> s='GOPIRAJ'
+
+>>> s.casefold()
+'gopiraj'
+
+>>> s.center(15,'*')
+'****GOPIRAJ****'
+
+>>> s.count('g')
+0
+
+>>> s='gopiraj'
+
+>>> s.count('g')
+1
+
+>>> s.count('o')
+1
+
+>>> s.count('0')
+0
+
+>>> s.count('0')
+0
+
+
+>>> s.endswith('i')
+False
+
+>>> s.endswith('j')
+True
+
+>>> s.endswith('raj')
+True
+
+>>> s.endswith('raj')
+True
+
+>>> s='gopiraj \t'
+
+>>> s.expandtabs(8)
+'gopiraj         '
+
+>>> s.expandtabs(4)
+'gopiraj     '
+
+>>> s.find('g')
+0
+
+>>> s.find('o')
+1
+
+>>> s.find('p')
+2
+
+>>> s.find('i')
+3
+
+>>> s.find('j')
+6
+
+>>> s.find('G')
+-1
+
+>>> s='gopi raj  is {}'
+
+>>> s.format('student')
+'gopi raj  is student'
+
+>>> s.format_map
+<built-in method format_map of str object at 0x000001B703E4CEB0>
+
+>>> s.format_map.__doc__
+"S.format_map(mapping) -> str\n\nReturn a formatted version of S, using substitutions from mapping.\nThe substitutions are identified by braces ('{' and '}')."
+
+>>> print(s.format_map.__doc__)
+S.format_map(mapping) -> str
+
+Return a formatted version of S, using substitutions from mapping.
+The substitutions are identified by braces ('{' and '}').
+
+>>> s.index('g')
+0
+
+>>> s.index('G')
+Traceback (most recent call last):
+  File "<pyshell#35>", line 1, in <module>
+    s.index('G')
+ValueError: substring not found
+
+>>> s.index('g',0,1)
+0
+
+>>> s.isalnum()
+False
+
+>>> s.isalnum()
+False
+
+>>> s='gopi123'
+
+>>> s.isalpha()
+False
+
+>>> s.isalnum()
+True
+
+>>> 
+
+>>> 
+>>> s='gopi  123'
+
+
+>>> s.isalnum()
+False
+
+>>> s.isascii()
+True
+
+
+>>> bin(12)
+'0b1100'
+
+>>> s='0b1100'
+
+>>> s.isascii()
+True
+
+>>> s.isdecimal()
+False
+
+>>> s='12345'
+
+>>> s.isdecimal()
+True
+
+>>> s.isdigit()
+True
+
+>>> s='12.233'
+
+>>> s.isdecimal()
+False
+
+>>> s.isdigit()
+False
+
+>>> import encodings
+
+>>> import encodings as e
+
+>>> e.aliases
+<module 'encodings.aliases' from 'C:\\Users\\gopir\\AppData\\Local\\Programs\\Python\\Python39\\lib\\encodings\\aliases.py'>
+
+>>> print(e.aliases)
+<module 'encodings.aliases' from 'C:\\Users\\gopir\\AppData\\Local\\Programs\\Python\\Python39\\lib\\encodings\\aliases.py'>
+
+
+>>> e.aliases.aliases.keys()
+
+dict_keys(['646', 'ansi_x3.4_1968', 'ansi_x3_4_1968', 'ansi_x3.4_1986', 'cp367', 'csascii', 'ibm367', 'iso646_us', 'iso_646.irv_1991', 'iso_ir_6', 'us', 'us_ascii', 'base64', 'base_64', 'big5_tw', 'csbig5', 'big5_hkscs', 'hkscs', 'bz2', '037', 'csibm037', 'ebcdic_cp_ca', 'ebcdic_cp_nl', 'ebcdic_cp_us', 'ebcdic_cp_wt', 'ibm037', 'ibm039', '1026', 'csibm1026', 'ibm1026', '1125', 'ibm1125', 'cp866u', 'ruscii', '1140', 'ibm1140', '1250', 'windows_1250', '1251', 'windows_1251', '1252', 'windows_1252', '1253', 'windows_1253', '1254', 'windows_1254', '1255', 'windows_1255', '1256', 'windows_1256', '1257', 'windows_1257', '1258', 'windows_1258', '273', 'ibm273', 'csibm273', '424', 'csibm424', 'ebcdic_cp_he', 'ibm424', '437', 'cspc8codepage437', 'ibm437', '500', 'csibm500', 'ebcdic_cp_be', 'ebcdic_cp_ch', 'ibm500', '775', 'cspc775baltic', 'ibm775', '850', 'cspc850multilingual', 'ibm850', '852', 'cspcp852', 'ibm852', '855', 'csibm855', 'ibm855', '857', 'csibm857', 'ibm857', '858', 'csibm858', 'ibm858', '860', 'csibm860', 'ibm860', '861', 'cp_is', 'csibm861', 'ibm861', '862', 'cspc862latinhebrew', 'ibm862', '863', 'csibm863', 'ibm863', '864', 'csibm864', 'ibm864', '865', 'csibm865', 'ibm865', '866', 'csibm866', 'ibm866', '869', 'cp_gr', 'csibm869', 'ibm869', '932', 'ms932', 'mskanji', 'ms_kanji', '949', 'ms949', 'uhc', '950', 'ms950', 'jisx0213', 'eucjis2004', 'euc_jis2004', 'eucjisx0213', 'eucjp', 'ujis', 'u_jis', 'euckr', 'korean', 'ksc5601', 'ks_c_5601', 'ks_c_5601_1987', 'ksx1001', 'ks_x_1001', 'gb18030_2000', 'chinese', 'csiso58gb231280', 'euc_cn', 'euccn', 'eucgb2312_cn', 'gb2312_1980', 'gb2312_80', 'iso_ir_58', '936', 'cp936', 'ms936', 'hex', 'roman8', 'r8', 'csHPRoman8', 'cp1051', 'ibm1051', 'hzgb', 'hz_gb', 'hz_gb_2312', 'csiso2022jp', 'iso2022jp', 'iso_2022_jp', 'iso2022jp_1', 'iso_2022_jp_1', 'iso2022jp_2', 'iso_2022_jp_2', 'iso_2022_jp_2004', 'iso2022jp_2004', 'iso2022jp_3', 'iso_2022_jp_3', 'iso2022jp_ext', 'iso_2022_jp_ext', 'csiso2022kr', 'iso2022kr', 'iso_2022_kr', 'csisolatin6', 'iso_8859_10', 'iso_8859_10_1992', 'iso_ir_157', 'l6', 'latin6', 'thai', 'iso_8859_11', 'iso_8859_11_2001', 'iso_8859_13', 'l7', 'latin7', 'iso_8859_14', 'iso_8859_14_1998', 'iso_celtic', 'iso_ir_199', 'l8', 'latin8', 'iso_8859_15', 'l9', 'latin9', 'iso_8859_16', 'iso_8859_16_2001', 'iso_ir_226', 'l10', 'latin10', 'csisolatin2', 'iso_8859_2', 'iso_8859_2_1987', 'iso_ir_101', 'l2', 'latin2', 'csisolatin3', 'iso_8859_3', 'iso_8859_3_1988', 'iso_ir_109', 'l3', 'latin3', 'csisolatin4', 'iso_8859_4', 'iso_8859_4_1988', 'iso_ir_110', 'l4', 'latin4', 'csisolatincyrillic', 'cyrillic', 'iso_8859_5', 'iso_8859_5_1988', 'iso_ir_144', 'arabic', 'asmo_708', 'csisolatinarabic', 'ecma_114', 'iso_8859_6', 'iso_8859_6_1987', 'iso_ir_127', 'csisolatingreek', 'ecma_118', 'elot_928', 'greek', 'greek8', 'iso_8859_7', 'iso_8859_7_1987', 'iso_ir_126', 'csisolatinhebrew', 'hebrew', 'iso_8859_8', 'iso_8859_8_1988', 'iso_ir_138', 'csisolatin5', 'iso_8859_9', 'iso_8859_9_1989', 'iso_ir_148', 'l5', 'latin5', 'cp1361', 'ms1361', 'cskoi8r', 'kz_1048', 'rk1048', 'strk1048_2002', '8859', 'cp819', 'csisolatin1', 'ibm819', 'iso8859', 'iso8859_1', 'iso_8859_1', 'iso_8859_1_1987', 'iso_ir_100', 'l1', 'latin', 'latin1', 'maccyrillic', 'macgreek', 'maciceland', 'maccentraleurope', 'mac_centeuro', 'maclatin2', 'macintosh', 'macroman', 'macturkish', 'ansi', 'dbcs', 'csptcp154', 'pt154', 'cp154', 'cyrillic_asian', 'quopri', 'quoted_printable', 'quotedprintable', 'rot13', 'csshiftjis', 'shiftjis', 'sjis', 's_jis', 'shiftjis2004', 'sjis_2004', 's_jis_2004', 'shiftjisx0213', 'sjisx0213', 's_jisx0213', 'tis620', 'tis_620_0', 'tis_620_2529_0', 'tis_620_2529_1', 'iso_ir_166', 'u16', 'utf16', 'unicodebigunmarked', 'utf_16be', 'unicodelittleunmarked', 'utf_16le', 'u32', 'utf32', 'utf_32be', 'utf_32le', 'u7', 'utf7', 'unicode_1_1_utf_7', 'u8', 'utf', 'utf8', 'utf8_ucs2', 'utf8_ucs4', 'cp65001', 'uu', 'zip', 'zlib', 'x_mac_japanese', 'x_mac_korean', 'x_mac_simp_chinese', 'x_mac_trad_chinese'])
+
+>>> e.aliases.aliases()
+Traceback (most recent call last):
+  File "<pyshell#68>", line 1, in <module>
+    e.aliases.aliases()
+TypeError: 'dict' object is not callable
+
+>>> e.aliases.aliases
+{'646': 'ascii', 'ansi_x3.4_1968': 'ascii', 'ansi_x3_4_1968': 'ascii', 'ansi_x3.4_1986': 'ascii', 'cp367': 'ascii', 'csascii': 'ascii', 'ibm367': 'ascii', 'iso646_us': 'ascii', 'iso_646.irv_1991': 'ascii', 'iso_ir_6': 'ascii', 'us': 'ascii', 'us_ascii': 'ascii', 'base64': 'base64_codec', 'base_64': 'base64_codec', 'big5_tw': 'big5', 'csbig5': 'big5', 'big5_hkscs': 'big5hkscs', 'hkscs': 'big5hkscs', 'bz2': 'bz2_codec', '037': 'cp037', 'csibm037': 'cp037', 'ebcdic_cp_ca': 'cp037', 'ebcdic_cp_nl': 'cp037', 'ebcdic_cp_us': 'cp037', 'ebcdic_cp_wt': 'cp037', 'ibm037': 'cp037', 'ibm039': 'cp037', '1026': 'cp1026', 'csibm1026': 'cp1026', 'ibm1026': 'cp1026', '1125': 'cp1125', 'ibm1125': 'cp1125', 'cp866u': 'cp1125', 'ruscii': 'cp1125', '1140': 'cp1140', 'ibm1140': 'cp1140', '1250': 'cp1250', 'windows_1250': 'cp1250', '1251': 'cp1251', 'windows_1251': 'cp1251', '1252': 'cp1252', 'windows_1252': 'cp1252', '1253': 'cp1253', 'windows_1253': 'cp1253', '1254': 'cp1254', 'windows_1254': 'cp1254', '1255': 'cp1255', 'windows_1255': 'cp1255', '1256': 'cp1256', 'windows_1256': 'cp1256', '1257': 'cp1257', 'windows_1257': 'cp1257', '1258': 'cp1258', 'windows_1258': 'cp1258', '273': 'cp273', 'ibm273': 'cp273', 'csibm273': 'cp273', '424': 'cp424', 'csibm424': 'cp424', 'ebcdic_cp_he': 'cp424', 'ibm424': 'cp424', '437': 'cp437', 'cspc8codepage437': 'cp437', 'ibm437': 'cp437', '500': 'cp500', 'csibm500': 'cp500', 'ebcdic_cp_be': 'cp500', 'ebcdic_cp_ch': 'cp500', 'ibm500': 'cp500', '775': 'cp775', 'cspc775baltic': 'cp775', 'ibm775': 'cp775', '850': 'cp850', 'cspc850multilingual': 'cp850', 'ibm850': 'cp850', '852': 'cp852', 'cspcp852': 'cp852', 'ibm852': 'cp852', '855': 'cp855', 'csibm855': 'cp855', 'ibm855': 'cp855', '857': 'cp857', 'csibm857': 'cp857', 'ibm857': 'cp857', '858': 'cp858', 'csibm858': 'cp858', 'ibm858': 'cp858', '860': 'cp860', 'csibm860': 'cp860', 'ibm860': 'cp860', '861': 'cp861', 'cp_is': 'cp861', 'csibm861': 'cp861', 'ibm861': 'cp861', '862': 'cp862', 'cspc862latinhebrew': 'cp862', 'ibm862': 'cp862', '863': 'cp863', 'csibm863': 'cp863', 'ibm863': 'cp863', '864': 'cp864', 'csibm864': 'cp864', 'ibm864': 'cp864', '865': 'cp865', 'csibm865': 'cp865', 'ibm865': 'cp865', '866': 'cp866', 'csibm866': 'cp866', 'ibm866': 'cp866', '869': 'cp869', 'cp_gr': 'cp869', 'csibm869': 'cp869', 'ibm869': 'cp869', '932': 'cp932', 'ms932': 'cp932', 'mskanji': 'cp932', 'ms_kanji': 'cp932', '949': 'cp949', 'ms949': 'cp949', 'uhc': 'cp949', '950': 'cp950', 'ms950': 'cp950', 'jisx0213': 'euc_jis_2004', 'eucjis2004': 'euc_jis_2004', 'euc_jis2004': 'euc_jis_2004', 'eucjisx0213': 'euc_jisx0213', 'eucjp': 'euc_jp', 'ujis': 'euc_jp', 'u_jis': 'euc_jp', 'euckr': 'euc_kr', 'korean': 'euc_kr', 'ksc5601': 'euc_kr', 'ks_c_5601': 'euc_kr', 'ks_c_5601_1987': 'euc_kr', 'ksx1001': 'euc_kr', 'ks_x_1001': 'euc_kr', 'gb18030_2000': 'gb18030', 'chinese': 'gb2312', 'csiso58gb231280': 'gb2312', 'euc_cn': 'gb2312', 'euccn': 'gb2312', 'eucgb2312_cn': 'gb2312', 'gb2312_1980': 'gb2312', 'gb2312_80': 'gb2312', 'iso_ir_58': 'gb2312', '936': 'gbk', 'cp936': 'gbk', 'ms936': 'gbk', 'hex': 'hex_codec', 'roman8': 'hp_roman8', 'r8': 'hp_roman8', 'csHPRoman8': 'hp_roman8', 'cp1051': 'hp_roman8', 'ibm1051': 'hp_roman8', 'hzgb': 'hz', 'hz_gb': 'hz', 'hz_gb_2312': 'hz', 'csiso2022jp': 'iso2022_jp', 'iso2022jp': 'iso2022_jp', 'iso_2022_jp': 'iso2022_jp', 'iso2022jp_1': 'iso2022_jp_1', 'iso_2022_jp_1': 'iso2022_jp_1', 'iso2022jp_2': 'iso2022_jp_2', 'iso_2022_jp_2': 'iso2022_jp_2', 'iso_2022_jp_2004': 'iso2022_jp_2004', 'iso2022jp_2004': 'iso2022_jp_2004', 'iso2022jp_3': 'iso2022_jp_3', 'iso_2022_jp_3': 'iso2022_jp_3', 'iso2022jp_ext': 'iso2022_jp_ext', 'iso_2022_jp_ext': 'iso2022_jp_ext', 'csiso2022kr': 'iso2022_kr', 'iso2022kr': 'iso2022_kr', 'iso_2022_kr': 'iso2022_kr', 'csisolatin6': 'iso8859_10', 'iso_8859_10': 'iso8859_10', 'iso_8859_10_1992': 'iso8859_10', 'iso_ir_157': 'iso8859_10', 'l6': 'iso8859_10', 'latin6': 'iso8859_10', 'thai': 'iso8859_11', 'iso_8859_11': 'iso8859_11', 'iso_8859_11_2001': 'iso8859_11', 'iso_8859_13': 'iso8859_13', 'l7': 'iso8859_13', 'latin7': 'iso8859_13', 'iso_8859_14': 'iso8859_14', 'iso_8859_14_1998': 'iso8859_14', 'iso_celtic': 'iso8859_14', 'iso_ir_199': 'iso8859_14', 'l8': 'iso8859_14', 'latin8': 'iso8859_14', 'iso_8859_15': 'iso8859_15', 'l9': 'iso8859_15', 'latin9': 'iso8859_15', 'iso_8859_16': 'iso8859_16', 'iso_8859_16_2001': 'iso8859_16', 'iso_ir_226': 'iso8859_16', 'l10': 'iso8859_16', 'latin10': 'iso8859_16', 'csisolatin2': 'iso8859_2', 'iso_8859_2': 'iso8859_2', 'iso_8859_2_1987': 'iso8859_2', 'iso_ir_101': 'iso8859_2', 'l2': 'iso8859_2', 'latin2': 'iso8859_2', 'csisolatin3': 'iso8859_3', 'iso_8859_3': 'iso8859_3', 'iso_8859_3_1988': 'iso8859_3', 'iso_ir_109': 'iso8859_3', 'l3': 'iso8859_3', 'latin3': 'iso8859_3', 'csisolatin4': 'iso8859_4', 'iso_8859_4': 'iso8859_4', 'iso_8859_4_1988': 'iso8859_4', 'iso_ir_110': 'iso8859_4', 'l4': 'iso8859_4', 'latin4': 'iso8859_4', 'csisolatincyrillic': 'iso8859_5', 'cyrillic': 'iso8859_5', 'iso_8859_5': 'iso8859_5', 'iso_8859_5_1988': 'iso8859_5', 'iso_ir_144': 'iso8859_5', 'arabic': 'iso8859_6', 'asmo_708': 'iso8859_6', 'csisolatinarabic': 'iso8859_6', 'ecma_114': 'iso8859_6', 'iso_8859_6': 'iso8859_6', 'iso_8859_6_1987': 'iso8859_6', 'iso_ir_127': 'iso8859_6', 'csisolatingreek': 'iso8859_7', 'ecma_118': 'iso8859_7', 'elot_928': 'iso8859_7', 'greek': 'iso8859_7', 'greek8': 'iso8859_7', 'iso_8859_7': 'iso8859_7', 'iso_8859_7_1987': 'iso8859_7', 'iso_ir_126': 'iso8859_7', 'csisolatinhebrew': 'iso8859_8', 'hebrew': 'iso8859_8', 'iso_8859_8': 'iso8859_8', 'iso_8859_8_1988': 'iso8859_8', 'iso_ir_138': 'iso8859_8', 'csisolatin5': 'iso8859_9', 'iso_8859_9': 'iso8859_9', 'iso_8859_9_1989': 'iso8859_9', 'iso_ir_148': 'iso8859_9', 'l5': 'iso8859_9', 'latin5': 'iso8859_9', 'cp1361': 'johab', 'ms1361': 'johab', 'cskoi8r': 'koi8_r', 'kz_1048': 'kz1048', 'rk1048': 'kz1048', 'strk1048_2002': 'kz1048', '8859': 'latin_1', 'cp819': 'latin_1', 'csisolatin1': 'latin_1', 'ibm819': 'latin_1', 'iso8859': 'latin_1', 'iso8859_1': 'latin_1', 'iso_8859_1': 'latin_1', 'iso_8859_1_1987': 'latin_1', 'iso_ir_100': 'latin_1', 'l1': 'latin_1', 'latin': 'latin_1', 'latin1': 'latin_1', 'maccyrillic': 'mac_cyrillic', 'macgreek': 'mac_greek', 'maciceland': 'mac_iceland', 'maccentraleurope': 'mac_latin2', 'mac_centeuro': 'mac_latin2', 'maclatin2': 'mac_latin2', 'macintosh': 'mac_roman', 'macroman': 'mac_roman', 'macturkish': 'mac_turkish', 'ansi': 'mbcs', 'dbcs': 'mbcs', 'csptcp154': 'ptcp154', 'pt154': 'ptcp154', 'cp154': 'ptcp154', 'cyrillic_asian': 'ptcp154', 'quopri': 'quopri_codec', 'quoted_printable': 'quopri_codec', 'quotedprintable': 'quopri_codec', 'rot13': 'rot_13', 'csshiftjis': 'shift_jis', 'shiftjis': 'shift_jis', 'sjis': 'shift_jis', 's_jis': 'shift_jis', 'shiftjis2004': 'shift_jis_2004', 'sjis_2004': 'shift_jis_2004', 's_jis_2004': 'shift_jis_2004', 'shiftjisx0213': 'shift_jisx0213', 'sjisx0213': 'shift_jisx0213', 's_jisx0213': 'shift_jisx0213', 'tis620': 'tis_620', 'tis_620_0': 'tis_620', 'tis_620_2529_0': 'tis_620', 'tis_620_2529_1': 'tis_620', 'iso_ir_166': 'tis_620', 'u16': 'utf_16', 'utf16': 'utf_16', 'unicodebigunmarked': 'utf_16_be', 'utf_16be': 'utf_16_be', 'unicodelittleunmarked': 'utf_16_le', 'utf_16le': 'utf_16_le', 'u32': 'utf_32', 'utf32': 'utf_32', 'utf_32be': 'utf_32_be', 'utf_32le': 'utf_32_le', 'u7': 'utf_7', 'utf7': 'utf_7', 'unicode_1_1_utf_7': 'utf_7', 'u8': 'utf_8', 'utf': 'utf_8', 'utf8': 'utf_8', 'utf8_ucs2': 'utf_8', 'utf8_ucs4': 'utf_8', 'cp65001': 'utf_8', 'uu': 'uu_codec', 'zip': 'zlib_codec', 'zlib': 'zlib_codec', 'x_mac_japanese': 'shift_jis', 'x_mac_korean': 'euc_kr', 'x_mac_simp_chinese': 'gb2312', 'x_mac_trad_chinese': 'big5'}
+
+
+>>> s=e.aliases.aliases.keys()
+
+>>> for i in s:
+	print('{0:6}'.format(i),end=' ')
+
+	
+646    ansi_x3.4_1968 ansi_x3_4_1968 ansi_x3.4_1986 cp367  csascii ibm367 iso646_us iso_646.irv_1991 iso_ir_6 us     us_ascii base64 base_64 big5_tw csbig5 big5_hkscs hkscs  bz2    037    csibm037 ebcdic_cp_ca ebcdic_cp_nl ebcdic_cp_us ebcdic_cp_wt ibm037 ibm039 1026   csibm1026 ibm1026 1125   ibm1125 cp866u ruscii 1140   ibm1140 1250   windows_1250 1251   windows_1251 1252   windows_1252 1253   windows_1253 1254   windows_1254 1255   windows_1255 1256   windows_1256 1257   windows_1257 1258   windows_1258 273    ibm273 csibm273 424    csibm424 ebcdic_cp_he ibm424 437    cspc8codepage437 ibm437 500    csibm500 ebcdic_cp_be ebcdic_cp_ch ibm500 775    cspc775baltic ibm775 850    cspc850multilingual ibm850 852    cspcp852 ibm852 855    csibm855 ibm855 857    csibm857 ibm857 858    csibm858 ibm858 860    csibm860 ibm860 861    cp_is  csibm861 ibm861 862    cspc862latinhebrew ibm862 863    csibm863 ibm863 864    csibm864 ibm864 865    csibm865 ibm865 866    csibm866 ibm866 869    cp_gr  csibm869 ibm869 932    ms932  mskanji ms_kanji 949    ms949  uhc    950    ms950  jisx0213 eucjis2004 euc_jis2004 eucjisx0213 eucjp  ujis   u_jis  euckr  korean ksc5601 ks_c_5601 ks_c_5601_1987 ksx1001 ks_x_1001 gb18030_2000 chinese csiso58gb231280 euc_cn euccn  eucgb2312_cn gb2312_1980 gb2312_80 iso_ir_58 936    cp936  ms936  hex    roman8 r8     csHPRoman8 cp1051 ibm1051 hzgb   hz_gb  hz_gb_2312 csiso2022jp iso2022jp iso_2022_jp iso2022jp_1 iso_2022_jp_1 iso2022jp_2 iso_2022_jp_2 iso_2022_jp_2004 iso2022jp_2004 iso2022jp_3 iso_2022_jp_3 iso2022jp_ext iso_2022_jp_ext csiso2022kr iso2022kr iso_2022_kr csisolatin6 iso_8859_10 iso_8859_10_1992 iso_ir_157 l6     latin6 thai   iso_8859_11 iso_8859_11_2001 iso_8859_13 l7     latin7 iso_8859_14 iso_8859_14_1998 iso_celtic iso_ir_199 l8     latin8 iso_8859_15 l9     latin9 iso_8859_16 iso_8859_16_2001 iso_ir_226 l10    latin10 csisolatin2 iso_8859_2 iso_8859_2_1987 iso_ir_101 l2     latin2 csisolatin3 iso_8859_3 iso_8859_3_1988 iso_ir_109 l3     latin3 csisolatin4 iso_8859_4 iso_8859_4_1988 iso_ir_110 l4     latin4 csisolatincyrillic cyrillic iso_8859_5 iso_8859_5_1988 iso_ir_144 arabic asmo_708 csisolatinarabic ecma_114 iso_8859_6 iso_8859_6_1987 iso_ir_127 csisolatingreek ecma_118 elot_928 greek  greek8 iso_8859_7 iso_8859_7_1987 iso_ir_126 csisolatinhebrew hebrew iso_8859_8 iso_8859_8_1988 iso_ir_138 csisolatin5 iso_8859_9 iso_8859_9_1989 iso_ir_148 l5     latin5 cp1361 ms1361 cskoi8r kz_1048 rk1048 strk1048_2002 8859   cp819  csisolatin1 ibm819 iso8859 iso8859_1 iso_8859_1 iso_8859_1_1987 iso_ir_100 l1     latin  latin1 maccyrillic macgreek maciceland maccentraleurope mac_centeuro maclatin2 macintosh macroman macturkish ansi   dbcs   csptcp154 pt154  cp154  cyrillic_asian quopri quoted_printable quotedprintable rot13  csshiftjis shiftjis sjis   s_jis  shiftjis2004 sjis_2004 s_jis_2004 shiftjisx0213 sjisx0213 s_jisx0213 tis620 tis_620_0 tis_620_2529_0 tis_620_2529_1 iso_ir_166 u16    utf16  unicodebigunmarked utf_16be unicodelittleunmarked utf_16le u32    utf32  utf_32be utf_32le u7     utf7   unicode_1_1_utf_7 u8     utf    utf8   utf8_ucs2 utf8_ucs4 cp65001 uu     zip    zlib   x_mac_japanese x_mac_korean x_mac_simp_chinese x_mac_trad_chinese 
+
+
+
+>>> for i in s:
+	if i=='utf8':
+		print('yes')
+
+		
+yes
+
+>>> type(s)
+<class 'dict_keys'>
+
+>>> for i in s:
+	if i=="ascii":
+		print('yes')
+
+
+>>> for i in s:
+	if i=='ascii':
+		print('yes')
+
+		
+
+>>> for i in s:
+	if i=='ascii':
+		print('yes')
+else:
+	print('No')
+
+	
+No
+
+
+>>> d='gopi raj sathish'
+
+>>> d.encode('utf8','ignore')
+b'gopi raj sathish'
+
+>>> d.encode('ascii','ignore')
+b'gopi raj sathish'
+
+>>> d.encode('ascii','replace')
+b'gopi raj sathish'
+
+>>> def fun(input,replaces,str):
+	return input.replece(replaces,str)
+
+
+
+>>> def fun(inpu,replaces,str):
+	return inpu.replece(replaces,str)
+
+
+
+>>> def fun(inpu,replaces,st):
+	return inpu.replece(replaces,st)
+
+
+>>> s='gopi'
+
+>>> s=''
+
+>>> def fun(s,d,t):
+	return s.replace(d,t)
+
+>>> fun('gopi raj sathish ','sathish','SATHGIUSH')
+'gopi raj SATHGIUSH '
+
+>>> s='gopi'
+
+>>> s.zfill(4)
+'gopi'
+
+>>> s.zfill(6)
+'00gopi'
+
+>>> s='weekyourweek'
+
+>>> s.maketrans('wy','gf','u')
+{119: 103, 121: 102, 117: None}
+
+>>> d=s.maketrans('wy','gf','u')
+
+>>> s.translate(d)
+'geekforgeek'
+
+>>> s='GopiRaja'
+
+>>> s[0]
+'G'
+
+
+>>> s.maketrans('GR','gr')
+{71: 103, 82: 114}
+
+>>> s.maketrans('GR','gr','a')
+{71: 103, 82: 114, 97: None}
+
+>>> s.translate(s.maketrans('GR','gr','a'))
+'gopirj'
+
+>>> s
+'GopiRaja'
+
+>>> s=s.translate(s.maketrans('GR','gr','a'))
+
+>>> s
+'gopirj'
+
+
+>>> s='gopiraj'
+
+>>> s.isidentifier()
+True
+
+>>> s='Gopi'
+
+>>> s.isidentifier()
+True
+
+>>> s='gopi raj'
+
+>>> s.isidentifier()
+False
+
+>>> s.title()
+
+'Gopi Raj'
+>>> s.lower()
+'gopi raj'
+
+>>> s.splitlines()
+['gopi raj']
+
+>>> s='gopi raj sarhish\n and this is my name'
+
+>>> s.splitlines()
+['gopi raj sarhish', ' and this is my name']
+
+
+>>> s.upper()
+'GOPI RAJ SARHISH\n AND THIS IS MY NAME'
+
+
+>>> s.zfill(12)
+'gopi raj sarhish\n and this is my name'
+
+>>> s.zfill(56)
+'0000000000000000000gopi raj sarhish\n and this is my name'
+
+
+>>> s.startswith('g')
+True
+
+>>> s.startswith('gopi')
+True
+
+>>> s
+'gopi raj sarhish\n and this is my name'
+
+>>> s='gopi raj sathish'
+
+>>> s.split(' ')
+['gopi', 'raj', 'sathish']
+
+>>> s.partition('raj')
+('gopi ', 'raj', ' sathish')
+
+>>> s.partition(' ')
+('gopi', ' ', 'raj sathish')
+
+
+
+>>> s='gopi raj sathish raj and raj'
+
+>>> s.replace('raj','RAJ')
+'gopi RAJ sathish RAJ and RAJ'
+
+>>> s.replace('raj','RAJ',2)
+'gopi RAJ sathish RAJ and raj'
+
+>>> s='gopi raj sathish '
+
+>>> s.replace('raj','RAJ')
+'gopi RAJ sathish '
+
+>>> s='weekyourweek'
+
+>>> s.maketrans('wyu','gf@')
+{119: 103, 121: 102, 117: 64}
+
+>>> s.translate(s.maketrans('wyu','gf@'))
+'geekfo@rgeek'
+
+>>> s='gopirajsathish raja'
+
+>>> s.lstrip('$')
+'gopirajsathish raja'
+
+>>> d=s.maketrans('gr','GR')
+
+>>> s.translate(d)
+'GopiRajsathish Raja'
+
+>>> s.replace('a','A')
+'gopirAjsAthish rAjA'
+>>> s='gopirajsathish raja'
+
+>>> import string
+
+>>> import collections
+
+>>> reversed(s)
+
+<reversed object at 0x00000203A565EC70>
+
+>>> list(reversed(s))
+['a', 'j', 'a', 'r', ' ', 'h', 's', 'i', 'h', 't', 'a', 's', 'j', 'a', 'r', 'i', 'p', 'o', 'g']
+
+>>> s
+'gopirajsathish raja'
+
+>>> s[::-1]
+'ajar hsihtasjaripog'
+
+>>> s.replace('a','@',-1)
+'gopir@js@thish r@j@'
+
+>>> s.replace('a','@',1)
+'gopir@jsathish raja'
+
+>>> s[::-1]
+'ajar hsihtasjaripog'
+
+>>> s=s[::-1]
+
+>>> s.replace('a','@')
+'@j@r hsiht@sj@ripog'
+
+>>> s.replace('a','@',1)
+'@jar hsihtasjaripog'
+
+>>> s.replace('a','@',1)
+'@jar hsihtasjaripog'
+
+>>> s=s.replace('a','@',1)
+
+>>> s[::-1]
+'gopirajsathish raj@'
+
+>>> s=s[::-1]
+
+>>> d=s.maketrans('gr','GR','@')
+
+>>> s.translate(d)
+'GopiRajsathish Raj'
+
+>>> s='gopiraj'
+
+>>> max(s)
+'r'
+
+>>> s=line = "Geek1 \nGeek2 \nGeek3"
+
+>>> s = "Geek1 \nGeek2 \nGeek3"
+
+>>> s.split(' ',1)
+['Geek1', '\nGeek2 \nGeek3']
+
+>>> import string
+
+>>> t=string.Template('hi $name how are u?')
+
+
+>>> t.safe_substitute({'name':'gopi'})
+'hi gopi how are u?'
+	      
+	      
